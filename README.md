@@ -9,4 +9,3 @@ primer repositorio de IEEE LatinAmerica
 * 
 ![PNGgraphicalAbstract](https://github.com/user-attachments/assets/4c56dcab-c2b6-4b98-9df1-238a5bfd49ab)
 
-![PNGgraphicalAbstract](https://github.com/user-attachments/assets/98c2b25f-f69e-4989-9137-bbb4431686dc)
