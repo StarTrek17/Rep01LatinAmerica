@@ -9,13 +9,13 @@ primer repositorio de IEEE LatinAmerica
 * 
 ![PNGgraphicalAbstract](https://github.com/user-attachments/assets/4c56dcab-c2b6-4b98-9df1-238a5bfd49ab)
 
-Resources and extra documentation for the manuscript "Needle Placement for Robot-assisted 3D Ultrasound-guided Breast Biopsy: A Preliminary Study" published in IEEE Latin America Transactions. The code is organized by the type of programming language used in the project in the following order Python -> Matlab -> R. The project hierarchy and folders description is as follows
+Resources and extra documentation for the manuscript "Replacing Missing Data in a Set of Historical Projects to Improve the Prediction of Software Effort" published in IEEE Latin America Transactions. The code is organized by the type of programming language used in the project in the following order MySQL -> R -> Excell. The project hierarchy and folders description is as follows:
 
-PYTHON\BreastDimension: For a geometrical model of woman breast and basic dimensions for a breast holder device
-MATLAB\Models:
+MySQL\Using a  SQL-model to replace data in every atribute with missing data of a ISBSG set
+MySQL/Models:
 getRootDirectory.m. Script for loading current working directory.
-startup.m. Script for adding all folder paths to Matlab.
-CAD_models:
+startup.m. Script for adding all folder paths to MySQL.
+SQL_models:
 Breast. Breast models for A, B, and C-cup sizes.
 Devices. Needle devices for core and fine needle biopsies.
 Matlab_models. Scripts for robot modeling (forward and inverse kinematics), breast modeling, trajectory generation, a collision-free path algorithm and multiple simulation.
