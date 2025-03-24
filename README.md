@@ -4,7 +4,7 @@ primer repositorio de IEEE LatinAmerica
 ![PngGraphicalAbstract](https://github.com/user-attachments/assets/a19645a7-b196-4bc4-b72c-e13abe1a2e6f)
 
 
-Resources and extra documentation for the manuscript "Replacing Missing Data in a Set of Historical Projects to Improve the Prediction of Software Effort" published in IEEE Latin America Transactions. The code is organized by the type of process:
+Resources and extra documentation for the manuscript "Replacing Missing Data" published in IEEE Latin America Transactions. The code is organized by the type of process:
 •	Pre-processing: MySql;
 •	Predictions Model: R;
 •	Other algorithms to predict: Excell.
