@@ -1,11 +1,19 @@
 # Rep01LatinAmerica
 primer repositorio de IEEE LatinAmerica
-![PNGgraphicalAbstract](https://github.com/user-attachments/assets/4c56dcab-c2b6-4b98-9df1-238a5bfd49ab)
 
-Resources and extra documentation for the manuscript "Replacing Missing Data in a Set of Historical Projects to Improve the Prediction of Software Effort" published in IEEE Latin America Transactions. The code is organized by the type of programming language used in the project in the following order MySQL -> R -> Excell. The project hierarchy and folders description is as follows:
+![PngGraphicalAbstract](https://github.com/user-attachments/assets/a19645a7-b196-4bc4-b72c-e13abe1a2e6f)
 
-MySQL\Using a  SQL-model to replace data in every atribute with missing data of a ISBSG set
-MySQL/Models:
-getRootDirectory.m. Script for loading current working directory.
-startup.m. Script for adding all folder paths to MySQL.
-SQL_models:
+
+Resources and extra documentation for the manuscript "Replacing Missing Data in a Set of Historical Projects to Improve the Prediction of Software Effort" published in IEEE Latin America Transactions. The code is organized by the type of process:
+•	Pre-processing: MySql;
+•	Predictions Model: R;
+•	Other algorithms to predict: Excell.
+________________________________________
+Dataset and subsets
+The database files are in the folder "Dataset - Replacing Missing Data in a Set of Historical Projects". In this folder, you will find the references to original ISBSG database, the subsets used for training process in the "Training T-Subset" folder and the subsets used for validation process in the "Validation V-Subset" folder. In this folders, all the subsets are in txt format for copying and pasting into the code.
+Codes
+Pré processing
+The code for preprocessing is in the folder "MySql - Pre-processing code," where you can find the script used to prepare the database for use in the MySql process. In this Mysql notebook, you just need to use the previously described CSV T-subset and V-subset.
+Predict
+The prediction codes are in two folders: "R - Algorithms for prediction model" which contains the effort prediction models using R, and "Excell - Algorithms for other predictions," which contains the calculus for MMRE, PRED(25)  and MAE validation metrics.
+
