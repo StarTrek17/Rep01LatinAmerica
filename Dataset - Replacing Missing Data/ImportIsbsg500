@@ -1,0 +1,4 @@
+We imported the ISBSG random sample of 500 projects, isbsg500, into the isbsgorig database in MySQL.
+The isbsg500 sample contains 500 rows and 16 columns. The first column is the project identifier, ProyID, 
+and the remaining 15 columns serve as study variables. For numeric variables, blank values were replaced 
+with -1 value to facilitate SQL queries.
