@@ -1,0 +1,501 @@
+PryId,IndSct,OrgTyp,AppTyp,DvlTyp,DvlPlt,LngTyp,PrgLng1,FncSze,NWELL1,SmmWrkEff,PrjElpTme,MaxTeaSze,DBMS1,DvlMtd,LOC
+Y50003,Communication,Telecommunications,Online. eSales,Enhancement,Multi,,,67,741,608,4,-1,,Waterfall (incl Linear Processing & SSADM),-1
+Y50007,Communication,Telecommunications,Customer relationship management,Enhancement,,3GL,Java,51,314,288,1,-1,,Waterfall (incl Linear Processing & SSADM),-1
+Y50011,Construction,Construction,Stock control & order processing,New Development,Multi,4GL,Access,443,856,796,3,-1,ACCESS,Waterfall (incl Linear Processing & SSADM),-1
+Y50012,Wholesale & Retail,Billing,Billing,Enhancement,,3GL,COBOL,76,1100,1100,-1,-1,,,-1
+Y50014,,,,Enhancement,,,,3,28,28,-1,-1,,,-1
+Y50019,Communication,Telecommunications,Data Warehouse,Enhancement,Multi,3GL,Shell,98,324,266,4,-1,,Waterfall (incl Linear Processing & SSADM),-1
+Y50026,Insurance,Insurance,Sales contact management,New Development,MF,3GL,Java,620,18160,18160,7,-1,IMSDB2,Waterfall (incl Linear Processing & SSADM),-1
+Y50028,Communication,Telecommunications,Customer relationship management,Enhancement,Multi,4GL,Siebel,138,2954,2422,5,-1,,Waterfall (incl Linear Processing & SSADM),-1
+Y50033,Medical & Health Care,Medical and Health Care,not recorded,Enhancement,,,,162,92380,92380,20,253,,,-1
+Y50046,Communication,Telecommunications,Customer relationship management,Enhancement,Multi,3GL,Java,63,888,728,4,-1,,Waterfall (incl Linear Processing & SSADM),-1
+Y50047,Wholesale & Retail,Ordering,Stock control & order processing,Enhancement,MF,3GL,C,730,20975,20975,-1,-1,Oracle,,-1
+Y50052,Professional Services,Sales & Marketing,Trading,Enhancement,,4GL,ColdFusion,179,789,789,-1,-1,,,-1
+Y50056,Communication,Voice Provisioning,Voice Provisioning,Enhancement,,3GL,C,114,7290,7290,-1,-1,,,-1
+Y50063,Manufacturing,Manufacturing,Customer billing/relationship management,New Development,Multi,3GL,Visual Basic,849,2499,1874,5,-1,Oracle,Waterfall (incl Linear Processing & SSADM),-1
+Y50065,Medical & Health Care,Medical and Health Care,not recorded,Enhancement,,,,34,3444,3444,12,90,,,-1
+Y50069,Communication,Telecommunications,Data Warehouse,Enhancement,,3GL,Shell,949,3567,2925,3,-1,,Waterfall (incl Linear Processing & SSADM),-1
+Y50074,,,,Enhancement,,,,460,2253,1667,4,5,,,-1
+Y50078,Communication,Telecommunications,Broadband application,Enhancement,Multi,,,56,439,360,4,-1,,Waterfall (incl Linear Processing & SSADM),-1
+Y50080,,,,Enhancement,,4GL,PowerBuilder,46,1009,1009,2,-1,,,-1
+Y50084,,,,Enhancement,,4GL,Oracle,136,959,758,3,-1,,Waterfall (incl Linear Processing & SSADM),-1
+Y50085,Electronics & Computers,Computers & Software,,Enhancement,MR,4GL,ABAP,416,9205,9205,7,28,Yes,Incremental,-1
+Y50101,Communication,Telecommunications,Customer relationship management,Enhancement,,4GL,Amdocs framework,90,1891,1558,2,-1,,Waterfall (incl Linear Processing & SSADM),-1
+Y50104,,,,Enhancement,,4GL,Oracle,7,396,396,2,-1,,,-1
+Y50119,Communication,Telecommunications,Customer relationship management,Enhancement,,,,124,1838,1687,2,-1,,Waterfall (incl Linear Processing & SSADM),-1
+Y50136,,,Financial application area,New Development,Multi,4GL,,83,855,855,5,-1,Interactive,,-1
+Y50139,,,Transaction/Production System,Enhancement,MF,3GL,COBOL,80,3199,2879,14,4,DB2,,-1
+Y50143,Government,Public AdministrationCommunity ServicesInsurance,Electronic Data Interchange,New Development,MF,3GL,COBOL,243,2924,2924,8,8,DB2,,-1
+Y50149,Communication,Telecommunications,Customer relationship management,Enhancement,Multi,3GL,PL/SQL,244,4566,3744,4,-1,,Waterfall (incl Linear Processing & SSADM),-1
+Y50151,Banking,Banking,Transaction/Production System,New Development,MF,4GL,EASYTRIEVE,174,2288,1876,7,2,IMS,,-1
+Y50154,Insurance,Insurance,Financial transaction process/accounting,New Development,MF,3GL,COBOL,152,2569,2389,4,-1,IMS,Waterfall (incl Linear Processing & SSADM),-1
+Y50159,Banking,Banking,Financial transaction process/accounting,Enhancement,MF,3GL,PL/I,4,145,109,0,-1,"IMS/DB,DC",Waterfall (incl Linear Processing & SSADM),-1
+Y50164,,,MS Billing,Enhancement,,3GL,COBOL,68,12702,12702,-1,-1,,,-1
+Y50173,,,Financial application area,Enhancement,Multi,3GL,Java,25,118,118,1,-1,Interactive,,-1
+Y50174,,,,New Development,,4GL,Spreadsheet,582,2632,2632,6,7,,,6800
+Y50177,Communication,Telecommunications,Customer relationship management,Enhancement,,4GL,Amdocs framework,147,1774,1462,2,-1,,Waterfall (incl Linear Processing & SSADM),-1
+Y50180,Insurance,Insurance,Financial transaction process/accounting,New Development,PC,3GL,Visual Basic,309,2516,2340,3,-1,SQL Server,Waterfall (incl Linear Processing & SSADM),-1
+Y50184,Medical & Health Care,Medical and Health Care,not recorded,Enhancement,,,,13,2565,2565,15,28,,,-1
+Y50196,,,,New Development,,3GL,Java,69,2915,2915,9,-1,Interactive,,-1
+Y50200,Electronics & Computers,Computers & Software,"Job, case, incident, project management",Enhancement,Multi,3GL,Java,90,1112,1112,4,4,,Waterfall (incl Linear Processing & SSADM),-1
+Y50213,,,,New Development,,3GL,C,4329,73922,69930,61,-1,,Waterfall (incl Linear Processing & SSADM),-1
+Y50215,Communication,Telecommunications,Customer relationship management,Enhancement,,4GL,Amdocs framework,74,491,405,2,-1,,Waterfall (incl Linear Processing & SSADM),-1
+Y50218,Utilities,"Electricity, Gas, Water",Management Information System,New Development,MF,3GL,PL/I,163,668,668,9,3,DB2,,-1
+Y50220,Electronics & Computers,Computers & Software,,Enhancement,PC,3GL,Visual Basic,40,514,514,4,3,DB2,Waterfall (incl Linear Processing & SSADM),-1
+Y50223,,,,Enhancement,MF,3GL,COBOL,16,536,536,4,-1,,,-1
+Y50226,Insurance,Insurance,Unknown,Enhancement,,,,206,2020,1656,1,-1,,Waterfall (incl Linear Processing & SSADM),-1
+Y50232,Financial,"Financial, Property & Business Services",Financial transaction process/accounting,Enhancement,,4GL,Visual C++,171,420,420,-1,-1,Interactive,,-1
+Y50233,Communication,Communications,Complex process control,Enhancement,MR,3GL,Visual Basic,226,3901,3238,4,10,Oracle,,-1
+Y50238,Communication,Telecommunications,Customer relationship management,Enhancement,Multi,4GL,Siebel,284,7109,5829,4,-1,,Waterfall (incl Linear Processing & SSADM),-1
+Y50248,Communication,Telecommunications,Online analysis and reporting,Enhancement,PC,3GL,Java,302,5829,4372,5,10,Oracle,Waterfall (incl Linear Processing & SSADM),-1
+Y50249,Government,Government,Management of Licences and Permits,Enhancement,MF,ApG,COOL:Gen,16,657,598,11,-1,,,-1
+Y50251,Government,Government,Government,New Development,PC,4GL,DELPHI,40,120,120,1,2,,Rapid Application Development (RAD),-1
+Y50252,Communication,Telecommunications,Online. eSales,Enhancement,Multi,,,63,1161,952,8,-1,,Waterfall (incl Linear Processing & SSADM),-1
+Y50257,Communication,Communications,Transaction/Production System,Enhancement,,3GL,C,307,2994,2994,13,11,,,-1
+Y50261,,,Financial application area,New Development,Multi,3GL,Java,166,946,946,3,-1,Interactive,,-1
+Y50265,Communication,Communications,Management Information System,Enhancement,,4GL,Oracle,87,1606,1333,4,4,,,-1
+Y50267,Communication,Telecommunications,Customer relationship management,Enhancement,,4GL,Amdocs framework,107,1380,1137,4,-1,,Waterfall (incl Linear Processing & SSADM),-1
+Y50268,Communication,Telecommunications,Workflow support & management,Enhancement,Multi,,,139,2010,1648,2,-1,,Waterfall (incl Linear Processing & SSADM),-1
+Y50278,Communication,Telecommunications,Online. eSales,Enhancement,Multi,,,427,5190,4256,3,-1,,Waterfall (incl Linear Processing & SSADM),-1
+Y50281,Insurance,Insurance,Unknown,Enhancement,,,,60,323,265,2,-1,,Waterfall (incl Linear Processing & SSADM),-1
+Y50283,Financial,"Financial, Property & Business Services",Financial transaction process/accounting,Enhancement,MF,3GL,PL/I,224,12548,7780,12,8,IMSDB2,Waterfall (incl Linear Processing & SSADM),-1
+Y50305,Communication,Telecommunications,Customer relationship management,Enhancement,Multi,3GL,Java,110,1037,850,5,-1,,Waterfall (incl Linear Processing & SSADM),-1
+Y50306,,,Telecom & network management,Enhancement,,3GL,C,745,15112,15112,-1,-1,,,-1
+Y50318,Communication,Communications,Transaction/Production System,Enhancement,,3GL,COBOL,77,1936,1607,6,6,,,-1
+Y50323,Insurance,Insurance,Financial transaction process/accounting,Enhancement,,3GL,COBOL,647,8459,6006,9,21,,,-1
+Y50331,Communication,Telecommunications,Other,Enhancement,,3GL,Java,119,252,208,9,-1,,Waterfall (incl Linear Processing & SSADM),-1
+Y50333,Communication,Telecommunications,Workflow support & management,Enhancement,,,,78,776,636,2,-1,,Waterfall (incl Linear Processing & SSADM),-1
+Y50343,Insurance,Insurance,Unknown,Enhancement,,,,343,1550,1271,11,-1,,Waterfall (incl Linear Processing & SSADM),-1
+Y50349,Government,Government,Military,New Development,PC,4GL,DELPHI,1286,19344,19344,20,6,,Rapid Application Development (RAD),-1
+Y50352,,,,Enhancement,,,,275,1888,1888,6,-1,,,-1
+Y50353,Insurance,Insurance,Financial transaction process/accounting,Enhancement,MF,3GL,COBOL,68,2710,2520,3,-1,IMS,Waterfall (incl Linear Processing & SSADM),-1
+Y50355,,,,Enhancement,,3GL,Unix Shell,50,253,253,5,-1,,,-1
+Y50359,Medical & Health Care,Medical and Health Care,not recorded,Enhancement,,,,19,4061,3614,15,58,,,-1
+Y50361,Medical & Health Care,Medical and Health Care,not recorded,Enhancement,,,,21,813,683,6,20,,,-1
+Y50365,,,,Enhancement,,4GL,Oracle,12,343,343,3,-1,,,-1
+Y50368,Communication,Telecommunications,Workflow support & management,Enhancement,Multi,,,164,3307,2712,5,-1,,Waterfall (incl Linear Processing & SSADM),-1
+Y50370,Manufacturing,Manufacturing,Financial transaction process/accounting,New Development,Multi,4GL,SQL,702,4805,4805,12,-1,"Oracle,SQL Server",Waterfall (incl Linear Processing & SSADM),-1
+Y50378,Insurance,Insurance,Sales promotion tool,New Development,MF,4GL,ASP,287,2108,1960,8,-1,IMS,Waterfall (incl Linear Processing & SSADM),-1
+Y50388,Service Industry,Citizens and the Municipalities,Stock control & order processing,Enhancement,Multi,4GL,ASP.Net,139,5062,5062,11,10,,,-1
+Y50390,Banking,Banking,,New Development,MF,3GL,COBOL,154,2408,2408,6,9,IMS,,-1
+Y50392,Communication,Telecommunications,Customer relationship management,Enhancement,,3GL,Java,132,1037,952,10,-1,,Waterfall (incl Linear Processing & SSADM),-1
+Y50393,Service Industry,Transport & Storage,,Enhancement,MF,3GL,RPG,212,756,756,4,-1,DB/400,Waterfall (incl Linear Processing & SSADM),-1
+Y50396,Communication,Telecommunications,Customer relationship management,Enhancement,Multi,3GL,Visual Basic,165,2774,2275,4,-1,,Waterfall (incl Linear Processing & SSADM),-1
+Y50397,Communication,Communications,relatively complex application,Enhancement,MF,3GL,,3,65,65,-1,-1,Interactive,Waterfall (incl Linear Processing & SSADM),-1
+Y50398,Communication,Communications,Company hierarchy and staff directory,Enhancement,,3GL,C,115,1243,1243,6,4,,,-1
+Y50401,Communication,Telecommunications,EAI/ESB,Enhancement,,4GL,.NET,99,2631,2168,8,-1,,Waterfall (incl Linear Processing & SSADM),-1
+Y50409,Communication,Communications,Management Information System,Enhancement,,4GL,Oracle,46,4063,3372,7,11,,,-1
+Y50412,Insurance,Insurance,Unknown,Enhancement,,3GL,PL/SQL,53,329,270,7,-1,,Waterfall (incl Linear Processing & SSADM),-1
+Y50421,Communication,Telecommunications,Other,Enhancement,,4GL,.Net,74,1229,1128,4,-1,,Waterfall (incl Linear Processing & SSADM),-1
+Y50424,,,,Enhancement,,3GL,Java,203,1822,1822,-1,-1,,,-1
+Y50426,Service Industry,Car Rental,Customer relationship management,New Development,PC,3GL,C#,90,2006,2006,5,8,MS SQL Server 2005,Iterative,-1
+Y50427,Service Industry,Recreation & Personnel Services,Financial transaction process/accounting,New Development,MR,4GL,SQL,859,11372,11372,12,-1,Oracle,Waterfall (incl Linear Processing & SSADM),-1
+Y50431,Communication,Communications,Real-time System,New Development,MR,3GL,Java,1306,88555,73501,19,-1,Oracle,Joint Application Development (JAD)Multifunctional TeamsRapid Application Development (RAD),-1
+Y50434,Banking,Banking,Financial transaction process/accounting,Enhancement,MF,3GL,PL/I,14,180,167,3,-1,DB2,Waterfall (incl Linear Processing & SSADM),-1
+Y50449,Medical & Health Care,Medical and Health Care,not recorded,Enhancement,,,,18,2651,2412,6,33,,,-1
+Y50460,Wholesale & Retail,Consumer Goods,Fixed asset,Enhancement,MF,3GL,COBOL,230,930,930,4,-1,VSAM,Waterfall (incl Linear Processing & SSADM),-1
+Y50465,Medical & Health Care,Medical and Health Care,not recorded,Enhancement,,,,12,2920,2599,10,47,,,-1
+Y50466,,,,Enhancement,,,,687,1788,1788,6,4,,,-1
+Y50467,Communication,Telecommunications,Other,Enhancement,,3GL,Java,52,369,304,3,-1,,Waterfall (incl Linear Processing & SSADM),-1
+Y50469,Communication,Telecommunications,Stock control & order processing,Enhancement,Multi,3GL,Java,85,357,293,9,-1,,Waterfall (incl Linear Processing & SSADM),-1
+Y50470,Medical & Health Care,Medical and Health Care,not recorded,Enhancement,,,,116,13316,13316,11,69,,,-1
+Y50481,Service Industry,GovernmentCommunity Services,Catalogue/register of things or eventsCustomer billing/relationship managementElectronic Data Interchange,Enhancement,MF,3GL,PL/I,304,5377,5377,10,8,DB2,,-1
+Y50486,Government,Government,Customer billing/relationship management,Enhancement,Multi,3GL,JavaScript,132,1485,1485,12,3,MS SQL,,-1
+Y50492,,,,Enhancement,MF,3GL,COBOL,5,554,554,3,-1,,,-1
+Y50494,Medical & Health Care,Medical and Health Care,not recorded,Enhancement,,,,42,5305,4828,16,33,,,-1
+Y50496,Medical & Health Care,Medical and Health Care,not recorded,Enhancement,,,,47,2450,2450,24,36,,,-1
+Y50502,,,,New Development,,3GL,Visual Basic,28,686,686,4,4,,,3400
+Y50503,,,,New Development,Multi,3GL,Java,149,1492,1238,2,-1,,,-1
+Y50505,Banking,Banking,Financial transaction process/accounting,Enhancement,MF,3GL,PL/I,24,2347,1760,3,-1,"IMS/DB,DC",Waterfall (incl Linear Processing & SSADM),-1
+Y50514,Communication,Telecommunications,Data Warehouse,Enhancement,Multi,3GL,Shell,99,2029,1664,6,-1,,Waterfall (incl Linear Processing & SSADM),-1
+Y50521,Communication,Telecommunications,Stock control & order processing,Enhancement,Multi,3GL,Java,135,2424,1988,4,-1,,Waterfall (incl Linear Processing & SSADM),-1
+Y50525,Banking,Banking,Workflow support & management,New Development,Multi,4GL,Lotus Notes,77,218,203,2,-1,Notes,Waterfall (incl Linear Processing & SSADM),-1
+Y50527,Medical & Health Care,Medical and Health Care,not recorded,Enhancement,,,,6,538,490,6,12,,,-1
+Y50531,Medical & Health Care,Medical and Health Care,not recorded,Enhancement,,,,24,170,136,8,8,,,-1
+Y50543,Communication,Communications,Real-time System,Enhancement,MR,3GL,C,60,2053,1704,7,-1,Oracle,,-1
+Y50546,Communication,Telecommunications,Customer relationship management,Enhancement,,3GL,Java,86,523,480,3,-1,,Waterfall (incl Linear Processing & SSADM),-1
+Y50549,,,Financial application area,Enhancement,Multi,4GL,,233,1817,1817,6,-1,Interactive,,-1
+Y50557,Manufacturing,Manufacturing,Decision Support System,Enhancement,PC,4GL,Access,62,2049,1680,-1,2,,,-1
+Y50564,Insurance,Insurance,Financial transaction process/accounting,Enhancement,MF,3GL,Visual Basic,217,6459,6459,3,-1,DB2/400,Waterfall (incl Linear Processing & SSADM),-1
+Y50565,Insurance,Insurance,,Enhancement,,3GL,PL/SQL,87,251,230,1,-1,,Waterfall (incl Linear Processing & SSADM),-1
+Y50566,Service Industry,Recreation & Personnel Services,Financial transaction process/accounting,New Development,MR,4GL,SQL,359,8580,8580,9,-1,Oracle,Waterfall (incl Linear Processing & SSADM),-1
+Y50568,Insurance,Insurance,Unknown,Enhancement,,3GL,COBOL,51,259,212,3,-1,,Waterfall (incl Linear Processing & SSADM),-1
+Y50575,Construction,Construction,Production management,New Development,PC,3GL,COBOL,320,1427,1327,3,-1,Oracle,Waterfall (incl Linear Processing & SSADM),-1
+Y50578,Communication,Communications,relatively complex application,Enhancement,Multi,4GL,,267,8486,8486,-1,-1,Interactive,Waterfall (incl Linear Processing & SSADM),-1
+Y50581,Banking,Banking,Management Information System,New Development,MF,ApG,TELON,74,804,804,8,6,DB2IMS,,-1
+Y50587,Banking,Banking,Transaction/Production System,New Development,MF,3GL,COBOL,324,5867,5867,12,8,IMS,,-1
+Y50590,Communication,Telecommunications,Customer relationship management,Enhancement,Multi,3GL,Visual Basic,251,5349,4386,3,-1,,Waterfall (incl Linear Processing & SSADM),-1
+Y50602,Utilities,"Electricity, Gas, Water",Trading,New Development,Multi,4GL,Lotus Notes,193,1718,1718,7,-1,No,Waterfall (incl Linear Processing & SSADM),-1
+Y50612,Communication,Telecommunications,Data Warehouse,Enhancement,Multi,3GL,Shell,92,956,784,4,-1,,Waterfall (incl Linear Processing & SSADM),-1
+Y50621,Banking,Banking,Financial transaction process/accounting,Enhancement,MF,3GL,RPG,255,185,172,3,-1,RDB400,Waterfall (incl Linear Processing & SSADM),-1
+Y50632,Communication,Telecommunications,Customer relationship management,Enhancement,,,,185,1821,1672,5,-1,,Waterfall (incl Linear Processing & SSADM),-1
+Y50649,,,,Enhancement,,4GL,Oracle,113,1847,1847,3,-1,,,-1
+Y50656,Communication,Telecommunications,Data Warehouse,Enhancement,Multi,3GL,Shell,62,751,616,6,-1,,Waterfall (incl Linear Processing & SSADM),-1
+Y50658,Insurance,Insurance,Unknown,Enhancement,,3GL,PL/SQL,71,117,96,1,-1,,Waterfall (incl Linear Processing & SSADM),-1
+Y50663,Banking,Banking,Financial transaction process/accounting,Enhancement,MF,3GL,PL/I,218,4997,4997,33,-1,DB2,Waterfall (incl Linear Processing & SSADM),-1
+Y50665,Communication,Telecommunications,Stock control & order processing,Enhancement,Multi,3GL,Java,96,1599,1311,6,-1,,Waterfall (incl Linear Processing & SSADM),-1
+Y50667,Communication,Telecommunications,Customer relationship management,Enhancement,,4GL,Amdocs framework,56,119,98,2,-1,,Waterfall (incl Linear Processing & SSADM),-1
+Y50676,Government,Government,Financial transaction process/accounting,Enhancement,Multi,4GL,ABAP,249,2204,2204,15,9,DB2,,-1
+Y50684,Insurance,Insurance,Unknown,Enhancement,,3GL,PL/SQL,102,1233,1011,3,-1,,Waterfall (incl Linear Processing & SSADM),-1
+Y50685,,,,Enhancement,,4GL,Oracle,49,161,161,2,-1,,,-1
+Y50689,Insurance,Insurance,,Enhancement,,,Mixed,55,131,120,2,-1,,Waterfall (incl Linear Processing & SSADM),-1
+Y50691,,,,New Development,Multi,3GL,Java,205,2286,2126,4,-1,,,-1
+Y50692,Communication,Telecommunications,Customer relationship management,Enhancement,,4GL,Amdocs framework,60,350,289,1,-1,,Waterfall (incl Linear Processing & SSADM),-1
+Y50696,Communication,Telecommunications,Billing and ERP,Enhancement,,,,120,558,512,4,-1,,Waterfall (incl Linear Processing & SSADM),-1
+Y50700,Wholesale & Retail,Billing,Billing,Enhancement,,3GL,C++,70,1607,1607,-1,-1,,,-1
+Y50701,Wholesale & Retail,Ordering,Stock control & order processing,Enhancement,MF,3GL,C,161,9719,9719,-1,-1,,,-1
+Y50702,Insurance,Insurance,,Enhancement,MF,,,147,1170,1170,1,-1,,,-1
+Y50707,Communication,Telecommunications,Stock control & order processing,Enhancement,Multi,3GL,Java,56,1298,1064,4,-1,,Waterfall (incl Linear Processing & SSADM),-1
+Y50712,Medical & Health Care,Medical and Health Care,not recorded,Enhancement,,,,9,1871,1871,9,30,,,-1
+Y50715,Communication,Telecommunications,Other: Online. eSales,Enhancement,,4GL,html / jsp,55,412,340,4,-1,,Waterfall (incl Linear Processing & SSADM),-1
+Y50720,Government,GovernmentDefence,Reporting,Enhancement,MF,3GL,COBOL,64,1058,1058,22,-1,,,-1
+Y50721,Financial,"Financial, Property & Business Services",Transaction/Production System,New Development,MF,,,168,3348,3348,26,-1,DB2,Rapid Application Development (RAD),-1
+Y50732,,,,Enhancement,,,,387,1235,1235,5,4,,,-1
+Y50737,Communication,Communications,Transaction/Production System,Enhancement,MR,4GL,Oracle,340,676,676,7,3,Oracle,,-1
+Y50738,Communication,Telecommunications,Integration,Enhancement,,3GL,TIBCO,172,7421,6085,4,-1,,Waterfall (incl Linear Processing & SSADM),-1
+Y50739,Communication,Telecommunications,Online analysis and reporting,Enhancement,,,Unknown,153,4796,3952,6,-1,,Waterfall (incl Linear Processing & SSADM),-1
+Y50740,Communication,Telecommunications,Data Warehouse,Enhancement,Multi,3GL,Shell,58,1283,1052,5,-1,,Waterfall (incl Linear Processing & SSADM),-1
+Y50747,,,,Re-development,,,,249,2873,2873,4,-1,,,-1
+Y50750,Medical & Health Care,Medical and Health Care,not recorded,Enhancement,,,,16,812,812,11,20,,,-1
+Y50757,Communication,Telecommunications,Online. eSales,Enhancement,Multi,,,76,1795,1472,9,-1,,Waterfall (incl Linear Processing & SSADM),-1
+Y50759,Government,Government,Catalogue/register of things or eventsOnline analysis and reportingElectronic Data Interchange,Enhancement,Multi,3GL,C#,263,911,911,3,10,DB2,,-1
+Y50762,Communication,Telecommunications,Customer relationship management,Enhancement,Multi,3GL,Java,231,224,184,9,-1,,Waterfall (incl Linear Processing & SSADM),-1
+Y50778,Communication,Communications,relatively complex application,Enhancement,Multi,4GL,,40,261,261,-1,-1,Interactive,Waterfall (incl Linear Processing & SSADM),-1
+Y50791,,,,Enhancement,,,,51,417,417,3,5,,,-1
+Y50792,Medical & Health Care,Medical and Health Care,not recorded,Enhancement,,,,26,5230,5230,8,52,,,-1
+Y50793,,,,New Development,PC,4GL,Oracle,534,2960,2960,5,-1,Oracle,,-1
+Y50796,,,,Enhancement,,,,100,878,878,7,-1,,,-1
+Y50802,Communication,Communications,relatively complex application,Enhancement,Multi,4GL,,31,578,578,-1,-1,Interactive,Waterfall (incl Linear Processing & SSADM),-1
+Y50837,Medical & Health Care,Medical and Health Care,not recorded,Enhancement,,,,125,16747,16747,15,163,,,-1
+Y50841,Insurance,Insurance,Sales contact management,New Development,MF,3GL,COBOL,164,7040,5280,9,-1,IMS,Waterfall (incl Linear Processing & SSADM),-1
+Y50842,,,,Enhancement,MF,3GL,COBOL,12,1777,1777,4,-1,,,-1
+Y50847,Insurance,Insurance,Transaction/Production System,Enhancement,MF,3GL,Visual Basic,209,3532,3532,13,-1,ACCESSDB2IMS,Joint Application Development (JAD),-1
+Y50851,Communication,Telecommunications,Customer relationship management,Enhancement,,,VoiceXML,104,1794,1479,3,-1,,Waterfall (incl Linear Processing & SSADM),-1
+Y50853,Medical & Health Care,Medical and Health Care,not recorded,Enhancement,,,,27,4380,3898,15,71,,,-1
+Y50860,Wholesale & Retail,Billing,Billing,Enhancement,,3GL,COBOL,95,3680,3680,-1,-1,DB2IMS,,-1
+Y50866,Medical & Health Care,Medical and Health Care,not recorded,Enhancement,,,,92,7879,7879,19,85,,,-1
+Y50868,Communication,Communications,Telecom & network management,Enhancement,PC,3GL,Java,70,436,436,1,-1,Oracle,,-1
+Y50871,,,Transaction/Production System,Enhancement,MF,3GL,COBOL,228,5876,5288,9,5,DB2,,-1
+Y50875,Insurance,Insurance,Unknown,Enhancement,,,,135,666,546,4,-1,,Waterfall (incl Linear Processing & SSADM),-1
+Y50877,Banking,Banking,Personnel system,Enhancement,MF,3GL,PL/I,205,3280,3280,8,-1,IMS,Waterfall (incl Linear Processing & SSADM),-1
+Y50883,,,,Enhancement,,4GL,Oracle,18,268,268,2,-1,,,-1
+Y50892,,,Transaction/Production System,Enhancement,MF,3GL,COBOL,154,1934,1934,19,2,DB2IMS,,-1
+Y50896,Insurance,Insurance,,Enhancement,,,Mixed,95,194,178,10,-1,,Waterfall (incl Linear Processing & SSADM),-1
+Y50901,Manufacturing,Manufacturing,,New Development,MR,4GL,Oracle,4272,17600,17600,7,-1,Oracle 6,,-1
+Y50917,Government,GovernmentDefence,Financial transaction process/accounting,Enhancement,MF,3GL,COBOL,36,609,609,22,-1,,,-1
+Y50919,Communication,Communications,Transaction/Production System,Enhancement,,4GL,ADS/Online,351,1095,909,4,6,,,-1
+Y50929,Medical & Health Care,Medical and Health Care,not recorded,Enhancement,,,,40,3567,2818,16,33,,,-1
+Y50935,Communication,Communications,Transaction/Production System,Enhancement,MF,3GL,COBOL,2697,10957,9094,6,27,DB2,,-1
+Y50945,Communication,Telecommunications,Online. eSales,Enhancement,Multi,,,55,361,296,-1,-1,,Waterfall (incl Linear Processing & SSADM),-1
+Y50953,Communication,Telecommunications,Other: Online. eSales,Enhancement,,3GL,HTML,61,991,816,5,-1,,Waterfall (incl Linear Processing & SSADM),-1
+Y50954,Communication,Communications,relatively complex application,Enhancement,MF,4GL,,34,847,847,-1,-1,Interactive,Waterfall (incl Linear Processing & SSADM),-1
+Y50957,Manufacturing,Manufacturing,Sales contact management,New Development,Multi,4GL,SQL,749,4623,4623,26,-1,SQL Server,Waterfall (incl Linear Processing & SSADM),-1
+Y50960,Communication,Telecommunications,Other,Enhancement,,3GL,Java,107,782,645,3,-1,,Waterfall (incl Linear Processing & SSADM),-1
+Y50964,Electronics & Computers,Computers & Software,Utility,New Development,PC,4GL,DELPHI,16,619,619,8,1,,Rapid Application Development (RAD),-1
+Y50973,,,,Enhancement,,4GL,Visual C++,538,1818,1345,6,5,,,17000
+Y50975,Medical & Health Care,Medical and Health Care,not recorded,Enhancement,,,,7,537,478,5,22,,,-1
+Y50976,Wholesale & Retail,Ordering,Stock control & order processing,Enhancement,,3GL,C++,155,8385,8385,-1,-1,,,-1
+Y50980,Communication,Communications,relatively complex application,Enhancement,Multi,4GL,,307,1596,1596,-1,-1,Interactive,Waterfall (incl Linear Processing & SSADM),-1
+Y50981,Financial,"Financial, Property & Business Services",Software for machine control,Enhancement,Multi,3GL,Visual Basic,159,2076,2076,4,-1,SQL Server 6.5,Waterfall (incl Linear Processing & SSADM),-1
+Y50993,,,Transaction/Production System,Enhancement,MF,3GL,COBOL,310,5971,5374,15,4,DB2,,-1
+Y50997,Banking,Banking,Transaction/Production System,New Development,MF,3GL,COBOL,200,1935,1935,7,6,IMS,,-1
+Y50998,,,,New Development,,3GL,C,474,1644,1644,7,5,,,4000
+Y60000,Communication,Communications,relatively complex application,Enhancement,MF,3GL,,13,497,497,-1,-1,Interactive,Waterfall (incl Linear Processing & SSADM),-1
+Y60002,Communication,Telecommunications,Customer relationship management,Enhancement,Multi,4GL,Siebel,53,952,781,4,-1,,Waterfall (incl Linear Processing & SSADM),-1
+Y60006,Insurance,Insurance,,Enhancement,,,Mixed,101,228,210,2,-1,,Waterfall (incl Linear Processing & SSADM),-1
+Y60015,Communication,Telecommunications,Data or database management,Enhancement,Multi,,,56,751,616,5,-1,,Waterfall (incl Linear Processing & SSADM),-1
+Y60016,Communication,Telecommunications,Other,Enhancement,,4GL,ABAP 4,63,1398,1152,12,-1,,Waterfall (incl Linear Processing & SSADM),-1
+Y60029,Medical & Health Care,Medical and Health Care,not recorded,Enhancement,,,,23,5229,5229,12,63,,,-1
+Y60057,Communication,Telecommunications,Billing and ERP,Enhancement,,,,89,671,616,5,-1,,Waterfall (incl Linear Processing & SSADM),-1
+Y60063,Medical & Health Care,Medical and Health Care,not recorded,Enhancement,,,,450,49846,49846,23,90,,,-1
+Y60080,Communication,Telecommunications,Customer relationship management,Enhancement,Multi,3GL,PL/SQL,70,546,448,4,-1,,Waterfall (incl Linear Processing & SSADM),-1
+Y60082,,,,Enhancement,,4GL,.Net,245,1113,880,3,-1,,Waterfall (incl Linear Processing & SSADM),-1
+Y60088,Communication,Communications,Telecom & network management,Enhancement,PC,3GL,Pro*C,58,534,534,11,10,Oracle,,-1
+Y60093,Manufacturing,Manufacturing,,Enhancement,MF,3GL,PL/I,1062,15972,15972,11,24,IMSDB2LOTUS NOTES,,412409
+Y60100,Wholesale & Retail,Ordering,Stock control & order processing,Enhancement,MF,3GL,C,127,7451,7451,-1,-1,,,-1
+Y60104,Manufacturing,Manufacturing,Sales contact management,New Development,MR,3GL,Java,473,2000,2000,2,-1,Oracle 8i 8.1.6,Waterfall (incl Linear Processing & SSADM),-1
+Y60105,Manufacturing,Manufacturing,,Enhancement,MF,3GL,PL/I,26,4618,4618,8,28,IMS,,4137
+Y60106,Government,Public AdministrationCommunity ServicesInsurance,Transaction/Production System,Enhancement,MF,3GL,COBOL,32,300,300,2,2,DB2,,-1
+Y60111,,,Transaction/Production System,Enhancement,MF,3GL,COBOL,201,3804,3424,7,7,DB2,,-1
+Y60115,Communication,Telecommunications,Customer relationship management,Enhancement,Multi,,,54,654,536,3,-1,,Waterfall (incl Linear Processing & SSADM),-1
+Y60117,Banking,Banking,Financial transaction process/accounting,New Development,MR,3GL,HTML,190,4282,3982,15,-1,HiRDB,Waterfall (incl Linear Processing & SSADM),-1
+Y60120,Government,Public AdministrationCommunity ServicesInsurance,Transaction/Production System,New Development,MF,3GL,COBOL,138,2038,2038,3,5,DB2,,-1
+Y60123,Insurance,Insurance,Unknown,Enhancement,,,,84,213,175,2,-1,,Waterfall (incl Linear Processing & SSADM),-1
+Y60128,Insurance,Insurance,Unknown,Enhancement,,3GL,Java,238,1751,1436,8,-1,,Waterfall (incl Linear Processing & SSADM),-1
+Y60137,Wholesale & Retail,Ordering,Stock control & order processing,Enhancement,,3GL,C++,73,3934,3934,-1,-1,,,-1
+Y60141,Government,Government,Catalogue/register of things or eventsOnline analysis and reporting,Enhancement,MF,3GL,PL/I,198,2119,2119,10,5,DB2,,-1
+Y60144,Communication,Telecommunications,Online. eSales,Enhancement,Multi,,,107,732,600,1,-1,,Waterfall (incl Linear Processing & SSADM),-1
+Y60145,,,Financial application area,Enhancement,Multi,3GL,Java,9,51,51,1,-1,Interactive,,-1
+Y60147,Communication,Communications,relatively complex application,Enhancement,MF,3GL,,15,559,559,-1,-1,Batch,Waterfall (incl Linear Processing & SSADM),-1
+Y60149,Electronics & Computers,Computers & Software,Utility,New Development,PC,4GL,DELPHI,658,1052,1052,5,2,,Rapid Application Development (RAD),-1
+Y60158,,,Office Automation System,New Development,MR,,Brightware proprietary,51,1690,1200,14,2,Oracle,,-1
+Y60160,Medical & Health Care,Medical and Health Care,not recorded,Enhancement,,,,18,458,357,16,14,,,-1
+Y60170,Communication,Telecommunications,Customer billing,Enhancement,,,,151,2080,1910,5,-1,,Waterfall (incl Linear Processing & SSADM),-1
+Y60171,Communication,Telecommunications,Customer relationship management,Enhancement,,4GL,Amdocs framework,70,524,432,4,-1,,Waterfall (incl Linear Processing & SSADM),-1
+Y60173,,,,Enhancement,MR,3GL,Visual Basic,15,470,470,2,-1,,,-1
+Y60177,Communication,Communications,Transaction/Production System,Enhancement,MR,3GL,LEX,80,1251,1038,4,7,OBJECTSTOR,,-1
+Y60194,Banking,Banking,Office Information System,New Development,MF,3GL,COBOL,301,3631,3631,12,5,IMS,,-1
+Y60205,Communication,Telecommunications,Online. eSales,Enhancement,Multi,,,52,546,448,3,-1,,Waterfall (incl Linear Processing & SSADM),-1
+Y60213,Insurance,Insurance,,Enhancement,,,Mixed,74,491,451,4,-1,,Waterfall (incl Linear Processing & SSADM),-1
+Y60219,Communication,Telecommunications,Customer relationship management,Enhancement,,3GL,Java,84,1072,984,6,-1,,Waterfall (incl Linear Processing & SSADM),-1
+Y60222,Communication,Communications,relatively complex application,Enhancement,Multi,4GL,,385,9865,9865,-1,-1,Interactive,Waterfall (incl Linear Processing & SSADM),-1
+Y60236,Insurance,Insurance,Unknown,Enhancement,,,,83,238,195,2,-1,,Waterfall (incl Linear Processing & SSADM),-1
+Y60259,Communication,Communications,relatively complex application,Enhancement,Multi,3GL,,41,805,805,-1,-1,Interactive,Waterfall (incl Linear Processing & SSADM),-1
+Y60260,Communication,Telecommunications,Customer relationship management,Enhancement,,3GL,Java,1758,22080,20272,4,-1,,Waterfall (incl Linear Processing & SSADM),-1
+Y60269,,,,New Development,,4GL,.Net,134,2076,1665,2,-1,,Waterfall (incl Linear Processing & SSADM),-1
+Y60272,Communication,Communications,Transaction/Production System,New Development,MR,4GL,ABAP,1801,52172,43303,7,49,Oracle,Rapid Application Development (RAD),-1
+Y60276,Communication,Telecommunications,Online. eSales,Enhancement,Multi,,,185,6654,5456,4,-1,,Waterfall (incl Linear Processing & SSADM),-1
+Y60285,Communication,Telecommunications,Customer relationship management,Enhancement,Multi,,,105,1522,1248,3,-1,,Waterfall (incl Linear Processing & SSADM),-1
+Y60288,Communication,Telecommunications,Customer billing,Enhancement,Multi,3GL,PYTHON,60,790,648,8,-1,,Waterfall (incl Linear Processing & SSADM),-1
+Y60295,Government,Government,Management of Licences and Permits,Enhancement,MF,ApG,COOL:Gen,200,3721,3721,8,-1,,,-1
+Y60297,Wholesale & Retail,E-Business,E-Business,Enhancement,,3GL,HTML,244,1080,1080,-1,-1,,,-1
+Y60299,Manufacturing,Manufacturing,Transaction/Production System,New Development,MF,3GL,Visual Basic,53,1620,1053,-1,-1,Yes,,-1
+Y60306,Insurance,Insurance,,Enhancement,,,Mixed,69,139,128,2,-1,,Waterfall (incl Linear Processing & SSADM),-1
+Y60310,Insurance,Insurance,Customer billing/relationship management,New Development,Multi,3GL,Visual Basic,12,558,312,4,-1,No,Waterfall (incl Linear Processing & SSADM),-1
+Y60313,,,Financial transaction process/accounting,New Development,Multi,3GL,Visual Basic,225,546,546,4,-1,Oracle,Waterfall (incl Linear Processing & SSADM),-1
+Y60316,Communication,Telecommunications,Customer relationship management,Enhancement,Multi,4GL,Siebel,54,902,740,-1,-1,,Waterfall (incl Linear Processing & SSADM),-1
+Y60317,Insurance,Insurance,,Enhancement,,,Mixed,265,496,455,11,-1,,Waterfall (incl Linear Processing & SSADM),-1
+Y60321,Communication,Telecommunications,Customer relationship management,Enhancement,,3GL,Java,436,7171,6584,4,-1,,Waterfall (incl Linear Processing & SSADM),-1
+Y60324,Insurance,Insurance,Unknown,Enhancement,,3GL,PL/SQL,101,368,302,1,-1,,Waterfall (incl Linear Processing & SSADM),-1
+Y60333,Insurance,Insurance,Unknown,Enhancement,,4GL,Oracle,101,1095,898,5,-1,,Waterfall (incl Linear Processing & SSADM),-1
+Y60336,Communication,Telecommunications,Financial transaction process/accounting,Enhancement,,3GL,Visual Basic 6.0,63,233,192,2,-1,,Waterfall (incl Linear Processing & SSADM),-1
+Y60337,Communication,Telecommunications,GEO Information Management,Enhancement,Multi,3GL,Java,130,3161,2592,5,-1,,Waterfall (incl Linear Processing & SSADM),-1
+Y60341,Insurance,Insurance,Unknown,Enhancement,,,,63,959,786,2,-1,,Waterfall (incl Linear Processing & SSADM),-1
+Y60344,Government,Government,Government,New Development,PC,4GL,DELPHI,364,696,696,2,3,,Rapid Application Development (RAD),-1
+Y60350,Communication,Telecommunications,Stock control & order processing,Enhancement,Multi,3GL,Java,339,3487,2859,7,-1,,Waterfall (incl Linear Processing & SSADM),-1
+Y60352,Medical & Health Care,Medical and Health Care,not recorded,Enhancement,,,,34,706,706,8,29,,,-1
+Y60358,Insurance,Insurance,,Enhancement,,3GL,PL/SQL,105,78,72,1,-1,,Waterfall (incl Linear Processing & SSADM),-1
+Y60360,Government,Government,Management of Licences and Permits,Enhancement,MF,ApG,COOL:Gen,151,937,937,13,-1,,,-1
+Y60366,,,Transaction/Production System,New Development,MF,2GL,Assembler,115,1828,1828,13,3,DB2VSAMDL/I,,-1
+Y60367,Communication,CommunicationsComputers & Software,Management or performance reportingElectronic Data Interchange,New Development,Multi,4GL,Access,80,707,707,2,5,,,-1
+Y60371,Communication,Media,Document management,New Development,PC,4GL,Visual C++,902,11140,10360,14,-1,Oracle 8.1,Waterfall (incl Linear Processing & SSADM),-1
+Y60375,Insurance,Insurance,Financial transaction process/accounting,Enhancement,Multi,3GL,Visual Basic,180,9292,9292,3,-1,ISAM,Waterfall (incl Linear Processing & SSADM),-1
+Y60376,,,Transaction/Production System,Enhancement,MF,3GL,CICS,143,3347,3012,9,3,DB2VSAM,,-1
+Y60378,Government,Government,Handling payment of social pensions within government,Enhancement,Multi,3GL,PL/I,374,13288,13288,12,17,DB2,,-1
+Y60380,Communication,Telecommunications,Customer relationship management,Enhancement,Multi,,,109,898,736,5,-1,,Waterfall (incl Linear Processing & SSADM),-1
+Y60382,Service Industry,Community ServicesInvoice-handling,Catalogue/register of things or eventsFinancial transaction process/accountingElectronic Data Interchange,Enhancement,Multi,3GL,Visual Basic,361,13151,13151,24,23,DB2,,-1
+Y60385,Government,Government,Catalogue/register of things or eventsDocument management,New Development,Multi,3GL,Java,260,4184,4184,9,15,Oracle,,-1
+Y60388,Medical & Health Care,Medical and Health Care,not recorded,Enhancement,,,,43,7738,6577,12,35,,,-1
+Y60390,Insurance,Insurance,Unknown,Enhancement,,,,93,840,689,4,-1,,Waterfall (incl Linear Processing & SSADM),-1
+Y60394,Government,GovernmentDefence,Financial transaction process/accounting,Enhancement,MF,3GL,COBOL,13,229,229,12,-1,,,-1
+Y60398,,,,Enhancement,,4GL,Oracle,51,536,536,4,-1,,,-1
+Y60404,Communication,Telecommunications,Customer relationship management,Enhancement,,3GL,Java,155,1178,1082,3,-1,,Waterfall (incl Linear Processing & SSADM),-1
+Y60409,Insurance,Insurance,Financial transaction process/accounting,Enhancement,MR,3GL,Java,18,2803,2803,3,-1,DB2 UDB,Waterfall (incl Linear Processing & SSADM),-1
+Y60418,,,Transaction/Production System,Enhancement,MF,3GL,CICS,204,2501,1776,8,2,DB2VSAM,,-1
+Y60419,Communication,Telecommunications,Billing and ERP,Enhancement,Multi,3GL,Java,167,1122,920,5,-1,,Waterfall (incl Linear Processing & SSADM),-1
+Y60420,Insurance,Insurance,Financial transaction process/accounting,New Development,MF,3GL,COBOL,157,3436,3436,2,-1,DB2/400,Waterfall (incl Linear Processing & SSADM),-1
+Y60421,Communication,Telecommunications,Other,Enhancement,,4GL,ABAP,122,1812,1664,5,-1,,Waterfall (incl Linear Processing & SSADM),-1
+Y60424,Insurance,Insurance,,Enhancement,,3GL,Java,286,1039,954,3,-1,,Waterfall (incl Linear Processing & SSADM),-1
+Y60428,Communication,Telecommunications,Online. eSales,Enhancement,Multi,,,111,1249,1024,8,-1,,Waterfall (incl Linear Processing & SSADM),-1
+Y60430,Banking,Banking,Management Information System,New Development,MF,3GL,Visual Basic,385,2761,2761,7,7,ACCESSIMSDB2,,-1
+Y60433,Communication,Telecommunications,Customer relationship management,Enhancement,,,ClearBasic,82,1031,850,6,-1,,Waterfall (incl Linear Processing & SSADM),-1
+Y60435,,,,Enhancement,,3GL,C,747,3108,3108,9,3,,,60000
+Y60442,Insurance,Insurance,Financial transaction process/accounting,New Development,MF,3GL,COBOL,258,11628,8605,5,-1,IMS,Waterfall (incl Linear Processing & SSADM),-1
+Y60443,Banking,Banking,Transaction/Production System,New Development,MF,3GL,COBOL,124,616,616,4,2,IMS,,-1
+Y60444,Medical & Health Care,Medical and Health Care,not recorded,Enhancement,,,,9,995,995,13,22,,,-1
+Y60450,,,Electronic Data Interchange,Enhancement,MF,3GL,COBOL,151,7317,5927,20,7,DB2,,-1
+Y60459,Insurance,Insurance,Financial transaction process/accounting,New Development,MF,3GL,COBOL,11,764,711,4,-1,IMS,Waterfall (incl Linear Processing & SSADM),-1
+Y60471,Communication,Communications,Transaction/Production System,Enhancement,MR,3GL,Visual Basic,261,2639,2639,6,8,Oracle,Rapid Application Development (RAD),-1
+Y60477,Manufacturing,Manufacturing,Document management,New Development,Multi,3GL,Visual Basic,177,1570,1570,2,-1,Oracle 8.1.6,Waterfall (incl Linear Processing & SSADM),-1
+Y60482,,,Telecom & network management,Enhancement,,3GL,C,527,1621,1621,-1,-1,,,-1
+Y60485,Manufacturing,Manufacturing,ERP,New Development,PC,4GL,DELPHI,414,466,466,9,1,,Rapid Application Development (RAD),-1
+Y60486,,,,New Development,,3GL,Object oriented language,446,1862,1862,8,2,,,9000
+Y60487,Communication,Communications,relatively complex application,Enhancement,Multi,4GL,,11,429,429,-1,-1,Interactive,Waterfall (incl Linear Processing & SSADM),-1
+Y60490,,,,New Development,,3GL,C,254,28760,28760,17,80,,,300000
+Y60495,Communication,Telecommunications,Customer relationship management,Enhancement,,3GL,Java,105,540,496,3,-1,,Waterfall (incl Linear Processing & SSADM),-1
+Y60497,Communication,Communications,relatively complex application,Enhancement,MF,3GL,,95,4092,4092,-1,-1,Batch,Waterfall (incl Linear Processing & SSADM),-1
+Y60498,Communication,Telecommunications,Integration,Enhancement,,3GL,TIBCO,218,10121,8299,4,-1,,Waterfall (incl Linear Processing & SSADM),-1
+Y60501,,,,Enhancement,,,,416,3800,3800,9,7,,,-1
+Y60507,,,,Enhancement,,,,175,471,438,3,4,,,-1
+Y60516,,,,Enhancement,,3GL,Unix Shell,67,322,322,3,-1,,,-1
+Y60517,Communication,Telecommunications,Online. eSales,Enhancement,Multi,,,107,1022,838,5,-1,,Waterfall (incl Linear Processing & SSADM),-1
+Y60523,Insurance,Insurance,Unknown,Enhancement,,3GL,PL/SQL,233,971,796,7,-1,,Waterfall (incl Linear Processing & SSADM),-1
+Y60535,,,,New Development,MF,3GL,RPG,246,2142,1778,4,-1,,,-1
+Y60538,Medical & Health Care,Medical and Health Care,not recorded,Enhancement,,,,4,624,568,9,15,,,-1
+Y60545,Medical & Health Care,Medical and Health Care,not recorded,Enhancement,,,,7,482,482,11,21,,,-1
+Y60547,Medical & Health Care,Medical and Health Care,not recorded,Enhancement,,,,25,5886,5886,20,65,,,-1
+Y60554,Communication,Telecommunications,Customer relationship management,Enhancement,,3GL,Visual Basic,104,492,405,4,-1,,Waterfall (incl Linear Processing & SSADM),-1
+Y60558,,,Financial application area,Enhancement,Multi,3GL,Java,37,311,311,3,-1,Interactive,,-1
+Y60561,Manufacturing,Manufacturing,Financial transaction process/accounting,New Development,Multi,3GL,Visual Basic,2845,28422,28422,10,-1,Oracle 7.3,Waterfall (incl Linear Processing & SSADM),-1
+Y60571,Medical & Health Care,Medical and Health Care,not recorded,Enhancement,,,,42,1301,1041,9,14,,,-1
+Y60579,Communication,Telecommunications,Customer relationship management,Enhancement,,4GL,Amdocs framework,104,388,320,-1,-1,,Waterfall (incl Linear Processing & SSADM),-1
+Y60591,,,Financial application area,Enhancement,Multi,3GL,Java,89,908,908,6,-1,Interactive,,-1
+Y60595,Medical & Health Care,Medical and Health Care,not recorded,Enhancement,,,,108,7391,7391,13,50,,,-1
+Y60596,,,,Enhancement,,4GL,.Net,278,1214,960,2,-1,,Waterfall (incl Linear Processing & SSADM),-1
+Y60597,Communication,Communications,Management Information System,New Development,,3GL,Java,1290,22045,18297,8,31,,,-1
+Y60598,Government,Public AdministrationCommunity ServicesInsurance,Transaction/Production System,Enhancement,MR,,STAFFWARE,167,959,959,4,5,DB2,Joint Application Development (JAD)Rapid Application Development (RAD),-1
+Y60601,Insurance,Insurance,Unknown,Enhancement,,3GL,COBOL,71,241,198,1,-1,,Waterfall (incl Linear Processing & SSADM),-1
+Y60602,,,,Migration,,4GL,Oracle,275,994,786,3,-1,,Waterfall (incl Linear Processing & SSADM),-1
+Y60610,Communication,Telecommunications,Customer billing,Enhancement,Multi,3GL,C,55,1104,905,5,-1,,Waterfall (incl Linear Processing & SSADM),-1
+Y60614,,,,New Development,Multi,3GL,Java,650,3672,3048,6,-1,,,-1
+Y60620,Manufacturing,Manufacturing,Financial transaction process/accounting,New Development,Multi,3GL,Visual Basic,2509,19989,19989,10,-1,Oracle 7.3,Waterfall (incl Linear Processing & SSADM),-1
+Y60621,Medical & Health Care,Medical and Health Care,not recorded,Enhancement,,,,12,340,320,3,16,,,-1
+Y60623,,,,Enhancement,,3GL,,162,1092,1092,3,4,,,-1
+Y60633,Communication,Telecommunications,Human Resources,Enhancement,,4GL,ABAP 4,148,3012,2482,6,-1,,Waterfall (incl Linear Processing & SSADM),-1
+Y60634,Insurance,Insurance,Unknown,Enhancement,,,,53,866,710,4,-1,,Waterfall (incl Linear Processing & SSADM),-1
+Y60638,Communication,Communications,relatively complex application,Enhancement,Multi,4GL,,262,5729,5729,-1,-1,Interactive,Waterfall (incl Linear Processing & SSADM),-1
+Y60645,Communication,Telecommunications,Other,Enhancement,,3GL,Java,103,746,615,1,-1,,Waterfall (incl Linear Processing & SSADM),-1
+Y60655,Manufacturing,Manufacturing,Customer billing/relationship management,New Development,Multi,3GL,Visual Basic,1015,3973,3695,2,-1,Oracle,Waterfall (incl Linear Processing & SSADM),-1
+Y60662,Communication,Communications,relatively complex application,Enhancement,Multi,3GL,,99,1761,1761,-1,-1,Interactive,Waterfall (incl Linear Processing & SSADM),-1
+Y60663,Manufacturing,Manufacturing,Sales contact management,New Development,MF,3GL,RPG,381,816,816,2,-1,DB2/400,Waterfall (incl Linear Processing & SSADM),-1
+Y60670,Insurance,Insurance,,Enhancement,,,Mixed,60,200,184,2,-1,,Waterfall (incl Linear Processing & SSADM),-1
+Y60677,Electronics & Computers,Computers & Software,Complex process control,New Development,PC,4GL,Lotus Notes,828,3742,3368,5,4,DB2,,-1
+Y60696,Government,Government,Mathematical modelling (finance or eng.)Online analysis and reporting,Re-development,Multi,4GL,ABAP,489,3907,3907,19,6,DB2,,-1
+Y60701,Banking,Banking,Office Information System,New Development,MF,4GL,EASYTRIEVE,95,1231,1231,7,10,IMS,,-1
+Y60704,Communication,Communications,Transaction/Production System,Enhancement,,4GL,ADS/Online,149,828,687,3,3,,,-1
+Y60713,Communication,Telecommunications,Customer relationship management,Enhancement,,4GL,Amdocs framework,67,1365,1125,4,-1,,Waterfall (incl Linear Processing & SSADM),-1
+Y60725,Communication,Telecommunications,Customer relationship management,Enhancement,,3GL,Java,150,1961,1800,8,-1,,Waterfall (incl Linear Processing & SSADM),-1
+Y60730,Insurance,Insurance,Trading,New Development,PC,3GL,Java,94,1830,1830,3,-1,Yes,Waterfall (incl Linear Processing & SSADM),-1
+Y60734,Medical & Health Care,Medical and Health Care,not recorded,Enhancement,,,,7,1152,1025,9,32,,,-1
+Y60735,,,Decision Support System,New Development,MF,3GL,CICS,231,7104,5044,8,6,DB2,,-1
+Y60758,Communication,Telecommunications,Online. eSales,Enhancement,Multi,,,113,1024,840,-1,-1,,Waterfall (incl Linear Processing & SSADM),-1
+Y60759,Communication,Telecommunications,Stock control & order processing,Enhancement,Multi,3GL,Java,63,1130,927,4,-1,,Waterfall (incl Linear Processing & SSADM),-1
+Y60770,Wholesale & Retail,Consumer Goods,Fixed asset,Enhancement,MR,4GL,ABAP,1160,16960,16960,7,-1,Oracle 8,Waterfall (incl Linear Processing & SSADM),-1
+Y60772,Communication,Communications,Management Information System,New Development,MF,4GL,SAS,957,13720,11388,12,25,VMS,,-1
+Y60776,Communication,Telecommunications,Online. eSales,Enhancement,Multi,,,51,988,810,3,-1,,Waterfall (incl Linear Processing & SSADM),-1
+Y60786,Communication,Telecommunications,Data Warehouse,Enhancement,Multi,3GL,Shell,69,693,568,10,-1,,Waterfall (incl Linear Processing & SSADM),-1
+Y60790,Medical & Health Care,Medical and Health Care,not recorded,Enhancement,,,,3,931,847,11,23,,,-1
+Y60797,Government,Public AdministrationCommunity ServicesInsurance,Electronic Data Interchange,Enhancement,MF,3GL,COBOL,41,666,666,5,8,DB2,,-1
+Y60807,Communication,Communications,relatively complex application,Enhancement,MF,4GL,,31,543,543,-1,-1,Interactive,Waterfall (incl Linear Processing & SSADM),-1
+Y60817,,,,Enhancement,MR,,ARBOR/BP,115,613,613,4,-1,,,-1
+Y60826,Medical & Health Care,Medical and Health Care,not recorded,Enhancement,,,,25,3890,3890,15,71,,,-1
+Y60829,Insurance,Insurance,Unknown,Enhancement,,3GL,Java,747,15805,12960,11,-1,,Waterfall (incl Linear Processing & SSADM),-1
+Y60831,Medical & Health Care,Medical and Health Care,not recorded,Enhancement,,,,87,2042,2042,11,30,,,-1
+Y60834,,,,Enhancement,,4GL,,30,301,280,2,2,,,-1
+Y60837,,,,New Development,,3GL,C,79,1108,1030,6,2,,,3200
+Y60844,,,,Enhancement,,,,2391,3889,3617,5,9,,,-1
+Y60850,Communication,Telecommunications,Integration,Enhancement,,3GL,TIBCO,94,3018,2475,12,-1,,Waterfall (incl Linear Processing & SSADM),-1
+Y60852,,,,New Development,,,,406,964,800,-1,-1,,,-1
+Y60875,Professional Services,Sales & Marketing,Trading,Enhancement,MF,4GL,ASP,226,889,889,-1,-1,SQL Server 2000,,-1
+Y60876,,,,New Development,,,,2027,28160,28160,20,-1,,,-1
+Y60877,Government,Public AdministrationCommunity ServicesInsurance,Electronic Data Interchange,New Development,MF,3GL,COBOL,160,4742,4742,9,13,DB2,Joint Application Development (JAD)Rapid Application Development (RAD),-1
+Y60887,Medical & Health Care,Medical and Health Care,not recorded,Enhancement,,,,34,1407,1196,13,18,,,-1
+Y60889,Communication,Telecommunications,Customer relationship management,Enhancement,,4GL,Amdocs framework,173,1447,1192,5,-1,,Waterfall (incl Linear Processing & SSADM),-1
+Y60892,Government,Government,Management of Licences and Permits,Enhancement,MF,ApG,COOL:Gen,221,3191,2202,15,-1,,,-1
+Y60898,Communication,Telecommunications,Other: Online. eSales,Enhancement,,4GL,html / jsp,200,1220,1005,4,-1,,Waterfall (incl Linear Processing & SSADM),-1
+Y60900,Communication,Communications,Tools or system,Enhancement,PC,3GL,Java,98,184,184,1,-1,Solid,Waterfall (incl Linear Processing & SSADM),-1
+Y60905,Insurance,Insurance,Financial transaction process/accounting,Enhancement,MF,3GL,COBOL,3622,14573,14573,5,-1,IMS,Waterfall (incl Linear Processing & SSADM),-1
+Y60916,Insurance,Insurance,Unknown,Enhancement,,,,61,68,56,1,-1,,Waterfall (incl Linear Processing & SSADM),-1
+Y60918,Medical & Health Care,Medical and Health Care,not recorded,Enhancement,,,,82,6188,6188,14,24,,,-1
+Y60929,,,,Enhancement,,4GL,Oracle,120,912,912,2,-1,,,-1
+Y60936,Communication,Telecommunications,Enterprise Management,Enhancement,Multi,3GL,Java,110,1912,1568,4,-1,,Waterfall (incl Linear Processing & SSADM),-1
+Y60937,,,,New Development,,3GL,COBOL,191,973,780,4,-1,,Waterfall (incl Linear Processing & SSADM),-1
+Y60942,,,,Enhancement,MF,3GL,COBOL,32,836,836,4,-1,,,-1
+Y60943,Insurance,Insurance,Financial transaction process/accounting,New Development,MF,3GL,COBOL,366,19047,10666,7,-1,IMS,Waterfall (incl Linear Processing & SSADM),-1
+Y60945,,,Network Switch Provisioning,Enhancement,,3GL,C,81,4219,4219,-1,-1,,,-1
+Y60948,Communication,Telecommunications,Stock control & order processing,Enhancement,Multi,3GL,Java,65,1112,912,3,-1,,Waterfall (incl Linear Processing & SSADM),-1
+Y60953,Medical & Health Care,Medical and Health Care,not recorded,Enhancement,,,,4,2621,2333,19,35,,,-1
+Y60957,,,Financial application area,Enhancement,Multi,4GL,,188,1786,1786,7,-1,Interactive,,-1
+Y60963,,,Transaction/Production System,New Development,PC,3GL,JavaScript,140,1453,1453,2,-1,Oracle 8.05,,-1
+Y60967,Communication,Communications,Electronic Data Interchange,Enhancement,MR,3GL,C++,299,5242,5242,13,-1,Oracle,,-1
+Y60969,Wholesale & Retail,Ordering,Stock control & order processing,Enhancement,MF,3GL,C,50,1132,1132,-1,-1,Oracle,,-1
+Y60971,Insurance,Insurance,,Enhancement,MF,,,68,910,910,4,-1,,,-1
+Y60973,Banking,Banking,Financial transaction process/accounting,Enhancement,MF,3GL,PL/I,370,1505,1400,5,-1,IMS,Waterfall (incl Linear Processing & SSADM),-1
+Y60985,,,,New Development,,,,391,3247,3247,10,9,,,-1
+Y60986,Communication,Telecommunications,Data Warehouse,Enhancement,,3GL,PL/SQL,55,351,289,6,-1,,Waterfall (incl Linear Processing & SSADM),-1
+Y60990,Insurance,Insurance,Unknown,Enhancement,,,,81,139,114,1,-1,,Waterfall (incl Linear Processing & SSADM),-1
+Y60996,Service Industry,Real Estate & PropertyCommunity Services,Catalogue/register of things or eventsWorkflow support & management,New Development,Multi,3GL,C#,274,6910,6910,9,17,DB2,,-1
+Y60997,Manufacturing,Manufacturing,Financial transaction process/accounting,New Development,PC,4GL,DELPHI,1151,2414,2414,22,1,,Rapid Application Development (RAD),-1
+Y61024,Communication,Telecommunications,Customer relationship management,Enhancement,Multi,3GL,Java,56,962,789,5,-1,,Waterfall (incl Linear Processing & SSADM),-1
+Y61026,Government,Government,Government,New Development,PC,4GL,DELPHI,173,526,526,13,1,,Rapid Application Development (RAD),-1
+Y70005,Medical & Health Care,Medical and Health Care,not recorded,Enhancement,,,,270,9008,9008,15,94,,,-1
+Y70008,Medical & Health Care,Medical and Health Care,not recorded,Enhancement,,,,57,4243,4243,17,84,,,-1
+Y70015,Insurance,Insurance,,Enhancement,,,Mixed,136,1695,1556,4,-1,,Waterfall (incl Linear Processing & SSADM),-1
+Y70017,Communication,Telecommunications,Online. eSales,Enhancement,Multi,,,91,2039,1672,4,-1,,Waterfall (incl Linear Processing & SSADM),-1
+Y70020,Communication,Telecommunications,Customer relationship management,Enhancement,Multi,4GL,Siebel,851,11995,9836,4,-1,,Waterfall (incl Linear Processing & SSADM),-1
+Y70021,Insurance,Insurance,Unknown,Enhancement,,,,52,191,157,1,-1,,Waterfall (incl Linear Processing & SSADM),-1
+Y70026,Medical & Health Care,Medical and Health Care,not recorded,Enhancement,,,,19,1603,1603,12,49,,,-1
+Y70028,Insurance,Insurance,Unknown,Enhancement,,,,162,1249,1024,3,-1,,Waterfall (incl Linear Processing & SSADM),-1
+Y70056,Insurance,Insurance,,Enhancement,,3GL,PL/SQL,124,1011,928,6,-1,,Waterfall (incl Linear Processing & SSADM),-1
+Y70089,Insurance,Insurance,Unknown,Enhancement,,,,124,60,49,2,-1,,Waterfall (incl Linear Processing & SSADM),-1
+Y70091,Communication,Telecommunications,Customer relationship management,Enhancement,,3GL,Java,151,989,908,-1,-1,,Waterfall (incl Linear Processing & SSADM),-1
+Y70092,Communication,Telecommunications,Data Warehouse,Enhancement,,3GL,PL/SQL,105,1482,1221,4,-1,,Waterfall (incl Linear Processing & SSADM),-1
+Y70095,Communication,Telecommunications,Workflow support & management,Enhancement,Multi,,,167,1088,892,5,-1,,Waterfall (incl Linear Processing & SSADM),-1
+Y70116,Communication,Telecommunications,Customer relationship management,Enhancement,Multi,3GL,Visual Basic,97,1250,1025,3,-1,,Waterfall (incl Linear Processing & SSADM),-1
+Y70117,Insurance,Insurance,Unknown,Enhancement,,,Formspath,70,89,73,2,-1,,Waterfall (incl Linear Processing & SSADM),-1
+Y70122,Medical & Health Care,Medical and Health Care,not recorded,Enhancement,,,,107,5598,5598,22,66,,,-1
+Y70129,Manufacturing,,,New Development,,3GL,Java,50,618,496,2,-1,,Waterfall (incl Linear Processing & SSADM),-1
+Y70130,Medical & Health Care,Medical and Health Care,not recorded,Enhancement,,,,19,259,202,5,24,,,-1
+Y70145,Medical & Health Care,Medical and Health Care,not recorded,Enhancement,,,,13,488,381,11,12,,,-1
+Y70147,Communication,Telecommunications,Customer relationship management,Enhancement,Multi,,,98,1551,1272,4,-1,,Waterfall (incl Linear Processing & SSADM),-1
+Y70184,Communication,Telecommunications,Stock control & order processing,Enhancement,Multi,,,202,2689,2205,9,-1,,Waterfall (incl Linear Processing & SSADM),-1
+Y70188,Communication,Telecommunications,Customer relationship management,Enhancement,Multi,,,140,1249,1024,-1,-1,,Waterfall (incl Linear Processing & SSADM),-1
+Y70192,Medical & Health Care,Medical and Health Care,not recorded,Enhancement,,,,44,300,222,9,4,,,-1
+Y70194,Medical & Health Care,Medical and Health Care,not recorded,Enhancement,,,,142,54087,54087,21,172,,,-1
+Y70195,Communication,Communications,Telecom & network management,Enhancement,MR,3GL,C,181,2321,2112,9,4,Oracle,,-1
+Y70196,,,,Enhancement,,4GL,Oracle,141,2101,1661,5,-1,,Waterfall (incl Linear Processing & SSADM),-1
+Y70205,Communication,Telecommunications,Data or database management,Enhancement,Multi,,,56,605,496,4,-1,,Waterfall (incl Linear Processing & SSADM),-1
+Y70225,Insurance,Insurance,Unknown,Enhancement,,,,71,470,385,-1,-1,,Waterfall (incl Linear Processing & SSADM),-1
+Y70233,Communication,Telecommunications,Customer relationship management,Enhancement,Multi,4GL,Siebel,167,1361,1116,4,-1,,Waterfall (incl Linear Processing & SSADM),-1
+Y70234,,,,New Development,,,,744,3439,3439,7,11,,,-1
+Y70241,Wholesale & Retail,Billing,Billing,Enhancement,,3GL,C++,106,19888,19888,-1,-1,Oracle,,-1
+Y70243,Communication,Communications,Telecom & network management,Enhancement,PC,3GL,Java,48,1213,1007,3,4,Oracle,,-1
+Y70244,,,,Enhancement,,3GL,Java,377,8437,8437,-1,-1,,,-1
+Y70245,Communication,Telecommunications,Workflow support & management,Enhancement,Multi,,,192,2594,2127,4,-1,,Waterfall (incl Linear Processing & SSADM),-1
+Y70249,Communication,Telecommunications,Customer relationship management,Enhancement,,4GL,Amdocs framework,139,1850,1524,4,-1,,Waterfall (incl Linear Processing & SSADM),-1
+Y70259,Communication,Telecommunications,Customer relationship management,Enhancement,Multi,3GL,Java,72,244,200,6,-1,,Waterfall (incl Linear Processing & SSADM),-1
+Y70263,Insurance,Insurance,Unknown,Enhancement,,3GL,PL/SQL,60,193,158,1,-1,,Waterfall (incl Linear Processing & SSADM),-1
+Y70272,Communication,Communications,relatively complex application,Enhancement,Multi,4GL,,34,254,254,-1,-1,Interactive,Waterfall (incl Linear Processing & SSADM),-1
+Y70277,Medical & Health Care,Medical and Health Care,not recorded,Enhancement,,,,28,476,400,11,17,,,-1
+Y70278,,,Financial application area,Enhancement,Multi,3GL,Java,52,317,317,2,-1,Interactive,,-1
+Y70281,Communication,CommunicationsTelecom & Networking,Network ManagementTelecom and Networking,Enhancement,PC,3GL,C++,455,1904,1904,6,4,Oracle,,-1
+Y70286,Communication,Voice Provisioning,Voice Provisioning,Enhancement,,3GL,Java,345,20859,20859,-1,-1,,,-1
+Y70289,Communication,Telecommunications,Customer relationship management,Enhancement,Multi,,,206,2917,2392,7,-1,,Waterfall (incl Linear Processing & SSADM),-1
+Y70295,Insurance,Insurance,Unknown,Enhancement,,,,91,466,382,4,-1,,Waterfall (incl Linear Processing & SSADM),-1
+Y70299,Insurance,Insurance,Unknown,Enhancement,,,,120,1639,1344,5,-1,,Waterfall (incl Linear Processing & SSADM),-1
+Y70305,Communication,Communications,Transaction/Production System,Enhancement,,4GL,NATURAL,115,1576,1308,5,9,,,-1
+Y70310,Communication,Telecommunications,Customer relationship management,Enhancement,,3GL,Java,50,680,624,3,-1,,Waterfall (incl Linear Processing & SSADM),-1
+Y70323,Professional Services,Business Services,Management Information System,New Development,PC,3GL,Visual Basic,1750,16170,16170,26,12,,,-1
+Y70329,Insurance,Insurance,Financial transaction process/accounting,Enhancement,Multi,3GL,Visual Basic,2045,3613,3360,3,-1,SYBASE,Waterfall (incl Linear Processing & SSADM),-1
+Y70338,Medical & Health Care,Medical and Health Care,not recorded,Enhancement,,,,371,33277,33277,18,133,,,-1
+Y70340,,,,Enhancement,,,,19,1081,1081,2,-1,,,-1
+Y70344,,,,Enhancement,,,,721,6552,6552,6,12,,,-1
+Y70357,Communication,Telecommunications,Customer relationship management,Enhancement,,,,92,1790,1643,7,-1,,Waterfall (incl Linear Processing & SSADM),-1
+Y70359,Insurance,Insurance,,Enhancement,,,Mixed,64,190,175,1,-1,,Waterfall (incl Linear Processing & SSADM),-1
+Y70364,Manufacturing,Manufacturing,Tools or system,New Development,Multi,3GL,Visual Basic,79,250,187,3,-1,Oracle,Waterfall (incl Linear Processing & SSADM),-1
+Y70365,Communication,Telecommunications,Integration,Enhancement,Multi,3GL,TIBCO,79,1220,1000,3,-1,,Waterfall (incl Linear Processing & SSADM),-1
+Y70367,Service Industry,GovernmentCommunity Services,Catalogue/register of things or events,Enhancement,Multi,3GL,PL/I,117,3549,3549,7,10,DB2,Agile Development,-1
+Y70370,Education,Education Institution,Catalogue/register of things or events,New Development,PC,4GL,ASP.Net,119,119,119,6,3,,,-1
+Y70373,Insurance,Insurance,Unknown,Enhancement,,,,58,278,228,2,-1,,Waterfall (incl Linear Processing & SSADM),-1
+Y70382,Communication,Telecommunications,Customer relationship management,Enhancement,Multi,,,59,995,816,4,-1,,Waterfall (incl Linear Processing & SSADM),-1
+Y70388,Communication,Telecommunications,Online. eSales,Enhancement,Multi,,,2048,15712,12884,-1,-1,,Waterfall (incl Linear Processing & SSADM),-1
+Y70390,Communication,Telecommunications,Customer relationship management,Enhancement,,4GL,Amdocs framework,52,1786,1472,7,-1,,Waterfall (incl Linear Processing & SSADM),-1
+Y70399,,,,Enhancement,,4GL,.Net,301,1568,1240,5,-1,,Waterfall (incl Linear Processing & SSADM),-1
+Y70400,Service Industry,Food Processing,Financial transaction process/accounting,New Development,MR,,APPS,139,1075,1000,11,-1,Oracle 8,Waterfall (incl Linear Processing & SSADM),-1
+Y70410,Insurance,Insurance,Unknown,Enhancement,,,,71,312,256,2,-1,,Waterfall (incl Linear Processing & SSADM),-1
+Y70436,Government,Government,Document managementManagement or performance reporting,Enhancement,Multi,3GL,C#,83,634,634,5,6,SQL Server,,-1
+Y70438,Communication,Telecommunications,Customer relationship management,Enhancement,Multi,3GL,PL/SQL,92,1216,997,5,-1,,Waterfall (incl Linear Processing & SSADM),-1
+Y70446,Insurance,Insurance,,Enhancement,,3GL,Java,84,80,74,1,-1,,Waterfall (incl Linear Processing & SSADM),-1
+Y70453,,,,Enhancement,,3GL,C,42,296,296,3,-1,,,-1
+Y70455,Banking,,Security management,New Development,MR,3GL,Visual Basic,550,26520,24664,15,17,SYBASE V10,Waterfall (incl Linear Processing & SSADM),108000
+Y70457,Communication,Telecommunications,Customer relationship management,Enhancement,,4GL,Amdocs framework,63,2935,2419,5,-1,,Waterfall (incl Linear Processing & SSADM),-1
+Y70464,Communication,Telecommunications,Customer relationship management,Enhancement,Multi,3GL,Visual Basic,53,1613,1323,4,-1,,Waterfall (incl Linear Processing & SSADM),-1
+Y70469,,,,New Development,,3GL,Java,770,16594,13308,10,-1,,Waterfall (incl Linear Processing & SSADM),-1
+Y70470,Communication,Communications,relatively complex application,Enhancement,MF,3GL,,129,1809,1809,-1,-1,Batch,Waterfall (incl Linear Processing & SSADM),-1
+Y70476,Communication,Communications,relatively complex application,Enhancement,Multi,4GL,,109,655,655,-1,-1,Interactive,Waterfall (incl Linear Processing & SSADM),-1
+Y70477,Manufacturing,ManufacturingConsumer Goods,Management Information System,Re-development,MF,3GL,COBOL,13580,54620,54620,14,-1,DB2,Joint Application Development (JAD)Multifunctional Teams,-1
+Y70480,Manufacturing,Manufacturing,,Enhancement,Multi,3GL,Visual Basic,566,1343,1249,4,-1,Oracle,Waterfall (incl Linear Processing & SSADM),-1
+Y70495,Manufacturing,Manufacturing,Sales contact management,New Development,Multi,3GL,Visual Basic,1510,5740,5740,11,-1,SYBASE SQL Anywhere,Waterfall (incl Linear Processing & SSADM),-1
+Y70498,Medical & Health Care,Medical and Health Care,not recorded,Enhancement,,,,3,1449,1449,14,39,,,-1
+Y70499,,,,Enhancement,,4GL,Oracle,111,1521,1521,3,-1,,,-1
+Y70501,Communication,Telecommunications,Customer relationship management,Enhancement,,3GL,Java,495,7302,6704,2,-1,,Waterfall (incl Linear Processing & SSADM),-1
+Y70514,Communication,Telecommunications,Data Warehouse,Enhancement,,3GL,PL/SQL,388,4793,4400,8,-1,,Waterfall (incl Linear Processing & SSADM),-1
+Y70518,Insurance,Insurance,Financial transaction process/accounting,Enhancement,Multi,3GL,Visual Basic,309,25900,25900,5,-1,DB2/400,Waterfall (incl Linear Processing & SSADM),-1
+Y70522,Communication,Telecommunications,Customer relationship management,Enhancement,,4GL,Amdocs framework,174,2340,1928,11,-1,,Waterfall (incl Linear Processing & SSADM),-1
+Y70524,Government,Government,Workflow support & management,Enhancement,MF,3GL,PL/I,184,2951,2951,17,6,DB2,,-1
+Y70530,Communication,Communications,Transaction/Production System,Enhancement,,4GL,NATURAL,197,1049,871,2,3,,,-1
+Y70531,,,,Enhancement,,,IIS,8,45,45,2,-1,,,-1
+Y70540,Communication,Telecommunications,Stock control & order processing,Enhancement,,3GL,J2EE,103,1063,976,5,-1,,Waterfall (incl Linear Processing & SSADM),-1
+Y70541,,Maintenance,Maintenance,Enhancement,,3GL,C,108,7597,7597,-1,-1,,,-1
+Y70548,Medical & Health Care,Medical and Health Care,not recorded,Enhancement,,,,27,948,948,8,32,,,-1
+Y70559,,,,Enhancement,,3GL,Java,174,3905,3088,4,-1,,Waterfall (incl Linear Processing & SSADM),-1
+Y70561,Communication,Telecommunications,GEO Information Management,Enhancement,Multi,,,58,1532,1256,5,-1,,Waterfall (incl Linear Processing & SSADM),-1
+Y70572,Insurance,Insurance,Unknown,Enhancement,,3GL,Visual Basic,161,978,802,3,-1,,Waterfall (incl Linear Processing & SSADM),-1
+Y70586,Communication,Telecommunications,Online. eSales,Enhancement,Multi,,,51,834,684,8,-1,,Waterfall (incl Linear Processing & SSADM),-1
+Y70590,Communication,Telecommunications,Integration,Enhancement,Multi,3GL,TIBCO,66,859,704,4,-1,,Waterfall (incl Linear Processing & SSADM),-1
+Y70593,Government,GovernmentDefence,Financial transaction process/accounting,Enhancement,MF,3GL,COBOL,23,338,338,18,-1,,,-1
+Y70597,,,,New Development,,3GL,COBOL,781,45778,42574,32,309,,,83000
+Y70603,Communication,Communications,Transaction/Production System,Enhancement,MR,4GL,SQL,212,2325,1930,4,8,Oracle,,-1
+Y70604,Medical & Health Care,Medical and Health Care,not recorded,Enhancement,,,,7,2447,2447,11,47,,,-1
+Y70608,Government,Government,Management of Licences and Permits,Enhancement,MF,ApG,COOL:Gen,288,2677,2436,16,-1,,,-1
+Y70609,Banking,Banking,Financial transaction process/accounting,Enhancement,MF,3GL,PL/I,36,288,288,2,-1,"IMS/DB,DC",Waterfall (incl Linear Processing & SSADM),-1
