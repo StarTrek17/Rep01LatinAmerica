@@ -1,0 +1,116 @@
+# vista de la muestra de 500 proyectos en tabla yisbsg500
+select * from isbsgorig.yisbsg500;
+#
+# crear tabla para la columna Industry Section y60indsct
+# e incluir columna indsct a partir de yisbsg500
+create table isbsgorig.y60indsct
+select indsct from isbsgorig.yisbsg500;
+#
+# vista de la nueva tabla y60indsct
+select * from isbsgorig.y60indsct;
+#
+#hacer conteo de ocurrencias por indsct en tabla y60indsct
+#agrupando por indsct y ordenando por valor conteo descendente
+#
+create table isbsgorig.y61indsctcnt
+select indsct, count(*) from isbsgorig.y60indsct
+group by indsct
+order by 2 desc;
+#
+# vista de la nueva tabla y61indsctcnt
+#
+select * from isbsgorig.y61indsctcnt
+# el primer valor de 177 es el valor de la frecuencia
+# máxima de repetición para el valor indsct = "Communication" y
+# el segundo valor máximo 93 corresponde al valor espacios
+#
+# crear tabla y62indsctmax con el valor de la máxima ocurrencia
+# en tabla de conteos de frecuencia y61indsctcnt y
+# mostrar vista del valor Communcation = 177
+#
+create table isbsgorig.y62indsctmax
+select * from isbsgorig.y61indsctcnt
+limit 1;
+select * from isbsgorig.y62indsctmax;
+#
+# crear tabla duplicado de y60indsct,
+# y64indsctcmp que servira para remplazar
+# los valores de espacio de indsct por el valor 
+#  de su frecuencia de conteo 93
+#
+create table isbsgorig.y64indsctcmp
+select * from isbsgorig.y60indsct;
+select * from isbsgorig.y64indsctcmp;
+#
+# actualizar los valores espacio en tabla y64indsctcmp
+# remplazarlos por su valor correspondiente indsct 
+# de frecuencia máxima en y62indsctmax
+# mostrar tabla y64indsctcmp sin valores vacíos
+#
+update isbsgorig.y64indsctcmp, isbsgorig.y62indsctmax
+set y64indsctcmp.indsct = y62indsctmax.indsct
+where y64indsctcmp.indsct = "";
+select * from isbsgorig.y64indsctcmp;
+#
+# hacer nuevo conteo de frecuencias de indsct en la
+# tabla de valores no espacio de y64indsctcmp
+#
+create table isbsgorig.y61indsctcnt2
+select indsct, count(*) from isbsgorig.y64indsctcmp
+group by indsct
+order by 2 desc;
+
+select * from isbsgorig.y61indsctcnt2;
+#
+# alterar tabla y61indsctcnt2 para cambiar el nombre
+# de la columna indsct por progra. Mostrar tabla 
+#
+alter table isbsgorig.y61indsctcnt2
+change column indsct progra text;
+select * from isbsgorig.y61indsctcnt2;
+#
+# crear un join interno y65jointt4t1 entre las tablas
+# y64indsctcmp y y61indsctcnt2 por la igualdad de columnas
+# indsct = progra. Mostrar tabla y65jointt4t1
+#
+create table isbsgorig.y65joint4t1
+ select *
+ from isbsgorig.y64indsctcmp 
+ inner join isbsgorig.y61indsctcnt2
+on  isbsgorig.y64indsctcmp.indsct = 
+ isbsgorig.y61indsctcnt2.progra;
+select * from isbsgorig.y65joint4t1;
+#
+# borrar columna progra de tabla y65jointt4t1
+# mostrar tabla 
+#
+alter table isbsgorig.y65joint4t1
+drop column progra;
+select * from isbsgorig.y65joint4t1;
+#
+# duplicar tabla y65jointt4t1. Copias
+# y66indsctcnt, y67indsctconteo
+#
+create table isbsgorig.y66indsctcnt
+select * from isbsgorig.y65joint4t1;
+create table isbsgorig.y67indsctconteo
+select * from isbsgorig.y65joint4t1;
+#
+# borrar columna indsct de tabla y67indsctconteo
+# solo permanecen los valores de frecuencia correspondientes
+# a cada valor de indsct
+#
+alter table isbsgorig.y67indsctconteo
+drop column indsct;
+#
+# la tabla y66indsctcnt contiene el conteo de frecuencias
+# de cada valor indsct. La tabla es base para armar la
+# tabla de valores completos yisbsg500fmla cual servira
+# para extraer la muestra de entrenamiento de 400 proyectos
+# y la muestra de prueba de 100 proyectos
+select * from isbsgorig.y66indsctcnt;
+#
+# la tabla y67indsctconteo solo contiene el conteo de frecuencias
+# de cada valor indsct
+select * from isbsgorig.y67indsctconteo;
+
