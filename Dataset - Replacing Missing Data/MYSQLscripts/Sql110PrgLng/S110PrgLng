@@ -1,0 +1,117 @@
+# vista de la muestra de 500 proyectos en tabla yisbsg500
+select * from isbsgorig.yisbsg500;
+#
+# crear tabla para la columna programming language type y110Prglng
+# e incluir columna prglng1 a partir de yisbsg500
+create table isbsgorig.y110prglng
+select prglng1 from isbsgorig.yisbsg500;
+#
+# vista de la nueva tabla y110prglng
+select * from isbsgorig.y110prglng;
+#
+#hacer conteo de ocurrencias por prglng1 en tabla y110prglng
+#agrupando por prglng1 y ordenando por valor conteo descendente
+#
+create table isbsgorig.y111prglngcnt
+select prglng1, count(*) from isbsgorig.y110prglng
+group by prglng1
+order by 2 desc;
+#
+# vista de la nueva tabla y111prglngcnt
+#
+select * from isbsgorig.y111prglngcnt
+# el primer valor de 152 es el valor de la frecuencia
+# máxima de repetición para el valor prglng1 = "" y
+# el segundo valor máximo 63 corresponde al valor prgln1 = Java”
+#
+# crear tabla y112prglngmax con el valor de la máxima ocurrencia
+# en tabla de conteos de frecuencia y111prglngcnt cuando prglng1 = “Java”
+# mostrar vista del valor Java = 63
+#
+create table isbsgorig.y112prglngmax
+select * from isbsgorig.y111prglngcnt
+where prglng1 = “Java”;
+
+select * from isbsgorig.y112prglngmax;
+#
+# crear tabla duplicado de y110prglng,
+# y114prglngcmp que servirá para remplazar
+# los valores de espacio de prglng por el valor 
+#  de su frecuencia de conteo 63
+#
+create table isbsgorig.y114prglngcmp
+select * from isbsgorig.y110prglng;
+select * from isbsgorig.y114prglngcmp;
+#
+# actualizar los valores espacio en tabla y114prglngcmp
+# remplazarlos por su valor correspondiente prglng 
+# de frecuencia máxima en y112prglngmax
+# mostrar tabla y114prglngcmp sin valores vacíos
+#
+update isbsgorig.y114prglngcmp, isbsgorig.y112prglngmax
+set y114prglngcmp.prglng1 = y112prglngmax.prglng1
+where y114prglngcmp.prglng1 = "";
+select * from isbsgorig.y114prglngcmp;
+#
+# hacer nuevo conteo de frecuencias de prglng1 en la
+# tabla de valores no espacio de y114prglngcmp
+#
+create table isbsgorig.y111prglngcnt2
+select prglng1, count(*) from isbsgorig.y114prglngcmp
+group by prglng1
+order by 2 desc;
+
+select * from isbsgorig.y111prglngcnt2;
+#
+# alterar tabla y111prglngcnt2 para cambiar el nombre
+# de la columna prglng por progra. Mostrar tabla 
+#
+alter table isbsgorig.y111prglngcnt2
+change column prglng progra text;
+select * from isbsgorig.y111prglngcnt2;
+#
+# crear un join interno y115jointt4t1 entre las tablas
+# y114prglngcmp y y111prglngcnt2 por la igualdad de columnas
+# prglng = progra. Mostrar tabla y115jointt4t1
+#
+create table isbsgorig.y115joint4t1
+ select *
+ from isbsgorig.y114prglngcmp 
+ inner join isbsgorig.y111prglngcnt2
+on  isbsgorig.y114prglngcmp.prglng = 
+ isbsgorig.y111prglngcnt2.progra;
+select * from isbsgorig.y115joint4t1;
+#
+# borrar columna progra de tabla y115jointt4t1
+# mostrar tabla 
+#
+alter table isbsgorig.y115joint4t1
+drop column progra;
+select * from isbsgorig.y115joint4t1;
+#
+# duplicar tabla y115jointt4t1. Copias
+# y116prglngcnt, y117prglngconteo
+#
+create table isbsgorig.y116prglngcnt
+select * from isbsgorig.y115joint4t1;
+create table isbsgorig.y117prglngconteo
+select * from isbsgorig.y115joint4t1;
+#
+# borrar columna prglng de tabla y117prglngconteo
+# solo permanecen los valores de frecuencia correspondientes
+# a cada valor de prglng
+#
+alter table isbsgorig.y117prglngconteo
+drop column prglng;
+#
+# la tabla y116prglngcnt contiene el conteo de frecuencias
+# de cada valor prglng. La tabla es base para armar la
+# tabla de valores completos yisbsg500fmla cual servira
+# para extraer la muestra de entrenamiento de 400 proyectos
+# y la muestra de prueba de 100 proyectos
+select * from isbsgorig.y116prglngcnt;
+#
+# la tabla y117prglngconteo solo contiene el conteo de frecuencias
+# de cada valor prglng
+select * from isbsgorig.y117prglngconteo;
+
