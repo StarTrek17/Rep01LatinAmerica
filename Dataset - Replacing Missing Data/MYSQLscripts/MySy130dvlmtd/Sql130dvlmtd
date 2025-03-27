@@ -1,0 +1,118 @@
+# vista de la muestra de 500 proyectos en tabla yisbsg500
+select * from isbsgorig.yisbsg500;
+#
+# crear tabla para la columna development methodology dvlmtd y130Dvlmtd
+# e incluir columna dvlmtd a partir de yisbsg500
+create table isbsgorig.y130dvlmtd
+select dvlmtd from isbsgorig.yisbsg500;
+#
+# vista de la nueva tabla y130dvlmtd
+select * from isbsgorig.y130dvlmtd;
+#
+#hacer conteo de ocurrencias por dvlmtd en tabla y130dvlmtd
+#agrupando por dvlmtd y ordenando por valor conteo descendente
+#
+create table isbsgorig.y131dvlmtdcnt
+select dvlmtd, count(*) from isbsgorig.y130dvlmtd
+group by dvlmtd
+order by 2 desc;
+#
+# vista de la nueva tabla y131dvlmtdcnt
+#
+select * from isbsgorig.y131dvlmtdcnt
+# el primer valor de 261 es el valor de la frecuencia
+# máxima de repetición para el valor dvlmtd = "Waterfall …." y
+# el segundo valor máximo 220 corresponde al valor dvlmtd  = espacios
+#
+# crear tabla y132dvlmtdmax con el valor de la máxima ocurrencia
+# en tabla de conteos de frecuencia y131dvlmtdcnt cuando dvlmtd = “Waterfall …”
+# mostrar vista del valor dvlmtd = “Waterfall …”
+#
+create table isbsgorig.y132dvlmtdmax
+select * from isbsgorig.y131dvlmtdcnt
+limit 1;
+
+select * from isbsgorig.y132dvlmtdmax;
+#
+# crear tabla duplicado de y130dvlmtd,
+# y134dvlmtdcmp que servirá para remplazar
+# los valores de espacio de dvlmtd por el valor 
+#  de su frecuencia de conteo 63
+#
+create table isbsgorig.y134dvlmtdcmp
+select * from isbsgorig.y130dvlmtd;
+select * from isbsgorig.y134dvlmtdcmp;
+#
+# actualizar los valores espacio en tabla y134dvlmtdcmp
+# remplazarlos por su valor correspondiente dvlmtd
+# de frecuencia máxima en y132dvlmtdmax
+# mostrar tabla y134dvlmtdcmp sin valores vacíos
+#
+update isbsgorig.y134dvlmtdcmp, isbsgorig.y132dvlmtdmax
+set y134dvlmtdcmp.dvlmtd = y132dvlmtdmax.dvlmtd
+where y134dvlmtdcmp.dvlmtd = "";
+select * from isbsgorig.y134dvlmtdcmp;
+#
+# hacer nuevo conteo de frecuencias de dvlmtd en la
+# tabla de valores no espacio de y134dvlmtdcmp
+#
+create table isbsgorig.y131dvlmtdcnt2
+select dvlmtd, count(*) from isbsgorig.y134dvlmtdcmp
+group by dvlmtd
+order by 2 desc;
+
+select * from isbsgorig.y131dvlmtdcnt2;
+#
+# alterar tabla y131dvlmtdcnt2 para cambiar el nombre
+# de la columna dvlmtd por progra. Mostrar tabla 
+#
+alter table isbsgorig.y131dvlmtdcnt2
+change column dvlmtd progra text;
+select * from isbsgorig.y131dvlmtdcnt2;
+#
+# crear un join interno y135jointt4t1 entre las tablas
+# y134dvlmtdcmp y y131dvlmtdcnt2 por la igualdad de columnas
+# dvlmtd = progra. Mostrar tabla y135jointt4t1
+#
+create table isbsgorig.y135joint4t1
+ select *
+ from isbsgorig.y134dvlmtdcmp 
+ inner join isbsgorig.y131dvlmtdcnt2
+on  isbsgorig.y134dvlmtdcmp.dvlmtd = 
+ isbsgorig.y131dvlmtdcnt2.progra;
+select * from isbsgorig.y135joint4t1;
+#
+# borrar columna progra de tabla y135jointt4t1
+# mostrar tabla 
+#
+alter table isbsgorig.y135joint4t1
+drop column progra;
+select * from isbsgorig.y135joint4t1;
+#
+# duplicar tabla y135jointt4t1. Copias
+# y136dvlmtdcnt, y137dvlmtdconteo
+#
+create table isbsgorig.y136dvlmtdcnt
+select * from isbsgorig.y135joint4t1;
+create table isbsgorig.y137dvlmtdconteo
+select * from isbsgorig.y135joint4t1;
+#
+# borrar columna dvlmtd de tabla y137dvlmtdconteo
+# solo permanecen los valores de frecuencia correspondientes
+# a cada valor de dvlmtd
+#
+alter table isbsgorig.y137dvlmtdconteo
+drop column dvlmtd;
+#
+# la tabla y136dvlmtdcnt contiene el conteo de frecuencias
+# de cada valor dvlmtd. La tabla es base para armar la
+# tabla de valores completos yisbsg500fm la cual servirá
+# para extraer la muestra de entrenamiento de 400 proyectos
+# y la muestra de prueba de 100 proyectos
+select * from isbsgorig.y136dvlmtdcnt;
+#
+# la tabla y137dvlmtdconteo solo contiene el conteo de frecuencias
+# de cada valor dvlmtd
+select * from isbsgorig.y137dvlmtdconteo;
+
+
