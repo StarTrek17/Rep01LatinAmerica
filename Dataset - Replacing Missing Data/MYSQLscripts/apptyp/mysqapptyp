@@ -1,0 +1,116 @@
+# vista de la muestra de 500 proyectos en tabla yisbsg500
+select * from isbsgorig.yisbsg500;
+#
+# crear tabla para la columna application Type y80Apptyp
+# e incluir columna apptyp a partir de yisbsg500
+create table isbsgorig.y80apptyp
+select apptyp from isbsgorig.yisbsg500;
+#
+# vista de la nueva tabla y80apptyp
+select * from isbsgorig.y80apptyp;
+#
+#hacer conteo de ocurrencias por apptyp en tabla y80apptyp
+#agrupando por apptyp y ordenando por valor conteo descendente
+#
+create table isbsgorig.y81apptypcnt
+select apptyp, count(*) from isbsgorig.y80apptyp
+group by apptyp
+order by 2 desc;
+#
+# vista de la nueva tabla y81apptypcnt
+#
+select * from isbsgorig.y81apptypcnt
+# el primer valor de 128 es el valor de la frecuencia
+# máxima de repetición para el valor apptyp = "Telecommunications" y
+# el segundo valor máximo 94 corresponde al valor espacios
+#
+# crear tabla y82apptypmax con el valor de la máxima ocurrencia
+# en tabla de conteos de frecuencia y81apptypcnt y
+# mostrar vista del valor Communcation = 177
+#
+create table isbsgorig.y82apptypmax
+select * from isbsgorig.y81apptypcnt
+limit 1;
+select * from isbsgorig.y82apptypmax;
+#
+# crear tabla duplicado de y80apptyp,
+# y84apptypcmp que servira para remplazar
+# los valores de espacio de apptyp por el valor 
+#  de su frecuencia de conteo 93
+#
+create table isbsgorig.y84apptypcmp
+select * from isbsgorig.y80apptyp;
+select * from isbsgorig.y84apptypcmp;
+#
+# actualizar los valores espacio en tabla y84apptypcmp
+# remplazarlos por su valor correspondiente apptyp 
+# de frecuencia máxima en y82apptypmax
+# mostrar tabla y84apptypcmp sin valores vacíos
+#
+update isbsgorig.y84apptypcmp, isbsgorig.y82apptypmax
+set y84apptypcmp.apptyp = y82apptypmax.apptyp
+where y84apptypcmp.apptyp = "";
+select * from isbsgorig.y84apptypcmp;
+#
+# hacer nuevo conteo de frecuencias de apptyp en la
+# tabla de valores no espacio de y84apptypcmp
+#
+create table isbsgorig.y81apptypcnt2
+select apptyp, count(*) from isbsgorig.y84apptypcmp
+group by apptyp
+order by 2 desc;
+
+select * from isbsgorig.y81apptypcnt2;
+#
+# alterar tabla y81apptypcnt2 para cambiar el nombre
+# de la columna apptyp por progra. Mostrar tabla 
+#
+alter table isbsgorig.y81apptypcnt2
+change column apptyp progra text;
+select * from isbsgorig.y81apptypcnt2;
+#
+# crear un join interno y85jointt4t1 entre las tablas
+# y84apptypcmp y y81apptypcnt2 por la igualdad de columnas
+# apptyp = progra. Mostrar tabla y85jointt4t1
+#
+create table isbsgorig.y85joint4t1
+ select *
+ from isbsgorig.y84apptypcmp 
+ inner join isbsgorig.y81apptypcnt2
+on  isbsgorig.y84apptypcmp.apptyp = 
+ isbsgorig.y81apptypcnt2.progra;
+select * from isbsgorig.y85joint4t1;
+#
+# borrar columna progra de tabla y85jointt4t1
+# mostrar tabla 
+#
+alter table isbsgorig.y85joint4t1
+drop column progra;
+select * from isbsgorig.y85joint4t1;
+#
+# duplicar tabla y85jointt4t1. Copias
+# y86apptypcnt, y87apptypconteo
+#
+create table isbsgorig.y86apptypcnt
+select * from isbsgorig.y85joint4t1;
+create table isbsgorig.y87apptypconteo
+select * from isbsgorig.y85joint4t1;
+#
+# borrar columna apptyp de tabla y87apptypconteo
+# solo permanecen los valores de frecuencia correspondientes
+# a cada valor de apptyp
+#
+alter table isbsgorig.y87apptypconteo
+drop column apptyp;
+#
+# la tabla y86apptypcnt contiene el conteo de frecuencias
+# de cada valor apptyp. La tabla es base para armar la
+# tabla de valores completos yisbsg500fmla cual servira
+# para extraer la muestra de entrenamiento de 400 proyectos
+# y la muestra de prueba de 100 proyectos
+select * from isbsgorig.y86apptypcnt;
+#
+# la tabla y87apptypconteo solo contiene el conteo de frecuencias
+# de cada valor apptyp
+select * from isbsgorig.y87apptypconteo;
+
