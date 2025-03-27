@@ -1,0 +1,24 @@
+# la tabla muestra de 500 proyectos yisbsg500 contiene
+# 500 registros y 16 columnas. 8 de ellas contienen tanto
+# valores alfanuméricos como valores faltantes:
+# industry section, indsct
+# organization type, orgtyp
+# application type, apptyp
+# development platform, dvlplt
+# language type, lngtyp
+# primary programming language, prglng1
+# primary data base management system, DBMS1
+# development methodology, dvlmtd
+El remplazo de valores faltantes en cada una de las 8 columnas mencionadas se efectúa aplicando el método de imputación por moda máxima en la columna siguiendo los pasos:
+1.	Se extrae la columna de la tabla muestra yisbsg500 para incluirla en una nueva tabla y60nomcol
+2.	Se realiza un conteo de frecuencias de cada valor diferente de nomcol en y60nomcol, ordenando en forma descendente por el valor del conteo y se crea la nueva tabla y61nomcolcnt
+3.	El primer valor en y61nomcolcnt corresponde a la frecuencia máxima maxfrc del valor nomcol. También se tiene un valor de frecuencia maxfrc2 para el valor espacios de nomcol. Se crea una tabla con el valor de frecuencia máxima y nomcol: y62nomcolmax
+4.	En un duplicado y64nomcolcmp de la tabla y60nomcol, se remplazan los valores vacíos de nomcol por el valor de la frecuencia máxima en y62nomcolmax.
+5.	Se realiza un nuevo conteo de frecuencias de cada valor diferente de nomcol en y64nomcolcmp, ordenando en forma descendente por el valor del conteo y se crea la nueva tabla y61nomcolcnt2
+6.	Se cambia nombre de columna nomcol en y61nomcolcnt2 por progra
+7.	Mediante un join interno entre las tablas y64nomcolcmp y y61nomcolcnt2 por la igualdad de columnas nomcol y progra se crea la tabla y65joint4t1.
+8.	Se borra la columna progra en y65joint4t1
+9.	Se duplica la tabla y65joint4t1 en dos tablas: y66nomcolcnt, y67nomcolconteo
+10.	Se borra la columna nomcol en tabla y67nomcolconteo. Esta tabla servira para armar, columna por columna, la tabla de 500 registros con valores no vacíos yisbsg500cmp
+
+Dos columnas en la muestra yisbsg500 contienen datos numéricos con valores faltantes. Los valores faltantes fueron señalados por el valor -1 por conveniencia de diseño. Para ambas columnas se aplicó la imputación por estadística de proyectos ISPI descrita en nuestro artículo.
