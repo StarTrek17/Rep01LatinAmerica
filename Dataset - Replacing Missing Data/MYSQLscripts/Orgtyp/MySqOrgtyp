@@ -1,0 +1,116 @@
+# vista de la muestra de 500 proyectos en tabla yisbsg500
+select * from isbsgorig.yisbsg500;
+#
+# crear tabla para la columna Organization Type y70OrgTyp
+# e incluir columna orgtyp a partir de yisbsg500
+create table isbsgorig.y70orgtyp
+select orgtyp from isbsgorig.yisbsg500;
+#
+# vista de la nueva tabla y70orgtyp
+select * from isbsgorig.y70orgtyp;
+#
+#hacer conteo de ocurrencias por orgtyp en tabla y70orgtyp
+#agrupando por orgtyp y ordenando por valor conteo descendente
+#
+create table isbsgorig.y71orgtypcnt
+select orgtyp, count(*) from isbsgorig.y70orgtyp
+group by orgtyp
+order by 2 desc;
+#
+# vista de la nueva tabla y71orgtypcnt
+#
+select * from isbsgorig.y71orgtypcnt
+# el primer valor de 128 es el valor de la frecuencia
+# máxima de repetición para el valor orgtyp = "Telecommunications" y
+# el segundo valor máximo 94 corresponde al valor espacios
+#
+# crear tabla y72orgtypmax con el valor de la máxima ocurrencia
+# en tabla de conteos de frecuencia y71orgtypcnt y
+# mostrar vista del valor Communcation = 177
+#
+create table isbsgorig.y72orgtypmax
+select * from isbsgorig.y71orgtypcnt
+limit 1;
+select * from isbsgorig.y72orgtypmax;
+#
+# crear tabla duplicado de y70orgtyp,
+# y74orgtypcmp que servira para remplazar
+# los valores de espacio de orgtyp por el valor 
+#  de su frecuencia de conteo 93
+#
+create table isbsgorig.y74orgtypcmp
+select * from isbsgorig.y70orgtyp;
+select * from isbsgorig.y74orgtypcmp;
+#
+# actualizar los valores espacio en tabla y74orgtypcmp
+# remplazarlos por su valor correspondiente orgtyp 
+# de frecuencia máxima en y72orgtypmax
+# mostrar tabla y74orgtypcmp sin valores vacíos
+#
+update isbsgorig.y74orgtypcmp, isbsgorig.y72orgtypmax
+set y74orgtypcmp.orgtyp = y72orgtypmax.orgtyp
+where y74orgtypcmp.orgtyp = "";
+select * from isbsgorig.y74orgtypcmp;
+#
+# hacer nuevo conteo de frecuencias de orgtyp en la
+# tabla de valores no espacio de y74orgtypcmp
+#
+create table isbsgorig.y71orgtypcnt2
+select orgtyp, count(*) from isbsgorig.y74orgtypcmp
+group by orgtyp
+order by 2 desc;
+
+select * from isbsgorig.y71orgtypcnt2;
+#
+# alterar tabla y71orgtypcnt2 para cambiar el nombre
+# de la columna orgtyp por progra. Mostrar tabla 
+#
+alter table isbsgorig.y71orgtypcnt2
+change column orgtyp progra text;
+select * from isbsgorig.y71orgtypcnt2;
+#
+# crear un join interno y75jointt4t1 entre las tablas
+# y74orgtypcmp y y71orgtypcnt2 por la igualdad de columnas
+# orgtyp = progra. Mostrar tabla y75jointt4t1
+#
+create table isbsgorig.y75joint4t1
+ select *
+ from isbsgorig.y74orgtypcmp 
+ inner join isbsgorig.y71orgtypcnt2
+on  isbsgorig.y74orgtypcmp.orgtyp = 
+ isbsgorig.y71orgtypcnt2.progra;
+select * from isbsgorig.y75joint4t1;
+#
+# borrar columna progra de tabla y75jointt4t1
+# mostrar tabla 
+#
+alter table isbsgorig.y75joint4t1
+drop column progra;
+select * from isbsgorig.y75joint4t1;
+#
+# duplicar tabla y75jointt4t1. Copias
+# y76orgtypcnt, y77orgtypconteo
+#
+create table isbsgorig.y76orgtypcnt
+select * from isbsgorig.y75joint4t1;
+create table isbsgorig.y77orgtypconteo
+select * from isbsgorig.y75joint4t1;
+#
+# borrar columna orgtyp de tabla y77orgtypconteo
+# solo permanecen los valores de frecuencia correspondientes
+# a cada valor de orgtyp
+#
+alter table isbsgorig.y77orgtypconteo
+drop column orgtyp;
+#
+# la tabla y76orgtypcnt contiene el conteo de frecuencias
+# de cada valor orgtyp. La tabla es base para armar la
+# tabla de valores completos yisbsg500fmla cual servira
+# para extraer la muestra de entrenamiento de 400 proyectos
+# y la muestra de prueba de 100 proyectos
+select * from isbsgorig.y76orgtypcnt;
+#
+# la tabla y77orgtypconteo solo contiene el conteo de frecuencias
+# de cada valor orgtyp
+select * from isbsgorig.y77orgtypconteo;
+
