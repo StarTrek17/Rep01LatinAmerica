@@ -1,0 +1,117 @@
+# vista de la muestra de 500 proyectos en tabla yisbsg500
+select * from isbsgorig.yisbsg500;
+#
+# crear tabla para la columna manejador de base de datos primario dbms1 y120Dbms
+# e incluir columna dbms1 a partir de yisbsg500
+create table isbsgorig.y120dbms
+select dbms1 from isbsgorig.yisbsg500;
+#
+# vista de la nueva tabla y120dbms
+select * from isbsgorig.y120dbms;
+#
+#hacer conteo de ocurrencias por dbms1 en tabla y120dbms
+#agrupando por dbms1 y ordenando por valor conteo descendente
+#
+create table isbsgorig.y121dbmscnt
+select dbms1, count(*) from isbsgorig.y120dbms
+group by dbms1
+order by 2 desc;
+#
+# vista de la nueva tabla y121dbmscnt
+#
+select * from isbsgorig.y121dbmscnt
+# el primer valor de 341 es el valor de la frecuencia
+# máxima de repetición para el valor dbms1 = "" y
+# el segundo valor máximo 30 corresponde al valor DB2 = 30
+#
+# crear tabla y122dbmsmax con el valor de la máxima ocurrencia
+# en tabla de conteos de frecuencia y121dbmscnt cuando dbms1 = “Java”
+# mostrar vista del valor DB2 = 30
+#
+create table isbsgorig.y122dbmsmax
+select * from isbsgorig.y121dbmscnt
+where dbms1 = “DB2”;
+
+select * from isbsgorig.y122dbmsmax;
+#
+# crear tabla duplicado de y120dbms,
+# y124dbmscmp que servirá para remplazar
+# los valores de espacio de dbms1 por el valor 
+#  de su frecuencia de conteo 63
+#
+create table isbsgorig.y124dbmscmp
+select * from isbsgorig.y120dbms;
+select * from isbsgorig.y124dbmscmp;
+#
+# actualizar los valores espacio en tabla y124dbmscmp
+# remplazarlos por su valor correspondiente dbms1
+# de frecuencia máxima en y122dbmsmax
+# mostrar tabla y124dbmscmp sin valores vacíos
+#
+update isbsgorig.y124dbmscmp, isbsgorig.y122dbmsmax
+set y124dbmscmp.dbms1 = y122dbmsmax.dbms1
+where y124dbmscmp.dbms1 = "";
+select * from isbsgorig.y124dbmscmp;
+#
+# hacer nuevo conteo de frecuencias de dbms1 en la
+# tabla de valores no espacio de y124dbmscmp
+#
+create table isbsgorig.y121dbmscnt2
+select dbms1, count(*) from isbsgorig.y124dbmscmp
+group by dbms1
+order by 2 desc;
+
+select * from isbsgorig.y121dbmscnt2;
+#
+# alterar tabla y121dbmscnt2 para cambiar el nombre
+# de la columna dbms1 por progra. Mostrar tabla 
+#
+alter table isbsgorig.y121dbmscnt2
+change column dbms1 progra text;
+select * from isbsgorig.y121dbmscnt2;
+#
+# crear un join interno y125jointt4t1 entre las tablas
+# y124dbmscmp y y121dbmscnt2 por la igualdad de columnas
+# dbms1 = progra. Mostrar tabla y125jointt4t1
+#
+create table isbsgorig.y125joint4t1
+ select *
+ from isbsgorig.y124dbmscmp 
+ inner join isbsgorig.y121dbmscnt2
+on  isbsgorig.y124dbmscmp.dbms1 = 
+ isbsgorig.y121dbmscnt2.progra;
+select * from isbsgorig.y125joint4t1;
+#
+# borrar columna progra de tabla y125jointt4t1
+# mostrar tabla 
+#
+alter table isbsgorig.y125joint4t1
+drop column progra;
+select * from isbsgorig.y125joint4t1;
+#
+# duplicar tabla y125jointt4t1. Copias
+# y126dbmscnt, y127dbmsconteo
+#
+create table isbsgorig.y126dbmscnt
+select * from isbsgorig.y125joint4t1;
+create table isbsgorig.y127dbmsconteo
+select * from isbsgorig.y125joint4t1;
+#
+# borrar columna dbms1 de tabla y127dbmsconteo
+# solo permanecen los valores de frecuencia correspondientes
+# a cada valor de dbms1
+#
+alter table isbsgorig.y127dbmsconteo
+drop column dbms1;
+#
+# la tabla y126dbmscnt contiene el conteo de frecuencias
+# de cada valor dbms1. La tabla es base para armar la
+# tabla de valores completos yisbsg500fmla cual servira
+# para extraer la muestra de entrenamiento de 400 proyectos
+# y la muestra de prueba de 100 proyectos
+select * from isbsgorig.y126dbmscnt;
+#
+# la tabla y127dbmsconteo solo contiene el conteo de frecuencias
+# de cada valor dbms1
+select * from isbsgorig.y127dbmsconteo;
+
