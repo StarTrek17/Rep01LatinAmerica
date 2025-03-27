@@ -1,0 +1,116 @@
+# vista de la muestra de 500 proyectos en tabla yisbsg500
+select * from isbsgorig.yisbsg500;
+#
+# crear tabla para la columna application Type y90Dvlplt
+# e incluir columna dvlplt a partir de yisbsg500
+create table isbsgorig.y90dvlplt
+select dvlplt from isbsgorig.yisbsg500;
+#
+# vista de la nueva tabla y90dvlplt
+select * from isbsgorig.y90dvlplt;
+#
+#hacer conteo de ocurrencias por dvlplt en tabla y90dvlplt
+#agrupando por dvlplt y ordenando por valor conteo descendente
+#
+create table isbsgorig.y91dvlpltcnt
+select dvlplt, count(*) from isbsgorig.y90dvlplt
+group by dvlplt
+order by 2 desc;
+#
+# vista de la nueva tabla y91dvlpltcnt
+#
+select * from isbsgorig.y91dvlpltcnt
+# el primer valor de 128 es el valor de la frecuencia
+# máxima de repetición para el valor dvlplt = "Telecommunications" y
+# el segundo valor máximo 94 corresponde al valor espacios
+#
+# crear tabla y92dvlpltmax con el valor de la máxima ocurrencia
+# en tabla de conteos de frecuencia y91dvlpltcnt y
+# mostrar vista del valor Communcation = 177
+#
+create table isbsgorig.y92dvlpltmax
+select * from isbsgorig.y91dvlpltcnt
+limit 1;
+select * from isbsgorig.y92dvlpltmax;
+#
+# crear tabla duplicado de y90dvlplt,
+# y94dvlpltcmp que servira para remplazar
+# los valores de espacio de dvlplt por el valor 
+#  de su frecuencia de conteo 93
+#
+create table isbsgorig.y94dvlpltcmp
+select * from isbsgorig.y90dvlplt;
+select * from isbsgorig.y94dvlpltcmp;
+#
+# actualizar los valores espacio en tabla y94dvlpltcmp
+# remplazarlos por su valor correspondiente dvlplt 
+# de frecuencia máxima en y92dvlpltmax
+# mostrar tabla y94dvlpltcmp sin valores vacíos
+#
+update isbsgorig.y94dvlpltcmp, isbsgorig.y92dvlpltmax
+set y94dvlpltcmp.dvlplt = y92dvlpltmax.dvlplt
+where y94dvlpltcmp.dvlplt = "";
+select * from isbsgorig.y94dvlpltcmp;
+#
+# hacer nuevo conteo de frecuencias de dvlplt en la
+# tabla de valores no espacio de y94dvlpltcmp
+#
+create table isbsgorig.y91dvlpltcnt2
+select dvlplt, count(*) from isbsgorig.y94dvlpltcmp
+group by dvlplt
+order by 2 desc;
+
+select * from isbsgorig.y91dvlpltcnt2;
+#
+# alterar tabla y91dvlpltcnt2 para cambiar el nombre
+# de la columna dvlplt por progra. Mostrar tabla 
+#
+alter table isbsgorig.y91dvlpltcnt2
+change column dvlplt progra text;
+select * from isbsgorig.y91dvlpltcnt2;
+#
+# crear un join interno y95jointt4t1 entre las tablas
+# y94dvlpltcmp y y91dvlpltcnt2 por la igualdad de columnas
+# dvlplt = progra. Mostrar tabla y95jointt4t1
+#
+create table isbsgorig.y95joint4t1
+ select *
+ from isbsgorig.y94dvlpltcmp 
+ inner join isbsgorig.y91dvlpltcnt2
+on  isbsgorig.y94dvlpltcmp.dvlplt = 
+ isbsgorig.y91dvlpltcnt2.progra;
+select * from isbsgorig.y95joint4t1;
+#
+# borrar columna progra de tabla y95jointt4t1
+# mostrar tabla 
+#
+alter table isbsgorig.y95joint4t1
+drop column progra;
+select * from isbsgorig.y95joint4t1;
+#
+# duplicar tabla y95jointt4t1. Copias
+# y96dvlpltcnt, y97dvlpltconteo
+#
+create table isbsgorig.y96dvlpltcnt
+select * from isbsgorig.y95joint4t1;
+create table isbsgorig.y97dvlpltconteo
+select * from isbsgorig.y95joint4t1;
+#
+# borrar columna dvlplt de tabla y97dvlpltconteo
+# solo permanecen los valores de frecuencia correspondientes
+# a cada valor de dvlplt
+#
+alter table isbsgorig.y97dvlpltconteo
+drop column dvlplt;
+#
+# la tabla y96dvlpltcnt contiene el conteo de frecuencias
+# de cada valor dvlplt. La tabla es base para armar la
+# tabla de valores completos yisbsg500fmla cual servira
+# para extraer la muestra de entrenamiento de 400 proyectos
+# y la muestra de prueba de 100 proyectos
+select * from isbsgorig.y96dvlpltcnt;
+#
+# la tabla y97dvlpltconteo solo contiene el conteo de frecuencias
+# de cada valor dvlplt
+select * from isbsgorig.y97dvlpltconteo;
+
