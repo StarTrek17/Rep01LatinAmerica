@@ -1,0 +1,116 @@
+# vista de la muestra de 500 proyectos en tabla yisbsg500
+select * from isbsgorig.yisbsg500;
+#
+# crear tabla para la columna programming language type y100Lngtyp
+# e incluir columna lngtyp a partir de yisbsg500
+create table isbsgorig.y100lngtyp
+select lngtyp from isbsgorig.yisbsg500;
+#
+# vista de la nueva tabla y100lngtyp
+select * from isbsgorig.y100lngtyp;
+#
+#hacer conteo de ocurrencias por lngtyp en tabla y100lngtyp
+#agrupando por lngtyp y ordenando por valor conteo descendente
+#
+create table isbsgorig.y101lngtypcnt
+select lngtyp, count(*) from isbsgorig.y100lngtyp
+group by lngtyp
+order by 2 desc;
+#
+# vista de la nueva tabla y101lngtypcnt
+#
+select * from isbsgorig.y101lngtypcnt
+# el primer valor de 242 es el valor de la frecuencia
+# máxima de repetición para el valor lngtyp = "3GL" y
+# el segundo valor máximo 147 corresponde al valor espacios
+#
+# crear tabla y102lngtypmax con el valor de la máxima ocurrencia
+# en tabla de conteos de frecuencia y101lngtypcnt y
+# mostrar vista del valor 3GL = 242
+#
+create table isbsgorig.y102lngtypmax
+select * from isbsgorig.y101lngtypcnt
+limit 1;
+select * from isbsgorig.y102lngtypmax;
+#
+# crear tabla duplicado de y100lngtyp,
+# y104lngtypcmp que servirá para remplazar
+# los valores de espacio de lngtyp por el valor 
+#  de su frecuencia de conteo 93
+#
+create table isbsgorig.y104lngtypcmp
+select * from isbsgorig.y100lngtyp;
+select * from isbsgorig.y104lngtypcmp;
+#
+# actualizar los valores espacio en tabla y104lngtypcmp
+# remplazarlos por su valor correspondiente lngtyp 
+# de frecuencia máxima en y102lngtypmax
+# mostrar tabla y104lngtypcmp sin valores vacíos
+#
+update isbsgorig.y104lngtypcmp, isbsgorig.y102lngtypmax
+set y104lngtypcmp.lngtyp = y102lngtypmax.lngtyp
+where y104lngtypcmp.lngtyp = "";
+select * from isbsgorig.y104lngtypcmp;
+#
+# hacer nuevo conteo de frecuencias de lngtyp en la
+# tabla de valores no espacio de y104lngtypcmp
+#
+create table isbsgorig.y101lngtypcnt2
+select lngtyp, count(*) from isbsgorig.y104lngtypcmp
+group by lngtyp
+order by 2 desc;
+
+select * from isbsgorig.y101lngtypcnt2;
+#
+# alterar tabla y101lngtypcnt2 para cambiar el nombre
+# de la columna lngtyp por progra. Mostrar tabla 
+#
+alter table isbsgorig.y101lngtypcnt2
+change column lngtyp progra text;
+select * from isbsgorig.y101lngtypcnt2;
+#
+# crear un join interno y105jointt4t1 entre las tablas
+# y104lngtypcmp y y101lngtypcnt2 por la igualdad de columnas
+# lngtyp = progra. Mostrar tabla y105jointt4t1
+#
+create table isbsgorig.y105joint4t1
+ select *
+ from isbsgorig.y104lngtypcmp 
+ inner join isbsgorig.y101lngtypcnt2
+on  isbsgorig.y104lngtypcmp.lngtyp = 
+ isbsgorig.y101lngtypcnt2.progra;
+select * from isbsgorig.y105joint4t1;
+#
+# borrar columna progra de tabla y105jointt4t1
+# mostrar tabla 
+#
+alter table isbsgorig.y105joint4t1
+drop column progra;
+select * from isbsgorig.y105joint4t1;
+#
+# duplicar tabla y105jointt4t1. Copias
+# y106lngtypcnt, y107lngtypconteo
+#
+create table isbsgorig.y106lngtypcnt
+select * from isbsgorig.y105joint4t1;
+create table isbsgorig.y107lngtypconteo
+select * from isbsgorig.y105joint4t1;
+#
+# borrar columna lngtyp de tabla y107lngtypconteo
+# solo permanecen los valores de frecuencia correspondientes
+# a cada valor de lngtyp
+#
+alter table isbsgorig.y107lngtypconteo
+drop column lngtyp;
+#
+# la tabla y106lngtypcnt contiene el conteo de frecuencias
+# de cada valor lngtyp. La tabla es base para armar la
+# tabla de valores completos yisbsg500fmla cual servira
+# para extraer la muestra de entrenamiento de 400 proyectos
+# y la muestra de prueba de 100 proyectos
+select * from isbsgorig.y106lngtypcnt;
+#
+# la tabla y107lngtypconteo solo contiene el conteo de frecuencias
+# de cada valor lngtyp
+select * from isbsgorig.y107lngtypconteo;
+
