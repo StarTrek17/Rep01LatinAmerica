@@ -1,0 +1,29 @@
+# vista de la muestra de 500 proyectos en tabla yisbsg500
+select * from isbsgorig.yisbsg500;
+#
+# crear tabla para la columna maximum team size maxteasze y140Maxteasze
+# e incluir columna maxteasze a partir de yisbsg500
+create table isbsgorig.y140maxteasze
+select maxteasze from isbsgorig.yisbsg500;
+#
+# vista de la nueva tabla y140maxteasze
+select * from isbsgorig.y140maxteasze;
+#
+select * from isbsgorig.y142maxteaszemax;
+#
+# crear tabla duplicado de y140maxteasze,
+# y144maxteaszecmp que servirá para remplazar
+# los valores -1 de maxteasze por el valor 
+#  común de 9
+#
+create table isbsgorig.y144maxteaszecmp
+select * from isbsgorig.y140maxteasze;
+select * from isbsgorig.y144maxteaszecmp;
+#
+# actualizar los valores -1 en tabla y144maxteaszecmp
+# remplazarlos por su valor correspondiente maxteasze = 9
+# mostrar tabla y144maxteaszecmp sin valores vacíos
+#
+update isbsgorig.y144maxteaszecmp
+set y144maxteaszecmp.maxteasze = 9
+where y144maxteaszecmp.maxteasze = -1;
