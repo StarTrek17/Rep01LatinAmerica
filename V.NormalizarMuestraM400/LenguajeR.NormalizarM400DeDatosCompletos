@@ -1,0 +1,3 @@
+la muestra aleatoria M400 contiene los datos completos en todas sus variables como producto del remplazo de sus 
+datos faltantes por los métodos MODA e ISPI. Usando lenguaje R, se normalizan los valores de M400 para realizar la
+experimentación-
