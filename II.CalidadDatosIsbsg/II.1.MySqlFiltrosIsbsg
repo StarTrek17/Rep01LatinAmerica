@@ -1,2 +1,22 @@
 filtros de datos 1-4 en MySql
+II.1.MySqlFiltrosIsbsg
+# Base de datos isbsg. Muestra original isbsg1 9592 registros
+# Base de datos MySql:  isbsgorig
+  select * from isbsgorig.isbsg1;
+# Filtro 1: Data Quality Rating DtaQltRtn en (“A”, “B”)
+  SELECT * FROM isbsgorig.isbsg1
+   where DatQltRtn in ("A", "B");
+# 8619 registros
+# crear tabla isbsgorig.isbsg1qltab
+ create table isbsgorig.isbsg1f1qltab like isbsgorig.isbsg1;
+# insertar registros en isbsg1f1qltab desde isbsg1
+# donde datqltrtn en (“A”, “B”)
+ insert into isbsgorig.isbsg1f1qltab SELECT * FROM isbsgorig.isbsg1
+ where DatQltRtn in ("A", "B");
+# Mostrar tabla isbsg1f1qltab
+  SELECT * FROM sbsgorig.isbsg1qltab;
+# 8619 registros
+
+
+
 
