@@ -60,8 +60,10 @@ SELECT * FROM isbsgorig. isbsg1f3couapp
 # Mostrar tabla isbsg1f4rsclvl
   SELECT * FROM isbsgorig.isbsg1f4rsclvl;
 # 4595 registros
+# Crear copia de isbsgorig.isbsg1f4rsclvl como isbsgorig.isbsg1f5
+create table isbsgorig.isbsg1f5
+SELECT * FROM isbsgorig.isbsg1f4rsclvl;
 #
-
 
 
 
