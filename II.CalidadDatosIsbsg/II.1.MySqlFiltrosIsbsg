@@ -40,12 +40,26 @@ group by couapp;
  create table isbsgorig.isbsg1f3couapp like isbsgorig.isbsg1f2ufprtn;
 # insertar registros en isbsg1f3couapp desde isbsg1f2upfrtn
  # donde couapp like (“%IFPUG 4+%”)
- insert into isbsgorig.isbsg13couapp  SELECT * FROM isbsgorig.isbsg1f2upfrtn
+ insert into isbsgorig.isbsg1f3couapp  SELECT * FROM isbsgorig.isbsg1f2upfrtn
  where couapp like (%IFPUG 4+%);
 # Mostrar tabla isbsg1f3couapp
   SELECT * FROM isbsgorig.isbsg1f3couapp;
-
 # 5422 registros
+#
+
+Filtro 4:  = Normalised Level 1 Work Effort = 1
+SELECT * FROM isbsgorig. isbsg1f3couapp
+   where rsclvl = 1;
+# 4595 registros
+# crear tabla isbsgorig.isbsg1f4rsclvl
+ create table isbsgorig.isbsg1f4rsclvl like isbsgorig.isbsg1f3couapp;
+# insertar registros en isbsg1f4rsclvl desde isbsg1f3couapp
+ # donde rsclvl = 1
+ insert into isbsgorig.isbsg1f4rsclvl  SELECT * FROM isbsgorig.isbsg1f3couapp
+ where rsclvl = 1;
+# Mostrar tabla isbsg1f4rsclvl
+  SELECT * FROM isbsgorig.isbsg1f4rsclvl;
+# 4595 registros
 #
 
 
