@@ -3,7 +3,7 @@ II.1.MySqlFiltrosIsbsg
 # Base de datos isbsg. Muestra original isbsg1 9592 registros
 # Base de datos MySql:  isbsgorig
   select * from isbsgorig.isbsg1;
-# Filtro 1: Data Quality Rating DtaQltRtn en (“A”, “B”)
+### Filtro 1: Data Quality Rating DtaQltRtn en (“A”, “B”)
   SELECT * FROM isbsgorig.isbsg1
    where DatQltRtn in ("A", "B");
 # 8619 registros
@@ -17,7 +17,7 @@ II.1.MySqlFiltrosIsbsg
   SELECT * FROM isbsgorig.isbsg1qltab;
 # 8619 registros
 #
-## Filtro 2: Unadjusted Function Point Rating ufprtn en (“A”, “B”)
+### Filtro 2: Unadjusted Function Point Rating ufprtn en (“A”, “B”)
 SELECT * FROM isbsgorig.isbsg1qltab
    where ufprtn in ("A", "B");
 # 7268 registros
@@ -31,7 +31,7 @@ SELECT * FROM isbsgorig.isbsg1qltab
   SELECT * FROM isbsgorig.isbsg1f2ufprtn;
 # 7268 registros
 #
-# Filtro 3: Count Approach CouApp = ("IFPUG 4+")
+### Filtro 3: Count Approach CouApp = ("IFPUG 4+")
 SELECT * FROM isbsgorig. isbsg1f2ufprtn
    where CouApp like "%IFPUG 4+%"
 group by couapp;
@@ -47,7 +47,7 @@ group by couapp;
 # 5422 registros
 #
 
-Filtro 4:  = Normalised Level 1 Work Effort = 1
+### Filtro 4:  = Normalised Level 1 Work Effort = 1
 SELECT * FROM isbsgorig. isbsg1f3couapp
    where rsclvl = 1;
 # 4595 registros
