@@ -14,8 +14,23 @@ II.1.MySqlFiltrosIsbsg
  insert into isbsgorig.isbsg1f1qltab SELECT * FROM isbsgorig.isbsg1
  where DatQltRtn in ("A", "B");
 # Mostrar tabla isbsg1f1qltab
-  SELECT * FROM sbsgorig.isbsg1qltab;
+  SELECT * FROM isbsgorig.isbsg1qltab;
 # 8619 registros
+#
+## Filtro 2: Unadjusted Function Point Rating ufprtn en (“A”, “B”)
+SELECT * FROM isbsgorig.isbsg1qltab
+   where ufprtn in ("A", "B");
+# 7268 registros
+# crear tabla isbsgorig.isbsg1f2ufprtn
+ create table isbsgorig.isbsg1f2ufprtn like isbsgorig.isbsg1f1qltab;
+# insertar registros en isbsg1f2ufprtn desde isbsg1f1qltab
+ # donde ufprtn en (“A”, “B”)
+ insert into isbsgorig.isbsg1f2ufprtn  SELECT * FROM isbsgorig.isbsg1f1qltab
+ where ufprtn in ("A", "B");
+# Mostrar tabla isbsg1f2ufprtn
+  SELECT * FROM isbsgorig.isbsg1f2ufprtn;
+# 7268 registros
+#
 
 
 
