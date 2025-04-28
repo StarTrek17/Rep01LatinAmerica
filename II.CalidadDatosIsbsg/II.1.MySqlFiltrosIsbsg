@@ -31,6 +31,22 @@ SELECT * FROM isbsgorig.isbsg1qltab
   SELECT * FROM isbsgorig.isbsg1f2ufprtn;
 # 7268 registros
 #
+# Filtro 3: Count Approach CouApp = ("IFPUG 4+")
+SELECT * FROM isbsgorig. isbsg1f2ufprtn
+   where CouApp like "%IFPUG 4+%"
+group by couapp;
+# 5422 registros
+# crear tabla isbsgorig.isbsg1f3couapp
+ create table isbsgorig.isbsg1f3couapp like isbsgorig.isbsg1f2ufprtn;
+# insertar registros en isbsg1f3couapp desde isbsg1f2upfrtn
+ # donde couapp like (“%IFPUG 4+%”)
+ insert into isbsgorig.isbsg13couapp  SELECT * FROM isbsgorig.isbsg1f2upfrtn
+ where couapp like (%IFPUG 4+%);
+# Mostrar tabla isbsg1f3couapp
+  SELECT * FROM isbsgorig.isbsg1f3couapp;
+
+# 5422 registros
+#
 
 
 
