@@ -1,0 +1,13 @@
+#
+# crear tabla gitisb.gitisbmove para incluir las variables de estudio
+# a partir de gitisb.gitisbmo
+create table gitisb.gitisbmove
+select pryid, indsct, orgtyp, apptyp, dvltyp, dvlplt, lngtyp, prglng1, fncsze,
+nwell1, smmwrkeff, maxteasze, dbms1, dvlmtd, loc, 
+ from gitisb.gitisbmo;
+#
+# mostrar tabla gitisb.gitisbmove
+#
+Select * from gitisb.gitisbmove;
+
+#
