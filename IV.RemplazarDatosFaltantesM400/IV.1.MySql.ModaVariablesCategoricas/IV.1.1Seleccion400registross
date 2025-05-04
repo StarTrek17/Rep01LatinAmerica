@@ -1,1 +1,16 @@
 
+# crear base de datos isbgit
+Create database gitisb;
+#
+# importar tabla C:\Users\Marco\OneDrive\Smstr15\S15ArtUno\S15A1IeeeLatin
+# \Envio250510\GitHubCode isbsgmo
+# copia primeros 400 registros de la tabla isbsgmo
+# en nueva tabla gitisbmo;
+#
+create table gitisb.gitisbmo
+select * from gitisb.isbsgmo
+limit 400;
+#
+# vista de la muestra de 400 proyectos en tabla gitisbmo
+select * from gitisb.gitisbmo;
+#
