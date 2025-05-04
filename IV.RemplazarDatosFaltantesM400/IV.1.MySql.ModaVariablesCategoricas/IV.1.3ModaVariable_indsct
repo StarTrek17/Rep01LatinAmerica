@@ -1,0 +1,8 @@
+#
+# crear tabla para la columna Industry Section gitisb.git10indsct
+# e incluir columna indsct a partir de gitisb.gitisbmove
+create table gitisb.git10indsct
+select pryid as pryidind, indsct from gitisb.gitisbmove;
+#
+# vista de la nueva tabla git10indsct
+select * from gitisb.git10indsct;
