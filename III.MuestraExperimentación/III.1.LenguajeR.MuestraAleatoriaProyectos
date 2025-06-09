@@ -1,2 +1,212 @@
-en lenguaje R, se realiza muestra aleatoria de 400 proyectos ISBSG M400
+
+	
+
+R version 4.2.2 (2022-10-31 ucrt) -- "Innocent and Trusting"
+Copyright (C) 2022 The R Foundation for Statistical Computing
+Platform: x86_64-w64-mingw32/x64 (64-bit)
+
+R es un software libre y viene sin GARANTIA ALGUNA.
+Usted puede redistribuirlo bajo ciertas circunstancias.
+Escriba 'license()' o 'licence()' para detalles de distribucion.
+
+R es un proyecto colaborativo con muchos contribuyentes.
+Escriba 'contributors()' para obtener más información y
+'citation()' para saber cómo citar R o paquetes de R en publicaciones.
+
+Escriba 'demo()' para demostraciones, 'help()' para el sistema on-line de ayuda,
+o 'help.start()' para abrir el sistema de ayuda HTML con su navegador.
+Escriba 'q()' para salir de R.
+
+java.home option: 
+JAVA_HOME environment variable: C:\Program Files\Java\jdk1.8.0_181
+[Workspace loaded from ~/.RData]
+
+> library(dplyr)
+
+Attaching package: ‘dplyr’
+
+The following objects are masked from ‘package:stats’:
+
+    filter, lag
+
+The following objects are masked from ‘package:base’:
+
+    intersect, setdiff, setequal, union
+
+Warning message:
+In fun(libname, pkgname) :
+  Java home setting is INVALID, it will be ignored.
+Please do NOT set it unless you want to override system settings.
+> install.packages("sampling")
+WARNING: Rtools is required to build R packages but is not currently installed. Please download and install the appropriate version of Rtools before proceeding:
+
+https://cran.rstudio.com/bin/windows/Rtools/
+Installing package into ‘C:/Users/Marco/AppData/Local/R/win-library/4.2’
+(as ‘lib’ is unspecified)
+also installing the dependency ‘lpSolve’
+
+
+  There is a binary version available but the source version is later:
+        binary source needs_compilation
+lpSolve 5.6.20 5.6.23              TRUE
+
+  Binaries will be installed
+probando la URL 'https://cran.rstudio.com/bin/windows/contrib/4.2/lpSolve_5.6.20.zip'
+Content type 'application/zip' length 360822 bytes (352 KB)
+downloaded 352 KB
+
+probando la URL 'https://cran.rstudio.com/bin/windows/contrib/4.2/sampling_2.10.zip'
+Content type 'application/zip' length 834379 bytes (814 KB)
+downloaded 814 KB
+
+package ‘lpSolve’ successfully unpacked and MD5 sums checked
+package ‘sampling’ successfully unpacked and MD5 sums checked
+
+The downloaded binary packages are in
+	C:\Users\Marco\AppData\Local\Temp\RtmpmIrb5W\downloaded_packages
+
+2025/04/30 20:00
+
+> library(dtplyr)
+
+Warning message:
+In fun(libname, pkgname) :
+  Java home setting is INVALID, it will be ignored.
+Please do NOT set it unless you want to override system settings.
+
+## dtplyr proporciona un backend data.table para dplyr. El objetivo de dtplyr es 
+## permitirle escribir código dplyr que se traduce automáticamente al código
+## data.table equivalente, aunque generalmente mucho más rápido.
+
+> library(sampling)
+
+Warning message:
+package ‘sampling’ was built under R version 4.2.3
+
+
+## En R, la función library("sampling") se utiliza para cargar la librería o paquete sampling,
+## que proporciona herramientas para realizar muestreo estadístico, como muestreo 
+## aleatorio simple, muestreo estratificado y muestreo por conglomerados. 
+
+>library(readr)
+
+
+> Isbsg1F5 <- read_csv("C:/Users/Marco/OneDrive/Smstr15/S15ArtUno/S15A1IeeeLatin/
+Envio250510/GitHubCode/isbsg1f5.txt")
+Rows: 4595 Columns: 21                                                                               
+── Column specification ──────────────────────────────────────────
+Delimiter: ","
+chr (12): DatQltRtn, UfpRtn, CouApp, IndSct, OrgTyp, AppTyp, D...
+dbl  (9): PryId, RscLvl, FncSze, NWELL1, SmmWrkEff, PrjElpTme,...
+
+ℹ Use `spec()` to retrieve the full column specification for this data.
+ℹ Specify the column types or set `show_col_types = FALSE` to quiet this message.
+
+> View(Isbsg1F5)
+> Isbsg1F5
+
+# A tibble: 4,595 × 21
+   PryId DatQl…¹ UfpRtn CouApp RscLvl IndSct OrgTyp AppTyp DvlTyp DvlPlt LngTyp PrgLng1 FncSze
+   <dbl> <chr>   <chr>  <chr>   <dbl> <chr>  <chr>  <chr>  <chr>  <chr>  <chr>  <chr>    <dbl>
+ 1 10003 B       B      IFPUG…      1 Commu… Telec… Onlin… Enhan… Multi  NA     NA          67
+ 2 10007 B       B      IFPUG…      1 Commu… Telec… Custo… Enhan… NA     3GL    Java        51
+ 3 10011 B       A      IFPUG…      1 Const… Const… Stock… New D… Multi  4GL    Access     443
+ 4 10012 B       A      IFPUG…      1 Whole… Billi… Billi… Enhan… NA     3GL    COBOL       76
+ 5 10014 B       A      IFPUG…      1 NA     NA     NA     Enhan… NA     NA     NA           3
+ 6 10019 B       B      IFPUG…      1 Commu… Telec… Data … Enhan… Multi  3GL    Shell       98
+ 7 10026 B       A      IFPUG…      1 Insur… Insur… Sales… New D… MF     3GL    Java       620
+ 8 10028 B       B      IFPUG…      1 Commu… Telec… Custo… Enhan… Multi  4GL    Siebel     138
+ 9 10033 B       B      IFPUG…      1 Medic… Medic… not r… Enhan… NA     NA     NA         162
+10 10046 B       B      IFPUG…      1 Commu… Telec… Custo… Enhan… Multi  3GL    Java        63
+# … with 4,585 more rows, 8 more variables: NWELL1 <dbl>, SmmWrkEff <dbl>, PrjElpTme <dbl>,
+#   MaxTeaSze <dbl>, DBMS1 <chr>, DvlMtd <chr>, LOC <dbl>, TtlPrjCst <dbl>, and abbreviated
+#   variable name ¹DatQltRtn
+# ℹ Use `print(n = ...)` to see more rows, and `colnames()` to see all variable names
+
+
+> muestra_aleatoria = slice_sample(.data=Isbsg1F5, n=500)
+> muestra_aleatoria
+
+
+
+# A tibble: 500 × 21
+   PryId DatQltRtn UfpRtn CouApp   RscLvl IndSct     OrgTyp AppTyp
+   <dbl> <chr>     <chr>  <chr>     <dbl> <chr>      <chr>  <chr> 
+ 1 24210 B         B      IFPUG 4+      1 Insurance  Insur… Unkno…
+ 2 15149 B         B      IFPUG 4+      1 Communica… Telec… Custo…
+ 3 15724 B         B      IFPUG 4+      1 Communica… Telec… Onlin…
+ 4 22342 B         B      IFPUG 4+      1 Communica… Telec… Onlin…
+ 5 32316 A         A      IFPUG 4+      1 Communica… Commu… Manag…
+ 6 11714 B         A      IFPUG 4+      1 Banking    Banki… Trans…
+ 7 17279 B         A      IFPUG 4+      1 Communica… Telec… Other…
+ 8 25158 B         B      IFPUG 4+      1 Communica… Telec… Other…
+ 9 29277 B         A      IFPUG 4+      1 Manufactu… Chemi… Finan…
+10 18735 B         B      IFPUG 4+      1 Communica… Telec… Custo…
+# ℹ 490 more rows
+# ℹ 13 more variables: DvlTyp <chr>, DvlPlt <chr>, LngTyp <chr>,
+#   PrgLng1 <chr>, FncSze <dbl>, NWELL1 <dbl>, SmmWrkEff <dbl>,
+#   PrjElpTme <dbl>, MaxTeaSze <dbl>, DBMS1 <chr>, DvlMtd <chr>,
+#   LOC <dbl>, TtlPrjCst <dbl>
+# ℹ Use `print(n = ...)` to see more rows
+
+
+> 
+
+> muestra_ordenada<-muestra_aleatoria[order(muestra_aleatoria$PryId), ]
+> muestra_ordenada
+
+# A tibble: 500 × 21
+   PryId DatQltRtn UfpRtn CouApp   RscLvl IndSct     OrgTyp AppTyp
+   <dbl> <chr>     <chr>  <chr>     <dbl> <chr>      <chr>  <chr> 
+ 1 10003 B         B      IFPUG 4+      1 Communica… Telec… Onlin…
+ 2 10019 B         B      IFPUG 4+      1 Communica… Telec… Data …
+ 3 10104 B         A      IFPUG 4+      1 NA         NA     NA    
+ 4 10267 B         A      IFPUG 4+      1 Communica… Telec… Custo…
+ 5 10388 A         A      IFPUG 4+      1 Service I… Citiz… Stock…
+ 6 10496 B         B      IFPUG 4+      1 Medical &… Medic… not r…
+ 7 10566 B         A      IFPUG 4+      1 Service I… Recre… Finan…
+ 8 10621 B         A      IFPUG 4+      1 Banking    Banki… Finan…
+ 9 10632 B         B      IFPUG 4+      1 Communica… Telec… Custo…
+10 10649 B         A      IFPUG 4+      1 NA         NA     NA    
+# ℹ 490 more rows
+# ℹ 13 more variables: DvlTyp <chr>, DvlPlt <chr>, LngTyp <chr>,
+#   PrgLng1 <chr>, FncSze <dbl>, NWELL1 <dbl>, SmmWrkEff <dbl>,
+#   PrjElpTme <dbl>, MaxTeaSze <dbl>, DBMS1 <chr>, DvlMtd <chr>,
+#   LOC <dbl>, TtlPrjCst <dbl>
+# ℹ Use `print(n = ...)` to see more rows
+
+
+> 
+> install.packages("openxlsx")
+WARNING: Rtools is required to build R packages but is not currently installed. Please download and install the appropriate version of Rtools before proceeding:
+
+https://cran.rstudio.com/bin/windows/Rtools/
+Installing package into ‘C:/Users/Marco/AppData/Local/R/win-library/4.2’
+(as ‘lib’ is unspecified)
+
+  There is a binary version available but the source version is later:
+          binary source needs_compilation
+openxlsx 4.2.5.2  4.2.8              TRUE
+
+  Binaries will be installed
+probando la URL 'https://cran.rstudio.com/bin/windows/contrib/4.2/openxlsx_4.2.5.2.zip'
+Content type 'application/zip' length 2342935 bytes (2.2 MB)
+downloaded 2.2 MB
+
+package ‘openxlsx’ successfully unpacked and MD5 sums checked
+
+The downloaded binary packages are in
+	C:\Users\Marco\AppData\Local\Temp\RtmpW2YuST\downloaded_packages
+> library(openxlsx)
+Warning message:
+package ‘openxlsx’ was built under R version 4.2.3 
+> openxlsx::write.xlsx(muestra_ordenada, 
+("C:/Users/Marco/OneDrive/Smstr15/S15ArtUno/S15A1IeeeLatin/Envio250510/Githubcode/Isbsgmo.xlsx")
+
+
+
+
+
+
+
 
