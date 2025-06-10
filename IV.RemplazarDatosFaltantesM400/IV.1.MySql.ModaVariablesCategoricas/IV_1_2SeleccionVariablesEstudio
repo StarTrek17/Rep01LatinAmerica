@@ -10,4 +10,4 @@ nwell1, smmwrkeff, maxteasze, dbms1, dvlmtd, loc,
 #
 Select * from gitisb.gitisbmove;
 
-#
+#LAS COLUMNAS maxteasze y loc tienen valor -1 para señalar un valor cero en la columna
