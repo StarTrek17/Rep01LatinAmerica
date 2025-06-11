@@ -1,0 +1,108 @@
+#
+#	1.	crear tabla  gitisb.git50lngtyp para incluir la columna language type     
+#		lngtyp a partir de la tabla gitisb.gitisbmove
+	create table gitisb.git50lngtyp
+	select pryid as pryidlngtyp, lngtyp from gitisb.gitisbmove;
+# 		vista de la nueva tabla git50lngtyp
+	select * from gitisb.git50lngtyp;
+#	2.	hacer conteo de ocurrencias por lngtyp en tabla git50lngtyp
+#		agrupando por lngtyp y ordenando por valor conteo descendente.
+#		Crear nueva tabla gitisb.git50lngtypcnt para incluir conteo
+	create table gitisb.git50lngtypcnt
+	select lngtyp, count(*) as conteolngtyp from gitisb.git50lngtyp
+	group by lngtyp
+	order by 2 desc;
+#		vista de la nueva tabla gitisb.git50lngtypcnt
+	select * from gitisb.git50lngtypcnt;
+#		el primer valor de 206 es el valor de la frecuencia máxima de repetición 
+#		para el valor “3GL” el cual será el valor de remplazo para los valores espacio, 
+#		el segundo valor máximo 124 corresponde al valor “” espacios. 
+#	3.	Se crea una tabla gitisb.git50lngtypcntmax con el valor de la máxima ocurrencia 
+#		206 (3GL) incluida en tabla de conteos de frecuencia gitisb.git50lngtypcnt para el
+#		valor “3GL”.
+#		mostrar vista de gitisb.git50lngtypcntmax
+	create table gitisb.git50lngtypcntmax
+	select * from gitisb.git50lngtypcnt
+	limit 1;
+	select * from gitisb.git50lngtypcntmax;
+#	4.	crear tabla duplicado de gitisb.git50lngtyp, llamada gitisb.git50lngtypcmp
+#		que sirve para remplazar los valores de espacio de lngtyp por el primer valor 
+# 		máximo de su frecuencia de conteo 206 (3GL). Mostrar tabla.
+	create table gitisb.git50lngtypcmp
+	select * from gitisb.git50lngtyp;
+	select * from gitisb.git50lngtypcmp;
+#	5.1	actualizar los valores espacio en tabla gitisb.git50lngtypcmp. Remplazarlos por su 
+#		valor correspondiente lngtyp de frecuencia máxima en gitisb.git50lngtypmax.        
+#	 	Mostrar tabla gitisb.git50lngtypcmp  sin valores vacíos.
+	update gitisb.git50lngtypcmp  t1, gitisb.git50lngtypcntmax t2
+	set t1.lngtyp = t2.lngtyp
+	where t1.lngtyp = "";
+	select * from gitisb.git50lngtypcmp;
+#	6.	hacer reconteo de frecuencias de lngtyp en la tabla de valores no espacio de    
+#		gitisb.git50lngtypcmp. El reconteo se guarda en nueva tabla 
+#		gitisb.git50lngtypcnt2.
+	create table gitisb.git50lngtypcnt2
+	select lngtyp, count(*) as conteo2lngtyp from  gitisb.git50lngtypcmp 
+	group by lngtyp
+	order by 2 desc;
+	select * from gitisb.git50lngtypcnt2;
+#		alterar tabla gitisb.git50lngtypcnt2 para cambiar el nombre de la columna lngtyp 
+#		por progra. Mostrar tabla.
+	alter table gitisb.git50lngtypcnt2
+	change column lngtyp progra text;
+	select * from gitisb.git50lngtypcnt2;
+#	7.	crear un join interno gitisb.git50lngtypt4t1 entre las tablas
+#		 gitisb.git50lngtypcmp de valores no vacio y gitisb.git50lngtypcnt2
+#		reconteo de lngtyp, por la igualdad de  columnas  lngtyp = progra. 
+#		Mostrar tabla gitisb.git50lngtypt4t1
+	create table gitisb.git50lngtypt4t1
+ 	select * from gitisb.git50lngtypcmp
+	inner join gitisb.git50lngtypcnt2
+	on  gitisb.git50lngtypcmp.lngtyp = 
+ 	gitisb.git50lngtypcnt2.progra;
+	select * from gitisb.git50lngtypt4t1;
+#		borrar columna progra de tabla gitisb.git50lngtypt4t1. Mostrar tabla 
+	alter table gitisb.git50lngtypt4t1
+	drop column progra;
+	select * from gitisb.git50lngtypt4t1;
+#		alterar tabla gitisb.git50lngtypt4t1 para cambiar el nombre de la columna lngtyp  
+#		por lngtyp2. Mostrar tabla.
+	alter table gitisb.git50lngtypt4t1
+	change column lngtyp lngtyp2 text;
+	select * from gitisb.git50lngtypt4t1;
+#	8.	duplicar tabla gitisb.git50lngtypt4t1 con 2 copias: gitisb.git501lngtypcnt y    
+#		gitisb.git502lngtypconteo.
+	create table gitisb.git501lngtypcnt 
+	select * from gitisb.git50lngtypt4t1;
+	create table gitisb.git502lngtypconteo
+	select * from gitisb.git50lngtypt4t1;
+#		se borra la columna lngtyp2 de la tabla gitisb.git502lngtypconteo. Solo         
+#		permanecen los valores de frecuencia correspondientes  a cada valor de lngtyp.
+	alter table gitisb.git502lngtypconteo 
+	drop column lngtyp2;
+#
+#		la tabla gitisb.git501lngtypcnt  contiene el conteo de frecuencias de cada valor  de  
+#		lngtyp. La tabla es base para armar la tabla de valores completos gitisb.gitisbmofil 
+#		la cual sirve para extraer la muestra de entrenamiento de 400 proyectos
+	select * from gitisb.git501lngtypcnt;
+#	la tabla gitisb.git502lngtypconteo  solo contiene el conteo de frecuencias
+#	 de cada   valor lngtyp
+	select * from gitisb.git502lngtypconteo;
+#			agregar columna lngtyp, conteo2lngtyp de tabla gitisb.git501lngtypcnt a la 
+#			tabla orgtyp gitisb.git401dvlplt mediante un join interno entre ambas      
+##			tablas por el numero de pryid y pryidlngtyp. Crear nueva tabla
+#			gitisb.git501lngtyp
+	create table  gitisb.git501lngtyp
+	select *  from gitisb.git401dvlplt  
+	inner join gitisb.git501lngtypcnt 
+	on  gitisb.git401dvlplt.pryid = 
+ 	gitisb.git501lngtypcnt.pryidlngtyp;
+#			mostrar tabla gitisb.git501lngtyp;
+	select * from gitisb.git501lngtyp;
+#			borrar columna pryidlngtyp de tabla gitisb.git501lngtyp;
+	alter table gitisb.git501lngtyp 
+	drop column pryidlngtyp;
+#			mostrar tabla gitisb.git501lngtyp;
+	select * from gitisb.git501lngtyp;
+
+
