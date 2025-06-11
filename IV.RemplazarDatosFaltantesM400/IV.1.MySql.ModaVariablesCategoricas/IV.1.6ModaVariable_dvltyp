@@ -1,0 +1,108 @@
+#
+#	1.	crear tabla  gitisb.git40dvlplt para incluir la columna development platform  
+#		dvlplt a partir de la tabla gitisb.gitisbmove
+	create table gitisb.git40dvlplt
+	select pryid as pryiddvlplt, dvlplt from gitisb.gitisbmove;
+# 		vista de la nueva tabla git40dvlplt
+	select * from gitisb.git40dvlplt;
+#	2.	hacer conteo de ocurrencias por dvlplt en tabla git40dvlplt
+#		agrupando por dvlplt y ordenando por valor conteo descendente.
+#		Crear nueva tabla gitisb.git40dvlpltcnt para incluir conteo
+	create table gitisb.git40dvlpltcnt
+	select dvlplt, count(*) as conteodvlplt from gitisb.git40dvlplt
+	group by dvlplt
+	order by 2 desc;
+#		vista de la nueva tabla gitisb.git40dvlpltcnt
+	select * from gitisb.git40dvlpltcnt;
+#		el primer valor de 185 es el valor de la frecuencia máxima de repetición 
+#		para el valor “” espacios, el segundo valor máximo 96 corresponde al
+#		valor “Multi”, el cual será el valor de remplazo para los valores espacio 
+#	3.	Se crea una tabla gitisb.git40dvlpltcntmax con el valor de la máxima ocurrencia 
+#		96 incluida en tabla de conteos de frecuencia gitisb.git40dvlpltcnt para el
+#		valor “Multi”.
+#		mostrar vista de gitisb.git40dvlpltcntmax
+	create table gitisb.git40dvlpltcntmax
+	select * from gitisb.git40dvlpltcnt
+	limit 1, 1;
+	select * from gitisb.git40dvlpltcntmax;
+#	4.	crear tabla duplicado de gitisb.git40dvlplt, llamada gitisb.git40dvlpltcmp
+#		que sirve para remplazar los valores de espacio de dvlplt por el segundo valor 
+# 		máximo de su frecuencia de conteo 96 (Multi). Mostrar tabla.
+	create table gitisb.git40dvlpltcmp
+	select * from gitisb.git40dvlplt;
+	select * from gitisb.git40dvlpltcmp;
+#	5.1	actualizar los valores espacio en tabla gitisb.git40dvlpltcmp. Remplazarlos por su
+#		valor correspondiente dvlplt de frecuencia máxima en gitisb.git40dvlpltmax.    
+#	 	Mostrar tabla gitisb.git40dvlpltcmp  sin valores vacíos.
+	update gitisb.git40dvlpltcmp  t1, gitisb.git40dvlpltcntmax t2
+	set t1.dvlplt = t2.dvlplt
+	where t1.dvlplt = "";
+	select * from gitisb.git40dvlpltcmp;
+#	6.	hacer reconteo de frecuencias de dvlplt en la tabla de valores no espacio de 
+#		gitisb.git40dvlpltcmp. El reconteo se guarda en nueva tabla 
+#		gitisb.git40dvlpltcnt2.
+	create table gitisb.git40dvlpltcnt2
+	select dvlplt, count(*) as conteo2dvlplt from  gitisb.git40dvlpltcmp 
+	group by dvlplt
+	order by 2 desc;
+	select * from gitisb.git40dvlpltcnt2;
+#		alterar tabla gitisb.git40dvlpltcnt2 para cambiar el nombre de la columna dvlplt
+#		por progra. Mostrar tabla.
+	alter table gitisb.git40dvlpltcnt2
+	change column dvlplt progra text;
+	select * from gitisb.git40dvlpltcnt2;
+#	7.	crear un join interno gitisb.git40dvlpltt4t1 entre las tablas
+#		 gitisb.git40dvlpltcmp de valores no vacio y gitisb.git40dvlpltcnt2
+#		reconteo de dvlplt, por la igualdad de  columnas  dvlplt = progra. 
+#		Mostrar tabla gitisb.git40dvlpltt4t1
+	create table gitisb.git40dvlpltt4t1
+ 	select * from gitisb.git40dvlpltcmp
+	inner join gitisb.git40dvlpltcnt2
+	on  gitisb.git40dvlpltcmp.dvlplt = 
+ 	gitisb.git40dvlpltcnt2.progra;
+	select * from gitisb.git40dvlpltt4t1;
+#		borrar columna progra de tabla gitisb.git40dvlpltt4t1. Mostrar tabla 
+	alter table gitisb.git40dvlpltt4t1
+	drop column progra;
+	select * from gitisb.git40dvlpltt4t1;
+#		alterar tabla gitisb.git40dvlpltt4t1 para cambiar el nombre de la columna dvlplt 
+#		por dvlplt2. Mostrar tabla.
+	alter table gitisb.git40dvlpltt4t1
+	change column dvlplt dvlplt2 text;
+	select * from gitisb.git40dvlpltt4t1;
+#	8.	duplicar tabla gitisb.git40dvlpltt4t1 con 2 copias: gitisb.git401dvlpltcnt y  
+#		gitisb.git402dvlpltconteo.
+	create table gitisb.git401dvlpltcnt 
+	select * from gitisb.git40dvlpltt4t1;
+	create table gitisb.git402dvlpltconteo
+	select * from gitisb.git40dvlpltt4t1;
+#		se borra la columna dvlplt2 de la tabla gitisb.git402dvlpltconteo. Solo   
+#		permanecen los valores de frecuencia correspondientes  a cada valor de dvlplt.
+	alter table gitisb.git402dvlpltconteo 
+	drop column dvlplt2;
+#		la tabla gitisb.git401dvlpltcnt  contiene el conteo de frecuencias de cada valor  de 
+#		dvlplt. La tabla es base para armar la tabla de valores completos gitisb.gitisbmofil 
+#		la cual sirve para extraer la muestra de entrenamiento de 400 proyectos
+	select * from gitisb.git401dvlpltcnt;
+#	la tabla gitisb.git402dvlpltconteo  solo contiene el conteo de frecuencias
+#	 de cada   valor dvlplt
+	select * from gitisb.git402dvlpltconteo;
+
+#			agregar columna dvlplt, conteo2dvlplt de tabla gitisb.git401dvlpltcnt a la 
+#			tabla orgtyp gitisb.git301apptyp mediante un join interno entre ambas   
+##			tablas por el numero de pryid y pryiddvlplt. Crear nueva tabla
+#			gitisb.git401dvlplt
+	create table  gitisb.git401dvlplt
+	select *  from gitisb.git301apptyp  
+	inner join gitisb.git401dvlpltcnt 
+	on  gitisb.git301apptyp.pryid = 
+ 	gitisb.git401dvlpltcnt.pryiddvlplt;
+#			mostrar tabla gitisb.git401dvlplt;
+	select * from gitisb.git401dvlplt;
+#			borrar columna pryiddvlplt de tabla gitisb.git401dvlplt;
+	alter table gitisb.git401dvlplt 
+	drop column pryiddvlplt;
+#			mostrar tabla gitisb.git401dvlplt;
+	select * from gitisb.git401dvlplt;
+
+
