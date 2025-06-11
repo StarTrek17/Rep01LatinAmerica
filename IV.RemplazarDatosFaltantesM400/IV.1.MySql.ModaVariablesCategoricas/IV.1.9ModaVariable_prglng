@@ -1,0 +1,107 @@
+#
+#	1.	crear tabla  gitisb.git60prglng para incluir la columna programming language              
+#		prglng a partir de la tabla gitisb.gitisbmove
+	create table gitisb.git60prglng
+	select pryid as pryidprglng, prglng1 from gitisb.gitisbmove;
+# 		vista de la nueva tabla git60prglng
+	select * from gitisb.git60prglng;
+#	2.	hacer conteo de ocurrencias por prglng en tabla git60prglng
+#		agrupando por prglng y ordenando por valor conteo descendente.
+#		Crear nueva tabla gitisb.git60prglngcnt para incluir conteo
+	create table gitisb.git60prglngcnt
+	select prglng, count(*) as conteoprglng from gitisb.git60prglng
+	group by prglng
+	order by 2 desc;
+#		vista de la nueva tabla gitisb.git60prglngcnt
+	select * from gitisb.git60prglngcnt;
+#		el primer valor de 149 es el valor de la frecuencia máxima de repetición 
+#		para el valor “” espacios el cual será remplazado por el segundo valor de 
+#		frecuencia máxima correspondiente a 49 del lenguaje “Java”. 
+#	3.	Se crea una tabla gitisb.git60prglngcntmax con el segundo valor de la máxima       
+#		ocurrencia 49, lenguaje “Java” incluida en tabla de conteos de frecuencia             
+#	              gitisb.git60prglngcnt.
+#		mostrar vista de gitisb.git60prglngcntmax
+	create table gitisb.git60prglngcntmax
+	select * from gitisb.git60prglngcnt
+	limit 1, 1;
+	select * from gitisb.git60prglngcntmax;
+#	4.	crear tabla duplicado de gitisb.git60prglng, llamada gitisb.git60prglngcmp
+#		que sirve para remplazar los valores de espacio de prglng1 por el  valor 
+# 		máximo de su frecuencia de conteo 49 del lenguaje “Java”. Mostrar tabla.
+	create table gitisb.git60prglngcmp
+	select * from gitisb.git60prglng;
+	select * from gitisb.git60prglngcmp;
+#	5.1	actualizar los valores espacio en tabla gitisb.git60prglngcmp. Remplazarlos por su  
+#		valor correspondiente prglng1 de frecuencia máxima en gitisb.git60prglngmax.         
+#	 	Mostrar tabla gitisb.git60prglngcmp  sin valores vacíos.
+	update gitisb.git60prglngcmp  t1, gitisb.git60prglngcntmax t2
+	set t1.prglng1 = t2.prglng1
+	where t1.prglng1 = "";
+	select * from gitisb.git60prglngcmp;
+#	6.	hacer reconteo de frecuencias de prglng en la tabla de valores no espacio de      
+#		gitisb.git60prglngcmp. El reconteo se guarda en nueva tabla 
+#		gitisb.git60prglngcnt2.
+	create table gitisb.git60prglngcnt2
+	select prglng1, count(*) as conteo2prglng from  gitisb.git60prglngcmp 
+	group by prglng1
+	order by 2 desc;
+	select * from gitisb.git60prglngcnt2;
+#		alterar tabla gitisb.git60prglngcnt2 para cambiar el nombre de la columna prglng1    
+#		por progra. Mostrar tabla.
+	alter table gitisb.git60prglngcnt2
+	change column prglng1 progra text;
+	select * from gitisb.git60prglngcnt2;
+#	7.	crear un join interno gitisb.git60prglngt4t1 entre las tablas
+#		 gitisb.git60prglngcmp de valores no vacio y gitisb.git60prglngcnt2
+#		reconteo de prglng1, por la igualdad de  columnas  prglng1 = progra. 
+#		Mostrar tabla gitisb.git60prglngt4t1
+	create table gitisb.git60prglngt4t1
+ 	select * from gitisb.git60prglngcmp
+	inner join gitisb.git60prglngcnt2
+	on  gitisb.git60prglngcmp.prglng1 = 
+ 	gitisb.git60prglngcnt2.progra;
+	select * from gitisb.git60prglngt4t1;
+#		borrar columna progra de tabla gitisb.git60prglngt4t1. Mostrar tabla 
+	alter table gitisb.git60prglngt4t1
+	drop column progra;
+	select * from gitisb.git60prglngt4t1;
+#		alterar tabla gitisb.git60prglngt4t1 para cambiar el nombre de la columna prglng1   
+#		por prglng2. Mostrar tabla.
+	alter table gitisb.git60prglngt4t1
+	change column prglng1 prglng2 text;
+	select * from gitisb.git60prglngt4t1;
+#	8.	duplicar tabla gitisb.git60prglngt4t1 con 2 copias: gitisb.git601prglngcnt y   
+#		gitisb.git602prglngconteo.
+	create table gitisb.git601prglngcnt 
+	select * from gitisb.git60prglngt4t1;
+	create table gitisb.git602prglngconteo
+	select * from gitisb.git60prglngt4t1;
+#		se borra la columna prglng2 de la tabla gitisb.git602prglngconteo. Solo           
+#		permanecen los valores de frecuencia correspondientes  a cada valor de prglng.
+	alter table gitisb.git602prglngconteo 
+	drop column prglng2;
+#		la tabla gitisb.git601prglngcnt  contiene el conteo de frecuencias de cada valor  de  
+#		prglng1. La tabla es base para armar la tabla de valores completos gitisb.gitisbmofil 
+#		la cual sirve para extraer la muestra de entrenamiento de 400 proyectos
+	select * from gitisb.git601prglngcnt;
+#	la tabla gitisb.git602prglngconteo  solo contiene el conteo de frecuencias
+#	 de cada   valor prglng1
+	select * from gitisb.git602prglngconteo;
+#	agregar columna prglng1, conteo2prglng de tabla gitisb.git601prglngcnt  
+#	a la tabla orgtyp gitisb.git501lngtyp mediante un join interno entre ambas  
+##	tablas por el numero de pryid y pryidprglng. Crear nueva tabla
+#	gitisb.git601prglng
+	create table  gitisb.git601prglng
+	select *  from gitisb.git501lngtyp  
+	inner join gitisb.git601prglngcnt 
+	on  gitisb.git501lngtyp.pryid = 
+ 	gitisb.git601prglngcnt.pryidprglng;
+#			mostrar tabla gitisb.git601prglng;
+	select * from gitisb.git601prglng;
+#			borrar columna pryidprglng de tabla gitisb.git601prglng;
+	alter table gitisb.git601prglng 
+	drop column pryidprglng;
+#			mostrar tabla gitisb.git601prglng;
+	select * from gitisb.git601prglng;
+
+
