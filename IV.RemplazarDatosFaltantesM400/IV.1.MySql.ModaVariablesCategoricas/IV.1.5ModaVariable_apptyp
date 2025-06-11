@@ -1,0 +1,126 @@
+#
+#	1.	crear tabla  gitisb.git30apptyp para incluir la columna Organization 
+#		Type apptyp  a partir de la tabla gitisb.gitisbmove
+	create table gitisb.git30apptyp
+	select pryid as pryidapp, apptyp from gitisb.gitisbmove;
+# 		vista de la nueva tabla git30apptyp
+	select * from gitisb.git30apptyp;
+#	2.	hacer conteo de ocurrencias por apptyp en tabla git30apptyp
+#		agrupando por apptyp y ordenando por valor conteo descendente.
+#		Crear nueva tabla gitisb.git30apptypcnt para incluir conteo
+	create table gitisb.git30apptypcnt
+	select apptyp, count(*) as conteoapp from gitisb.git30apptyp
+	group by apptyp
+	order by 2 desc;
+#		vista de la nueva tabla gitisb.git30apptypcnt
+	select * from gitisb.git30apptypcnt;
+#		el primer valor de 60 es el valor de la frecuencia máxima de repetición 
+#		para el valor “” espacios, el segundo valor máximo 57 corresponde al
+#		valor “not recorded”, el tercer valor máximo 47 corresponde al valor
+#		“Financial transaction process/accounting” y el sexto valor máximo 23 
+#		corresponde al valor “Unknown” 
+#	3.	crear tabla gitisb.git30apptypcntmax con el valor de la máxima ocurrencia
+#		incluida en tabla de conteos de frecuencia gitisb.git30apptypcnt para el
+#		tercer valor máximo “Financial transaction process/accounting”.
+#		mostrar vista de gitisb.git30apptypcntmax
+	create table gitisb.git30apptypcntmax
+	select * from gitisb.git30apptypcnt
+	limit 2, 1;
+	select * from gitisb.git30apptypcntmax;
+#	4.	crear tabla duplicado de gitisb.git30apptyp, llamada gitisb.git30apptypcmp
+#		que sirve para remplazar los valores de espacio de apptyp por el tercer valor 
+# 		de su frecuencia de conteo 47. Mostrar tabla.
+	create table gitisb.git30apptypcmp
+	select * from gitisb.git30apptyp;
+	select * from gitisb.git30apptypcmp;
+#	5.1	actualizar los valores espacio en tabla gitisb.git30apptypcmp. Remplazarlos por su 
+#		valor correspondiente apptyp de frecuencia máxima en gitisb.git30apptypmax.       
+#	 	Mostrar tabla gitisb.git30apptypcmp  sin valores vacíos.
+	update gitisb.git30apptypcmp  t1, gitisb.git30apptypcntmax t2
+	set t1.apptyp = t2.apptyp
+	where t1.apptyp = "";
+	select * from gitisb.git30apptypcmp;
+#	5.2	actualizar los valores “not recorded” en tabla gitisb.git30apptypcmp. 
+#		Remplazarlos por su  valor correspondiente apptyp de frecuencia máxima en 
+#			gitisb.git30apptypmax.    
+#	 	Mostrar tabla gitisb.git30apptypcmp  sin valores “not recorded”.
+	update gitisb.git30apptypcmp  t1, gitisb.git30apptypcntmax t2
+	set t1.apptyp = t2.apptyp
+	where t1.apptyp = "not recorded";
+	select * from gitisb.git30apptypcmp;
+#	5.3	actualizar los valores “Unknown” en tabla gitisb.git30apptypcmp. 
+#		Remplazarlos por su  valor correspondiente apptyp de frecuencia máxima en 
+#		gitisb.git30apptypmax.    
+#	 	Mostrar tabla gitisb.git30apptypcmp  sin valores “Unknown”.
+	update gitisb.git30apptypcmp  t1, gitisb.git30apptypcntmax t2
+	set t1.apptyp = t2.apptyp
+	where t1.apptyp = "Unknown";
+	select * from gitisb.git30apptypcmp;
+#	6.	hacer reconteo de frecuencias de apptyp en la tabla de valores no espacio de  
+#		gitisb.git30apptypcmp. El reconteo se guarda en nueva tabla 
+#		gitisb.git30apptypcnt2.
+	create table gitisb.git30apptypcnt2
+	select apptyp, count(*) as conteo2app from  gitisb.git30apptypcmp 
+	group by apptyp
+	order by 2 desc;
+	select * from gitisb.git30apptypcnt2;
+#		alterar tabla gitisb.git30apptypcnt2 para cambiar el nombre de la columna apptyp
+#		por progra. Mostrar tabla.
+	alter table gitisb.git30apptypcnt2
+	change column apptyp progra text;
+	select * from gitisb.git30apptypcnt2;
+#	7.	crear un join interno gitisb.git30apptypt4t1 entre las tablas
+#		 gitisb.git30apptypcmp de valores no vacio y gitisb.git30apptypcnt2
+#		reconteo de apptyp, por la igualdad de  columnas  apptyp = progra. 
+#		Mostrar tabla gitisb.git30apptypt4t1
+	create table gitisb.git30apptypt4t1
+ 	select * from gitisb.git30apptypcmp
+	inner join gitisb.git30apptypcnt2
+	on  gitisb.git30apptypcmp.apptyp = 
+ 	gitisb.git30apptypcnt2.progra;
+	select * from gitisb.git30apptypt4t1;
+#		borrar columna progra de tabla gitisb.git30apptypt4t1. Mostrar tabla 
+	alter table gitisb.git30apptypt4t1
+	drop column progra;
+	select * from gitisb.git30apptypt4t1;
+#		alterar tabla gitisb.git30apptypt4t1 para cambiar el nombre de la columna apptyp 
+#		por apptyp2. Mostrar tabla.
+	alter table gitisb.git30apptypt4t1
+	change column apptyp apptyp2 text;
+	select * from gitisb.git30apptypt4t1;
+#	8.	duplicar tabla gitisb.git30apptypt4t1 con 2 copias: gitisb.git301apptypcnt y  
+#		gitisb.git302apptypconteo.
+	create table gitisb.git301apptypcnt 
+	select * from gitisb.git30apptypt4t1;
+	create table gitisb.git302apptypconteo
+	select * from gitisb.git30apptypt4t1;
+#		se borra la columna apptyp2 de la tabla gitisb.git302apptypconteo. Solo         
+#		permanecen los valores de frecuencia correspondientes  a cada valor de apptyp.
+	alter table gitisb.git302apptypconteo 
+	drop column apptyp2;
+#		la tabla gitisb.git301apptypcnt  contiene el conteo de frecuencias de cada valor  de 
+#		apptyp. La tabla es base para armar la tabla de valores completos gitisb.gitisbmofil 
+#		la cual sirve para extraer la muestra de entrenamiento de 400 proyectos
+	select * from gitisb.git301apptypcnt;
+#	la tabla gitisb.git302apptypconteo  solo contiene el conteo de frecuencias de cada 
+#		valor apptyp
+	select * from gitisb.git302apptypconteo;
+#			agregar columna apptyp, conteo2app de tabla gitisb.git301apptypcnt a la  
+#			tabla orgtyp gitisb.git201orgtyp mediante un join interno entre ambas    
+##			tablas por el numero de pryid y pryidapp. Crear nueva tabla
+#			gitisb.git301apptyp
+	create table  gitisb.git301apptyp
+	select *  from gitisb.git201orgtyp  
+	inner join gitisb.git301apptypcnt 
+	on  gitisb.git201orgtyp.pryid = 
+ 	gitisb.git301apptypcnt.pryidapp;
+#			mostrar tabla gitisb.git301apptyp;
+	select * from gitisb.git301apptyp;
+#			borrar columna pryidapp de tabla gitisb.git301apptyp;
+#
+	alter table gitisb.git301apptyp 
+	drop column pryidapp;
+#			mostrar tabla gitisb.git301apptyp;
+	select * from gitisb.git301apptyp;
+
+
