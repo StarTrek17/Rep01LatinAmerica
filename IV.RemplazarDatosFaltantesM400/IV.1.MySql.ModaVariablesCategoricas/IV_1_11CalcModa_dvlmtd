@@ -1,0 +1,111 @@
+#
+#	1.	crear tabla  gitisb.git80dvlmtd para incluir la columna development
+#		 methodology  dvlmtd   a partir de la tabla gitisb.gitisbmove
+	create table gitisb.git80dvlmtd
+	select pryid as pryiddvlmtd, dvlmtd from gitisb.gitisbmove;
+# 		vista de la nueva tabla git80dvlmtd
+	select * from gitisb.git80dvlmtd;
+#	2.	hacer conteo de ocurrencias por dvlmtd en tabla git80dvlmtd
+#		agrupando por dvlmtd y ordenando por valor conteo descendente.
+#		Crear nueva tabla gitisb.git80dvlmtdcnt para incluir conteo
+	create table gitisb.git80dvlmtdcnt
+	select dvlmtd, count(*) as conteodvlmtd from gitisb.git80dvlmtd
+	group by dvlmtd
+	order by 2 desc;
+#		vista de la nueva tabla gitisb.git80dvlmtdcnt
+	select * from gitisb.git80dvlmtdcnt;
+#		el primer valor de 193 es el valor de la frecuencia máxima de repetición 
+#		para el valor “” espacios el cual será remplazado por el segundo valor de 
+#		frecuencia máxima correspondiente a 187 del dvlmtd                                 
+#		“Waterfall (incl Linear Processing & SSADM)”. 
+#	3.	Se crea una tabla gitisb.git80dvlmtdcntmax con el segundo valor de la máxima   
+#		ocurrencia 187, dvlmtd “Waterfall (incl Linear Processing & SSADM)” incluida en  
+#		tabla de conteos de frecuencia gitisb.git80dvlmtdcnt.
+#		mostrar vista de gitisb.git80dvlmtdcntmax
+	create table gitisb.git80dvlmtdcntmax
+	select * from gitisb.git80dvlmtdcnt
+	limit 1, 1;
+	select * from gitisb.git80dvlmtdcntmax;
+#	4.	crear tabla duplicado de gitisb.git80dvlmtd, llamada gitisb.git80dvlmtdcmp
+#		que sirve para remplazar los valores de espacio de dvlmtd por el  valor 
+# 		máximo de su frecuencia de conteo  de 187, dvlmtd 			
+#  “Waterfall (incl Linear  Processing & SSADM)”. Mostrar tabla.
+	create table gitisb.git80dvlmtdcmp
+	select * from gitisb.git80dvlmtd;
+	select * from gitisb.git80dvlmtdcmp;
+#	5.1	actualizar los valores espacio en tabla gitisb.git80dvlmtdcmp. Remplazarlos por su 
+#		valor correspondiente dvlmtd de frecuencia máxima en gitisb.git80dvlmtdmax.          
+#	 	Mostrar tabla gitisb.git80dvlmtdcmp  sin valores vacíos.
+	update gitisb.git80dvlmtdcmp  t1, gitisb.git80dvlmtdcntmax t2
+	set t1.dvlmtd = t2.dvlmtd
+	where t1.dvlmtd = "";
+	select * from gitisb.git80dvlmtdcmp;
+#	6.	hacer reconteo de frecuencias de dvlmtd en la tabla de valores no espacio de    
+#		gitisb.git80dvlmtdcmp. El reconteo se guarda en nueva tabla 
+#		gitisb.git80dvlmtdcnt2.
+	create table gitisb.git80dvlmtdcnt2
+	select dvlmtd, count(*) as conteo2dvlmtd from  gitisb.git80dvlmtdcmp 
+	group by dvlmtd
+	order by 2 desc;
+	select * from gitisb.git80dvlmtdcnt2;
+#		alterar tabla gitisb.git80dvlmtdcnt2 para cambiar el nombre de la columna dvlmtd   
+#		por progra. Mostrar tabla.
+	alter table gitisb.git80dvlmtdcnt2
+	change column dvlmtd progra text;
+	select * from gitisb.git80dvlmtdcnt2;
+#	7.	crear un join interno gitisb.git80dvlmtdt4t1 entre las tablas
+#		 gitisb.git80dvlmtdcmp de valores no vacio y gitisb.git80dvlmtdcnt2
+#		reconteo de dvlmtd, por la igualdad de  columnas  dvlmtd = progra. 
+#		Mostrar tabla gitisb.git80dvlmtdt4t1
+	create table gitisb.git80dvlmtdt4t1
+ 	select * from gitisb.git80dvlmtdcmp
+	inner join gitisb.git80dvlmtdcnt2
+	on  gitisb.git80dvlmtdcmp.dvlmtd = 
+ 	gitisb.git80dvlmtdcnt2.progra;
+	select * from gitisb.git80dvlmtdt4t1;
+
+#		borrar columna progra de tabla gitisb.git80dvlmtdt4t1. Mostrar tabla 
+	alter table gitisb.git80dvlmtdt4t1
+	drop column progra;
+	select * from gitisb.git80dvlmtdt4t1;
+#		alterar tabla gitisb.git80dvlmtdt4t1 para cambiar el nombre de la columna dvlmtd    
+#		por dvlmtd2. Mostrar tabla.
+	alter table gitisb.git80dvlmtdt4t1
+	change column dvlmtd dvlmtd2 text;
+	select * from gitisb.git80dvlmtdt4t1;
+#	8.	duplicar tabla gitisb.git80dvlmtdt4t1 con 2 copias: gitisb.git801dvlmtdcnt y        
+#		gitisb.git802dvlmtdconteo.
+	create table gitisb.git801dvlmtdcnt 
+	select * from gitisb.git80dvlmtdt4t1;
+	create table gitisb.git802dvlmtdconteo
+	select * from gitisb.git80dvlmtdt4t1;
+#		se borra la columna dvlmtd2 de la tabla gitisb.git802dvlmtdconteo. Solo                
+#		permanecen los valores de frecuencia correspondientes  a cada valor de dvlmtd.
+	alter table gitisb.git802dvlmtdconteo 
+	drop column dvlmtd2;
+#		la tabla gitisb.git801dvlmtdcnt  contiene el conteo de frecuencias de cada valor  de 
+#		dvlmtd. La tabla es base para armar la tabla de valores completos                   
+#		gitisb.gitisbmofil  la cual sirve para extraer la muestra de 
+#		entrenamiento de 400 proyectos
+	select * from gitisb.git801dvlmtdcnt;
+#	la tabla gitisb.git802dvlmtdconteo  solo contiene el conteo de frecuencias
+#	 de cada   valor dvlmtd
+	select * from gitisb.git802dvlmtdconteo;
+#	agregar columna dvlmtd, conteo2dvlmtd de tabla gitisb.git801dvlmtdcnt  
+#	a la tabla prglng gitisb.git701dbms1 mediante un join interno entre ambas  
+##	tablas por el numero de pryid y pryiddvlmtd. Crear nueva tabla
+#	gitisb.git801dvlmtd
+	create table  gitisb.git801dvlmtd
+	select *  from gitisb.git701dbms1  
+	inner join gitisb.git801dvlmtdcnt 
+	on  gitisb.git701dbms1.pryid = 
+ 	gitisb.git801dvlmtdcnt.pryiddvlmtd;
+#			mostrar tabla gitisb.git801dvlmtd;
+	select * from gitisb.git801dvlmtd;
+#			borrar columna pryiddvlmtd de tabla gitisb.git801dvlmtd;
+	alter table gitisb.git801dvlmtd 
+	drop column pryiddvlmtd;
+#			mostrar tabla gitisb.git801dvlmtd;
+	select * from gitisb.git801dvlmtd;
+
+
