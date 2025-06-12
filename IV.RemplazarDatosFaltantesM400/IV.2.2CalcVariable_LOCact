@@ -1,0 +1,68 @@
+#
+#	1-	crear duplicado de tabla gitisb.git961pryisb como tabla gitisb.git962pryisb la cual 		contiene la columna loc calculada por la tabla de lenguajes qslim y el tamaño 			funcional de la columna fncsze.
+		 create table gitisb.git962pryisb
+		Select * from gitisb.git961pryisb;
+#	2-	seleccionar la tabla gitisb.git950pryisb la cual contiene valores completos en todas 		las columnas excepto la última, la columna loc la cual indica valores -1 para sus 		datos faltantes. Estos valores -1 seran remplazados por sus valores loc calculados 		en la tabla git962pryisb.
+		Select * from gitisb.git950pryisb;
+#	3-	Hallar correspondencias entre las tablas gitisb.git950pryisb y gitisb.git962pryisb
+#		por medio de columna pryid
+	select * from gitisb.git950pryisb t1
+ 	inner join gitisb.git962pryisb t2
+	on  t1.pryid =  t2.pryid;
+#	400 filas retornadas
+#	4.	Cambiar nombre de columna pryid a pryidloc en  tabla gitisb.git962pryisb
+  	alter table gitisb.git962pryisb
+	change column pryid pryidloc integer;
+#	Cambiar nombre de columna prglng1 a prglng1loc en  tabla gitisb.git962pryisb
+  	alter table gitisb.git962pryisb
+	change column prglng1 prglng1loc text;
+  	alter table gitisb.git962pryisb
+	change column fncsze fncszeloc integer;
+	alter table gitisb.git962pryisb
+	change column loc locact integer;
+#	5.	Crear tabla gitisb.git963pryisb de correspondencias entre gitisb.git950pryisb y #		gitisb.git962pryisb
+	  create table gitisb.git963pryisb
+	select * from gitisb.git950pryisb t1
+ 	inner join gitisb.git962pryisb t2
+	on  t1.pryid =  t2.pryidloc;
+	select * from gitisb.git963pryisb;
+#	6.	Actualizar loc de gitisb.git963pryisb t1 remplazando por el valor locact
+		Update gitisb.git963pryisb
+	Set loc = locact
+	Where loc = -1;
+	389 filas actualizadas
+	select * from gitisb.git963pryisb;
+#	7.	Eliminar columnas pryidloc, prgln1loc, fncszeloc, locact, language, avg, median, 
+#			low, high
+#	borrar columna  pryidloc  
+	alter table gitisb.git963pryisb
+	drop column pryidloc;
+#	borrar columna  prglng1loc  
+	alter table gitisb.git963pryisb
+	drop column prglng1loc;
+#	borrar columna   fncszeloc 
+	alter table gitisb.git963pryisb
+	drop column fncszeloc;
+#	borrar columna  locact  
+	alter table gitisb.git963pryisb
+	drop column locact;
+#	borrar columna  language   
+	alter table gitisb.git963pryisb
+	drop column language;
+#	borrar columna  avg  
+	alter table gitisb.git963pryisb
+	drop column avg;
+#	borrar columna  median  
+	alter table gitisb.git963pryisb
+	drop column median;
+#	borrar columna  low  
+	alter table gitisb.git963pryisb
+	drop column low;
+#	borrar columna  high  
+	alter table gitisb.git963pryisb
+	drop column high;
+#	Mostrar tabla gitisb.git963pryisb 
+	Select * from gitisb.git963pryisb;
+#	exportar tabla gitisb.git963pryisb como isbsg400num
+	
+	
