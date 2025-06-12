@@ -1,0 +1,84 @@
+#
+#	1-	Importar tabla 
+#	C:\Users\Marco\OneDrive\Smstr15\S15ArtUno\S15A1IeeeLatin\Envio250510\MySql/
+#	TablaQSMpuntosFuncionLOC a gitisb.qsmslim
+	select * from gitisb.qsmslim;
+#	2-	Crear tabla de líneas de código fuente LOC gitisb.git903pryisb 
+#	para incluir las   columnas pryid, prglng1, fncsze, loc 
+#	de gitisb.git902pryisb;
+		create table gitisb.git903pryisb 
+	select pryid, prglng1, fncsze, loc from gitisb.git902pryisb;
+#	ver tabla gitisb.git903pryisb
+	select * from gitisb.git903pryisb;
+#	3-	Hallar correspondencias entre las tablas 
+#		gitisb.git903pryisb y gitisb.qsmslim por medio de
+#		columnas prglng1 y language 
+	select * from gitisb.git903pryisb t1
+ 	inner join gitisb.qsmslim t2
+	on  t1.prglng1 =  t2.language;
+#	389 correspondencias de 400 filas de prglng1
+#	4.	Encontrar los lenguajes de programación prglng1 sin 
+#		correspondencia en la tabla de lenguajes qsmslim
+	select *  from gitisb.git903pryisb t1
+	WHERE NOT EXISTS 
+	(select * from gitisb.qsmslim t2
+	WHERE T1.PRGLNG1 = T2.LANGUAGE);
+#	11 filas encontradas sin correspondencia prglng1<->language
+#	5-	Crear una tabla con las no correspondencias gitisb.git904pryisb
+		  create table  gitisb.git904pryisb
+		select *  from gitisb.git903pryisb t1
+		WHERE NOT EXISTS 
+		(select * from gitisb.qsmslim t2
+		WHERE T1.PRGLNG1 = T2.LANGUAGE);
+#		Crear tabla Ordenada gitisb.git905pryisb con las
+#		 no correspondencias por prglng1
+	 create table  gitisb.git905pryisb
+     	  select * from gitisb.git904pryisb
+        	order by prglng1;
+#	ver tabla gitisb.git905pryisb
+	Select * from  gitisb.git905pryisb;
+#	6.	exportar a excell tabla gitisb.git905pryisb como TablaQSMprglng1NotLang
+# 	SE CORRIGE EN EXCELL LOS LENGUAJES SIN CORRESPONDENCIA BUSCANDO
+#	LENGUAJES SIMILARES EN INTERNET. SE CREAN TABLAS EXCELL
+#	QsmSlimCorr—igual a QsmSlim + los lenguajes sin correspondencia
+#	 hallados en internet
+#	QsmSlimCorrEqv—igual a QsmSlim + los lenguajes sin correspondencia
+#	 hallados en internet + lenguaje equivalente hallado en internet
+#	TablaQSMprglng1NotLang
+#	SE IMPORTA A MYSQL LA TABLA  QsmSlimCorr
+#	ver tabla gitisb. QsmSlimCorr 
+	SELECT * FROM gitisb.qsmslimcorr; 
+#
+#	7-	Hallar correspondencias entre las tablas 
+#		gitisb.git903pryisb y gitisb.qsmslimcorr por medio de
+#		columnas prglng1 y language 
+#
+	select * from gitisb.git903pryisb t1
+ 	inner join gitisb.qsmslimcorr t2
+	on  t1.prglng1 =  t2.language;
+#	400 correspondencias de 400 filas de prglng1
+#	8-	crear tabla  gitisb.git960pryisb con correspondencias  
+#		entre las tablas gitisb.git903pryisb y gitisb.qsmslimcorr 
+#		por medio de las columnas prglng1 y language 
+	create table gitisb.git960pryisb
+	select * from gitisb.git903pryisb t1
+ 	inner join gitisb.qsmslimcorr t2
+	on  t1.prglng1 =  t2.language;
+#	400 correspondencias de 400 filas de prglng1
+# mostrar tabla gitisb.git960pryisb
+	select * from gitisb.git960pryisb;
+# crear duplicado de tabla gitisb.git960pryisb como gitisb.git961pryisb
+	create table gitisb.git961pryisb
+	select * from gitisb.git960pryisb;
+#	9-	actualizar tabla  gitisb.git961pryisb en columna LOC de valor -1  
+#		como LOC = fncsze * avg 
+	update gitisb.git961pryisb
+	set LOC   = fncsze * avg
+	where LOC  = -1;
+#	Mostrar tabla gitisb.git961pryisb
+	select * from gitisb.git961pryisb;
+#	Exportar tabla gitisb.git961pryisb a excell /envio0510/MySql/
+	gitisb.git961pryisb;
+
+
+
