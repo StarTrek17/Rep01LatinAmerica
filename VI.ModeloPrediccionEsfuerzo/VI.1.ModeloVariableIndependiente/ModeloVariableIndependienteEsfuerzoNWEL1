@@ -1,2 +1,273 @@
-utilizando el lenguaje R, se define un modelo del esfuerzo estimado de esfuerzo NWEL1
+utilizando el lenguaje R, se define un modelo del esfuerzo estimado de esfuerzo NWEL1- 
+# se importa archivo de excell isbsg400num el cual contiene todos
+# los valores completos de la muestra de 400 proyectos. 
+# Son valores numéricos.
+
+> library(readxl)
+Warning message:
+In fun(libname, pkgname) :
+  Java home setting is INVALID, it will be ignored.
+Please do NOT set it unless you want to override system settings.
+> isbsg400num <- read_excel("C:/Users/Marco/OneDrive/Smstr15/S15ArtUno/S15A1IeeeLatin/Envio250510/LenguajeR/sbsg400num.xlsx")
+# vista del archivo importado isbsg400num
+> View(isbsg400num)
+
+
+# mostrar la estructura de isbsg400num
+> str(isbsg400num)
+tibble [400 × 15] (S3: tbl_df/tbl/data.frame)
+ $ pryid    : num [1:400] 10003 10019 10104 10267 10388 ...
+ $ indsct   : num [1:400] 189 189 189 189 9 57 9 19 189 189 ...
+ $ orgtyp   : num [1:400] 150 150 150 150 1 57 1 19 150 150 ...
+ $ apptyp   : num [1:400] 12 10 187 33 8 187 187 187 33 187 ...
+ $ dvltyp   : num [1:400] 323 323 323 323 323 323 74 323 323 323 ...
+ $ dvlplt   : num [1:400] 281 281 281 281 281 281 18 78 281 281 ...
+ $ lngtyp   : num [1:400] 330 330 61 61 61 330 61 330 330 61 ...
+ $ prglng1  : num [1:400] 177 5 12 8 3 177 7 1 177 12 ...
+ $ fncsze   : num [1:400] 67 98 7 107 139 47 359 255 185 113 ...
+ $ nwell1   : num [1:400] 741 324 396 1380 5062 ...
+ $ smmwrkeff: num [1:400] 608 266 396 1137 5062 ...
+
+ $ maxteasze: num [1:400] 9 9 9 9 10 36 9 9 9 9 ...
+ $ dbms1    : num [1:400] 287 287 287 287 287 287 21 1 287 287 ...
+ $ dvlmtd   : num [1:400] 380 380 380 380 380 380 380 380 380 380 ...
+ $ loc      : num [1:400] 3551 9506 259 2247 6533 ...
+
+
+
+# generar un resumen estadístico de isbsg400num
+>  summary(isbsg400num)
+
+     pryid           indsct          orgtyp      
+ Min.   :10003   Min.   :  1.0   Min.   :  1.00  
+ 1st Qu.:14999   1st Qu.: 27.0   1st Qu.: 19.00  
+ Median :18904   Median : 57.0   Median : 57.00  
+ Mean   :19018   Mean   :108.7   Mean   : 77.16  
+ 3rd Qu.:23543   3rd Qu.:189.0   3rd Qu.:150.00  
+ Max.   :27858   Max.   :189.0   Max.   :150.00  
+     apptyp           dvltyp          dvlplt          lngtyp     
+ Min.   :  1.00   Min.   :  3.0   Min.   : 18.0   Min.   :  9.0  
+ 1st Qu.:  8.75   1st Qu.:323.0   1st Qu.: 78.0   1st Qu.:330.0  
+ Median : 33.00   Median :323.0   Median :281.0   Median :330.0  
+ Mean   : 93.94   Mean   :274.5   Mean   :214.7   Mean   :281.8  
+ 3rd Qu.:187.00   3rd Qu.:323.0   3rd Qu.:281.0   3rd Qu.:330.0  
+ Max.   :187.00   Max.   :323.0   Max.   :281.0   Max.   :330.0  
+    prglng1           fncsze           nwell1     
+ Min.   :  1.00   Min.   :   4.0   Min.   :   37  
+ 1st Qu.: 11.00   1st Qu.:  57.0   1st Qu.:  726  
+ Median : 34.00   Median : 106.0   Median : 1408  
+ Mean   : 85.89   Mean   : 239.1   Mean   : 3506  
+ 3rd Qu.:177.00   3rd Qu.: 228.0   3rd Qu.: 3626  
+ Max.   :177.00   Max.   :7400.0   Max.   :64317  
+   smmwrkeff         maxteasze          dbms1         dvlmtd     
+ Min.   :   37.0   Min.   :  1.00   Min.   :  1   Min.   :  1.0  
+ 1st Qu.:  632.8   1st Qu.:  9.00   1st Qu.: 30   1st Qu.:380.0  
+ Median : 1288.0   Median :  9.00   Median :287   Median :380.0  
+ Mean   : 3203.7   Mean   : 13.51   Mean   :210   Mean   :361.1  
+ 3rd Qu.: 3367.2   3rd Qu.:  9.00   3rd Qu.:287   3rd Qu.:380.0  
+ Max.   :60844.0   Max.   :138.00   Max.   :287   Max.   :380.0  
+      loc        
+ Min.   :   212  
+ 1st Qu.:  2756  
+ Median :  5724  
+ Mean   : 13747  
+ 3rd Qu.: 11240  
+ Max.   :412409  
+
+
+#  comando cor es útil para calcular el coeficiente de    
+#    correlación entre dos variables cuantitativas o para crear una     
+#    matriz de correlación cuando se le proporciona una matriz de     
+#    datos. Este comando es fundamental  para el análisis de          
+#    correlación en R.
+#    En el caso presente muestra la correlación entre las variables de   
+#    isbsg400num
+>  cor(isbsg400num)
+
+                 pryid      indsct      orgtyp       apptyp
+pryid      1.000000000  0.02869349  0.01255510  0.006799264
+indsct     0.028693492  1.00000000  0.79531883 -0.284873855
+orgtyp     0.012555103  0.79531883  1.00000000 -0.047392513
+apptyp     0.006799264 -0.28487386 -0.04739251  1.000000000
+dvltyp     0.021860882  0.19731256  0.16769402  0.042029285
+dvlplt     0.034863363  0.35139900  0.50435387  0.153189891
+lngtyp     0.144941481  0.04054140  0.06917770  0.067862741
+prglng1    0.110882073  0.14169717  0.19834465  0.137954329
+fncsze     0.052367657 -0.07225711 -0.08136567 -0.037701944
+nwell1     0.100839758 -0.11810945 -0.14616530  0.040626866
+smmwrkeff  0.084816853 -0.12350797 -0.15660055  0.028752529
+maxteasze  0.107798243 -0.20453539 -0.10998175  0.289771693
+dbms1      0.069787808  0.19892493  0.38332263  0.128313141
+dvlmtd    -0.023904934  0.12586377  0.19071398  0.193520065
+loc        0.046537221 -0.06825839 -0.07538729  0.011776021
+               dvltyp      dvlplt      lngtyp     prglng1
+pryid      0.02186088  0.03486336  0.14494148  0.11088207
+indsct     0.19731256  0.35139900  0.04054140  0.14169717
+orgtyp     0.16769402  0.50435387  0.06917770  0.19834465
+apptyp     0.04202929  0.15318989  0.06786274  0.13795433
+dvltyp     1.00000000  0.29280462  0.10300513  0.19785962
+dvlplt     0.29280462  1.00000000  0.14640830  0.35679244
+lngtyp     0.10300513  0.14640830  1.00000000  0.38339626
+prglng1    0.19785962  0.35679244  0.38339626  1.00000000
+fncsze    -0.35362066 -0.17932371 -0.02769293 -0.03108684
+nwell1    -0.23915198 -0.11845486  0.03487038 -0.01116219
+smmwrkeff -0.25450952 -0.10873342  0.03298457 -0.01921478
+maxteasze  0.13752989  0.18920723  0.14191068  0.32809333
+dbms1      0.25988132  0.53079196  0.09883902  0.19150648
+dvlmtd     0.18316283  0.27719229 -0.01756086  0.04278776
+loc       -0.26954917 -0.16894412  0.01185427 -0.05114228
+               fncsze      nwell1   smmwrkeff   maxteasze
+pryid      0.05236766  0.10083976  0.08481685  0.10779824
+indsct    -0.07225711 -0.11810945 -0.12350797 -0.20453539
+orgtyp    -0.08136567 -0.14616530 -0.15660055 -0.10998175
+apptyp    -0.03770194  0.04062687  0.02875253  0.28977169
+dvltyp    -0.35362066 -0.23915198 -0.25450952  0.13752989
+dvlplt    -0.17932371 -0.11845486 -0.10873342  0.18920723
+lngtyp    -0.02769293  0.03487038  0.03298457  0.14191068
+prglng1   -0.03108684 -0.01116219 -0.01921478  0.32809333
+fncsze     1.00000000  0.69380425  0.71416712 -0.02474795
+nwell1     0.69380425  1.00000000  0.96225901  0.28353535
+smmwrkeff  0.71416712  0.96225901  1.00000000  0.31746185
+maxteasze -0.02474795  0.28353535  0.31746185  1.00000000
+dbms1     -0.08429595 -0.05345735 -0.02643567  0.17892425
+dvlmtd    -0.12524976 -0.11232004 -0.11987741  0.07189234
+loc        0.83056951  0.61419618  0.63733463 -0.00192964
+                dbms1      dvlmtd         loc
+pryid      0.06978781 -0.02390493  0.04653722
+indsct     0.19892493  0.12586377 -0.06825839
+orgtyp     0.38332263  0.19071398 -0.07538729
+apptyp     0.12831314  0.19352007  0.01177602
+dvltyp     0.25988132  0.18316283 -0.26954917
+dvlplt     0.53079196  0.27719229 -0.16894412
+lngtyp     0.09883902 -0.01756086  0.01185427
+prglng1    0.19150648  0.04278776 -0.05114228
+fncsze    -0.08429595 -0.12524976  0.83056951
+nwell1    -0.05345735 -0.11232004  0.61419618
+smmwrkeff -0.02643567 -0.11987741  0.63733463
+maxteasze  0.17892425  0.07189234 -0.00192964
+dbms1      1.00000000  0.08569148 -0.09434964
+dvlmtd     0.08569148  1.00000000 -0.08922153
+loc       -0.09434964 -0.08922153  1.00000000
+
+
+
+
+
+
+# El comando library(corrplot) en R (y en RStudio) carga el  
+#    paquete corrplot en tu sesión de R. Este paquete es una herramienta 
+#    muy útil para visualizar matrices de correlación de una manera más   
+#     clara y organizada, que ayuda  a identificar patrones y relaciones entre 
+#    variables. 
+
+
+> library (corrplot)
+corrplot 0.92 loaded
+> 
+
+# El comando head() en el lenguaje R, específicamente dentro de     
+# RStudio, se utiliza para visualizar las primeras filas de un conjunto de   
+# datos. Por defecto, muestra las primeras 6 filas, pero se puede     
+# especificar un número diferente de filas como argumento. 
+
+>  head(isbsg400num)
+# A tibble: 6 × 15
+  pryid indsct orgtyp apptyp dvltyp dvlplt lngtyp prglng1 fncsze
+  <dbl>  <dbl>  <dbl>  <dbl>  <dbl>  <dbl>  <dbl>   <dbl>  <dbl>
+1 10003    189    150     12    323    281    330     177     67
+2 10019    189    150     10    323    281    330       5     98
+3 10104    189    150    187    323    281     61      12      7
+4 10267    189    150     33    323    281     61       8    107
+5 10388      9      1      8    323    281     61       3    139
+6 10496     57     57    187    323    281    330     177     47
+# ℹ 6 more variables: nwell1 <dbl>, smmwrkeff <dbl>,
+#   maxteasze <dbl>, dbms1 <dbl>, dvlmtd <dbl>, loc <dbl>
+
+
+ 
+
+
+
+# El comando corrplot() en R, proveniente del paquete corrplot, se usa 
+#  para visualizar matrices de correlación de manera gráfica. Es una      
+# herramienta útil para explorar visualmente las relaciones entre      
+# variables en tus datos. Se pueden generar diferentes tipos de    
+# correlogramas, reordenar la matriz de correlación, y personalizar el    
+# estilo de visualización. 
+
+Mtx<-cor(isbsg400num)   #permite ejecutar una matriz de correlación
+> corrplot(Mtx, method = "ellipse") #permite obtener un gráfico con elipses
+
+
+
+
+
+>  # Visualice otros metodos gráficos como, 'circle', 'square', 'ellipse',
+> # 'number', 'shade', 'color', 'pie'
+> corrplot(Mtx, method = "number") #permite obtener un gráfico con numeros
+
+ 
+
+# mostrar nombres de columnas
+> colnames(isbsg400num)
+
+ [1] "pryid"     "indsct"    "orgtyp"    "apptyp"    "dvltyp"   
+ [6] "dvlplt"    "lngtyp"    "prglng1"   "fncsze"    "nwell1"   
+[11] "smmwrkeff" "maxteasze" "dbms1"     "dvlmtd"    "loc"  
+
+
+# se puede definir un modelo entre la variable independiente “resumen de # esfuerzo de trabajo, nivel1, NWELL1” 
+#  y el resto de variables dependientes
+
+> modelo = lm(nwell1 ~ (indsct + orgtyp + apptyp + dvltyp + 
+           dvlplt + lngtyp + prglng1 + fncsze + smmwrkeff + 
+	   maxteasze + dbms1 + dvlmtd + loc), 
+     datos = isbsg400num)
+Warning message:
+In lm.fit(x, y, offset = offset, singular.ok = singular.ok, ...) :
+ extra argument ‘datos’ will be disregarded 
+> 
+
+ 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+>  # Visualice otros metodos gráficos como, 'circle', 'square', 'ellipse',
+> # 'number', 'shade', 'color', 'pie'
+> corrplot(Mtx, method = "number") #permite obtener un gráfico con numeros
+
+ 
+
+# mostrar nombres de columnas
+> colnames(isbsg400num)
+
+ [1] "pryid"     "indsct"    "orgtyp"    "apptyp"    "dvltyp"   
+ [6] "dvlplt"    "lngtyp"    "prglng1"   "fncsze"    "nwell1"   
+[11] "smmwrkeff" "maxteasze" "dbms1"     "dvlmtd"    "loc"  
+
+
+# se puede definir un modelo entre la variable independiente “resumen de # esfuerzo de trabajo, nivel1, NWELL1”
+#  y el resto de variables dependientes
+
+> modelo = lm(nwell1 ~ (indsct + orgtyp + apptyp + dvltyp + 
+           dvlplt + lngtyp + prglng1 + fncsze + smmwrkeff + 
+	   maxteasze + dbms1 + dvlmtd + loc), 
+     datos = isbsg400num)
+Warning message:
+In lm.fit(x, y, offset = offset, singular.ok = singular.ok, ...) :
+ extra argument ‘datos’ will be disregarded 
+> 
+
 
