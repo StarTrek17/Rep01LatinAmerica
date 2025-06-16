@@ -1,1 +1,19 @@
-usando MySql se determina la precisión del modelo de predicción de esfuerzo
+usando MySql se determina la precisión del modelo de predicción de esfuerzo mediante el calculo de 
+las métricas MMRE y PRED(25)
+De acuerdo al script VII.2.Metricas de precisión se tienen los siguientes totales 
+en la tabla isb100modmmretot:
+
+count(*)	sum(errorabsol)	sum(errorrelatmre)	sum(pred25)
+    100	            21982	            10.557        	99
+
+la métrica MMRE se calcula por MMRE = (sum(errorrelatmre) / count(*)) * 100
+                                    =  (10.557 / 100) * 100
+                                    =  10.557
+
+la métrica PRED(25) se calcula por PRED(25) = (sum(pred(25) / count(*)) * 100
+                                            =          (99  / 100) * 100
+                                            =          99
+Se tiene como norma establecida que la precisión del modelo propuesto es valida
+si MMRE <= 25  y  PRED(25) >= 75
+Con los valores calculados MMRE = 10.557 y PRED(25) >= 75 se comprueba que
+la precisión de nuestro modelo propuesto es válida.
