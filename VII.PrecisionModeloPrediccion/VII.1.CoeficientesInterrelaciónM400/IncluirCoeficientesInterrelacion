@@ -1,1 +1,77 @@
 por MySql incluir los coeficientes de correlación en el modelo ajustado de prediccion
+# SE CAMBIA EL TRABAJO CON ARCHIVO isborg.isb500 de 500 registros originales
+# se crea tabla isb100 con los registros a parit del 400, 100 registros más
+create table isborg.isb100
+select * from isborg.isb500
+limit 400, 100;
+# mostrar tabla isborg.isb100
+select * from isborg.isb100;
+# exportar tabla a C:\Users\Marco\OneDrive\Smstr15\S15ArtUno\S15A1IeeeLatin\Envio250411\MYSQL/
+# de acuerdo al modelo3 del lenguaje R, R100pruebapry
+# NWELL1 = 0.007018 + smmWrkeff * 1.010  +  orgtypcnt * (0.005803) +
+# dvltypcnt * (-0.006540) 
+# modelo3 = lm(nwell1 ~ (smmwrkeff + orgtypcnt + dvltypcnt), 
+# data=N100pruebapry)
+  
+# se seleccionan las variables
+# pryid, smmwrkeff, orgtypcnt, dvltypcnt,  nwell1 
+# y se adiciona la variable intercepto de valor constante 0.007018 y la variable nwell1est que será
+#el estimado de esfuerzo de nwell1. Se adicionan las variables para los coeficientes
+# Smmwrkeff 1.010 smmwrkeffcof
+# Orgtypcnt 0.005803 orgtypcntcof
+# Dvltypcnt -0.006540 dvltypcntcof
+#  Se crea nueva tabla isborg.isb100esfmod
+  create table isborg.isb100esfmod
+SELECT pryid, smmwrkeff, orgtypcnt, dvltypcnt, nwell1
+ FROM isborg.isb100;
+# se adiciona la columna intercepto de tipo decimal (6,6)
+alter table isborg.isb100esfmod
+ add intercepto decimal (6, 6) not null;
+# se adiciona la columna nwell1est de tipo int
+alter table isborg.isb100esfmod
+ add nwell1est int not null;
+# mostrar tabla isborg.isb100esfmod
+select * from isborg.isb100esfmod;
+# actualizar valor de la columna intercepto
+ update  isborg.isb100esfmod
+ set intercepto = 0.007018;
+# se adiciona la columna  smmwrkeffcof de tipo decimal (6,6)
+alter table isborg.isb100esfmod
+ add smmwrkeffcof decimal (6, 6) not null;
+# actualizar valor de la columna smmwrkeffcof
+ update  isborg.isb100esfmod
+ set smmwrkeffcof = 1.010;
+# aumentar tamaño de la columna  smmwrkeffcof de tipo decimal (8,6)
+alter table isborg.isb100esfmod
+ modify column smmwrkeffcof decimal (8, 6);
+# aumentar tamaño de la columna  orgtypcntcof  de tipo decimal (8,6)
+alter table isborg.isb100esfmod
+ modify column orgtypcntcof decimal (8, 6);
+# aumentar tamaño de la columna   dvltypcntcof  de tipo decimal (8,6)
+alter table isborg.isb100esfmod
+ modify column dvltypcntcof decimal (8, 6);
+# se adiciona la columna  orgtypcntcof de tipo decimal (8,6)
+alter table isborg.isb100esfmod
+ add orgtypcntcof decimal (8, 6) not null;
+# actualizar valor de la columna orgtypcntcof
+ update  isborg.isb100esfmod
+ set  orgtypcntcof = 0.005803;
+# se adiciona la columna  dvltypcntcof
+ de tipo decimal (8,6)
+alter table isborg.isb100esfmod
+ add  dvltypcntcof decimal (8, 6) not null;
+# actualizar valor de la columna dvltypcntcof
+ update  isborg.isb100esfmod
+ set  dvltypcntcof = -0.006540;
+# actualizar valor de la columna del estimado de esfuerzo nwell1est 
+ # Smmwrkeff 1.010 smmwrkeffcof
+# Orgtypcnt 0.005803 orgtypcntcof
+# Dvltypcnt -0.006540 dvltypcntcof
+# calcular nwell1est
+ update    isborg.isb100esfmod
+ set   nwell1est = intercepto + smmwrkeff * smmwrkeffcof   +  orgtypcnt * orgtypcntcof   + dvltypcnt * dvltypcntcof;
+# mostrar tabla isborg.isb100esfmod
+select * from isborg.isb100esfmod;
+exporto tabla isb100esfmod a 
+C:\Users\Marco\OneDrive\Smstr15\S15ArtUno\S15A1IeeeLatin\Envio250411\MYSQL/ 
+isb100esfmodest
