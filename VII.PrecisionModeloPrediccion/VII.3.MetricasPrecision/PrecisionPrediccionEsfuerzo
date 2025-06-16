@@ -67,4 +67,6 @@ select * from isborg.isb100modmmretot;
 C:\Users\Marco\OneDrive\Smstr15\S15ArtUno\S15A1IeeeLatin\Envio250411\MYSQL/
 isb100modmmretot
 
+count(*)	sum(errorabsol)	sum(errorrelatmre)	sum(pred25)
+    100	          21982	            10.557	         99
 
