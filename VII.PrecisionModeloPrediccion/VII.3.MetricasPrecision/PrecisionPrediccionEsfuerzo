@@ -1,1 +1,70 @@
 por medio de MySql se aplican las métricas de precisión a la muestra M400 y los valores estimado y real de NWEL1
+# de acuerdo a las métricas de precisión AR Error absoluto, Magnitud del error relativo MRE, Media de la Magnitud del error relativo MMRE, Pred(25) Predicción(25) se  calcula la diferencia entre  NWELL1 actual y NWELL1 estimado NWELL1est.
+# se seleccionan las columnas pryid, nwell1, nwell1est de isborg.isb100esf create table isborg.isb100mmre select pryid, nwell1, nwell1est from isborg.isb100esf;
+create table isborg.isb100modmmre
+select pryid, nwell1, nwell1est from isborg.isb100esfmod;
+# mostrar tabla isborg.isb100modmmre
+select * from isborg.isb100modmmre;
+
+# se adiciona la columna errorabsol  de tipo decimal(10, 4)
+alter table isborg.isb100modmmre
+add errorabsol  decimal (10, 4) not null;
+# modifcar valor de error absol
+# se calcula error absoluto como  esfuerzo real – esfuerzo estimado,
+# errorabsol = nwell1 – nwell1est
+# actualizar valor de la columna errorabsol
+update    isborg.isb100modmmre
+set  errorabsol = nwell1 – nwell1est;
+
+# se adiciona la columna errorrelatmre  de tipo decimal(10, 4)
+alter table isborg.isb100modmmre
+add errorrelatmre  decimal (10, 4) not null;
+
+# modificar valor de error relativo mre
+# se calcula magnitud de error relativo mre =  (valor absoluto (error absoluto)) / nwell1
+# errorrelatmre = abs(errorabsol) / nwell1
+
+# actualizar valor de la columna errorabsol
+ #
+update    isborg.isb100modmmre
+set  errorrelatmre = abs(errorabsol)/nwell1;
+#
+# mostrar tabla isborg.isb100modmmre
+select * from isborg.isb100mmre;
+
+# se adiciona la columna pred25 de tipo entero
+alter table isborg.isb100modmmre
+add pred25  int not null;
+#
+# modifcar valor de pred25
+# se calcula pred25 = 1 cuando errorrelatmre menor o igual a 0.25
+# Pred25 = 1  errorrelatmre <= 0.25
+
+# actualizar valor de la columna errorabsol
+ #
+update    isborg.isb100modmmre
+set  pred25 = 1
+where errorrelatmre <= 0.25;
+#
+# mostrar tabla isborg.isb100modmmre
+select * from isborg.isb100modmmre;
+#
+# calcular totales
+
+Select count(*), sum(errorabsol), sum(errorrelatmre), sum(pred25)
+From isborg.isb100modmmre;
+
+# crear tabla de totales
+Create table sborg.isb100modmmretot
+Select count(*), sum(errorabsol), sum(errorrelatmre), sum(pred25)
+From isborg.isb100modmmre;
+
+#mostrar tabla totales
+# mostrar tabla isborg.isb100modmmretot
+select * from isborg.isb100modmmretot;
+#
+# exportar tabla totales
+C:\Users\Marco\OneDrive\Smstr15\S15ArtUno\S15A1IeeeLatin\Envio250411\MYSQL/
+isb100modmmretot
+
+
