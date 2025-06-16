@@ -1,1 +1,261 @@
 usando el lenguaje R, se determinan los coeficientes de interrelación entre variables inpdendiente-dependientes.
+# del script VI.I.1ModeloVariableIndependiente se determinan los coeficentes de interrelación entre las 
+# variables del modelo
+# mostrar la estructura de isbsg400num
+> str(isbsg400num)
+tibble [400 × 15] (S3: tbl_df/tbl/data.frame)
+ $ pryid    : num [1:400] 10003 10019 10104 10267 10388 ...
+ $ indsct   : num [1:400] 189 189 189 189 9 57 9 19 189 189 ...
+ $ orgtyp   : num [1:400] 150 150 150 150 1 57 1 19 150 150 ...
+ $ apptyp   : num [1:400] 12 10 187 33 8 187 187 187 33 187 ...
+ $ dvltyp   : num [1:400] 323 323 323 323 323 323 74 323 323 323 ...
+ $ dvlplt   : num [1:400] 281 281 281 281 281 281 18 78 281 281 ...
+ $ lngtyp   : num [1:400] 330 330 61 61 61 330 61 330 330 61 ...
+ $ prglng1  : num [1:400] 177 5 12 8 3 177 7 1 177 12 ...
+ $ fncsze   : num [1:400] 67 98 7 107 139 47 359 255 185 113 ...
+ $ nwell1   : num [1:400] 741 324 396 1380 5062 ...
+ $ smmwrkeff: num [1:400] 608 266 396 1137 5062 ...
+
+ $ maxteasze: num [1:400] 9 9 9 9 10 36 9 9 9 9 ...
+ $ dbms1    : num [1:400] 287 287 287 287 287 287 21 1 287 287 ...
+ $ dvlmtd   : num [1:400] 380 380 380 380 380 380 380 380 380 380 ...
+ $ loc      : num [1:400] 3551 9506 259 2247 6533 ...
+# mostrar nombres de columnas
+> colnames(isbsg400num)
+
+ [1] "pryid"     "indsct"    "orgtyp"    "apptyp"    "dvltyp"   
+ [6] "dvlplt"    "lngtyp"    "prglng1"   "fncsze"    "nwell1"   
+[11] "smmwrkeff" "maxteasze" "dbms1"     "dvlmtd"    "loc"  
+
+## normalizar isbsg400num con function minmax
+> norm_minmax <- function (x) {(x - min(x))/(max(x) - min(x))}
+> norm_isbsg400num <- as.data.frame (lapply(isbsg400num,norm_minmax))
+> View(norm_isbsg400num) 
+## Exportar norm_isbsg400num
+write.csv(norm_isbsg400num,
+file = "C:/Users/Marco/OneDrive/Smstr15/S15ArtUno/S15A1IeeeLatin/Envio250510/LenguajeR/norm_isbsg400num")
+#
+> head(norm_isbsg400num) 
+          pryid     indsct    orgtyp     apptyp dvltyp dvlplt
+1 0.0000000000 1.00000000 1.0000000 0.05913978      1      1
+2 0.0008961075 1.00000000 1.0000000 0.04838710      1      1
+3 0.0056566788 1.00000000 1.0000000 1.00000000      1      1
+4 0.0147857743 1.00000000 1.0000000 0.17204301      1      1
+5 0.0215625875 0.04255319 0.0000000 0.03763441      1      1
+6 0.0276113134 0.29787234 0.3758389 1.00000000      1      1
+     lngtyp    prglng1       fncsze      nwell1   smmwrkeff
+1 1.0000000 1.00000000 0.0085181179 0.010952085 0.009390366
+2 1.0000000 0.02272727 0.0127095727 0.004464841 0.003766014
+3 0.1619938 0.06250000 0.0004056247 0.005584941 0.005903926
+4 0.1619938 0.03977273 0.0139264467 0.020892968 0.018090023
+5 0.1619938 0.01136364 0.0182531098 0.078173615 0.082638512
+6 1.0000000 1.00000000 0.0058139535 0.037538892 0.039682931
+   maxteasze dbms1 dvlmtd          loc
+1 0.05839416     1      1 0.0081004956
+2 0.05839416     1      1 0.0225474712
+3 0.05839416     1      1 0.0001140231
+4 0.05839416     1      1 0.0049369598
+5 0.06569343     1      1 0.0153349005
+6 0.25547445     1      1 0.0055289097
+
+> install.packages("rio")
+WARNING: Rtools is required to build R packages but is not currently installed. Please download and install the appropriate version of Rtools before proceeding:
++
+https://cran.rstudio.com/bin/windows/Rtools/
+Installing package into ‘C:/Users/Marco/AppData/Local/R/win-library/4.2’
+(as ‘lib’ is unspecified)
+
+  There is a binary version available but the source version is later:
+    binary source needs_compilation
+rio  1.0.1  1.2.3             FALSE
+
+installing the source package ‘rio’
+
+probando la URL 'https://cran.rstudio.com/src/contrib/rio_1.2.3.tar.gz'
+Content type 'application/x-gzip' length 531681 bytes (519 KB)
+downloaded 519 KB
+
+* installing *source* package 'rio' ...
+** package 'rio' successfully unpacked and MD5 sums checked
+** using staged installation
+** R
+** inst
+** byte-compile and prepare package for lazy loading
+** help
+*** installing help indices
+*** copying figures
+** building package indices
+** installing vignettes
+** testing if installed package can be loaded from temporary location
+** testing if installed package can be loaded from final location
+** testing if installed package keeps a record of temporary installation path
+* DONE (rio)
+
+The downloaded source packages are in
+	‘C:\Users\Marco\AppData\Local\Temp\RtmpgFZnX7\downloaded_packages’
+> 
+> library(rio)
+The following rio suggested packages are not installed: ‘arrow’, ‘hexView’, ‘fst’, ‘pzfx’, ‘rmatio’, ‘readODS’, ‘qs’
+Use 'install_formats()' to install them
+> library(clipr)
+Welcome to clipr. See ?write_clip for advisories on writing to the clipboard in R.
+> write_clip(norm_isbsg400num)
+> isbsg400numno <- norm_isbsg400num
+> summary(isbsg400numno)
+  
+pryid            indsct           orgtyp      
+ Min.   :0.0000   Min.   :0.0000   Min.   :0.0000  
+ 1st Qu.:0.2798   1st Qu.:0.1383   1st Qu.:0.1208  
+ Median :0.4985   Median :0.2979   Median :0.3758  
+ Mean   :0.5049   Mean   :0.5728   Mean   :0.5111  
+ 3rd Qu.:0.7583   3rd Qu.:1.0000   3rd Qu.:1.0000  
+ Max.   :1.0000   Max.   :1.0000   Max.   :1.0000  
+     apptyp            dvltyp           dvlplt      
+ Min.   :0.00000   Min.   :0.0000   Min.   :0.0000  
+ 1st Qu.:0.04167   1st Qu.:1.0000   1st Qu.:0.2281  
+ Median :0.17204   Median :1.0000   Median :1.0000  
+ Mean   :0.49970   Mean   :0.8485   Mean   :0.7481  
+ 3rd Qu.:1.00000   3rd Qu.:1.0000   3rd Qu.:1.0000  
+ Max.   :1.00000   Max.   :1.0000   Max.   :1.0000  
+     lngtyp          prglng1            fncsze        
+ Min.   :0.0000   Min.   :0.00000   Min.   :0.000000  
+ 1st Qu.:1.0000   1st Qu.:0.05682   1st Qu.:0.007166  
+ Median :1.0000   Median :0.18750   Median :0.013791  
+ Mean   :0.8497   Mean   :0.48233   Mean   :0.031788  
+ 3rd Qu.:1.0000   3rd Qu.:1.00000   3rd Qu.:0.030287  
+ Max.   :1.0000   Max.   :1.00000   Max.   :1.000000  
+     nwell1          smmwrkeff          maxteasze      
+ Min.   :0.00000   Min.   :0.000000   Min.   :0.00000  
+ 1st Qu.:0.01072   1st Qu.:0.009797   1st Qu.:0.05839  
+ Median :0.02132   Median :0.020573   Median :0.05839  
+ Mean   :0.05397   Mean   :0.052078   Mean   :0.09128  
+ 3rd Qu.:0.05584   3rd Qu.:0.054767   3rd Qu.:0.05839  
+ Max.   :1.00000   Max.   :1.000000   Max.   :1.00000  
+     dbms1            dvlmtd            loc          
+ Min.   :0.0000   Min.   :0.0000   Min.   :0.000000  
+ 1st Qu.:0.1014   1st Qu.:1.0000   1st Qu.:0.006171  
+ Median :1.0000   Median :1.0000   Median :0.013372  
+ Mean   :0.7309   Mean   :0.9503   Mean   :0.032836  
+ 3rd Qu.:1.0000   3rd Qu.:1.0000   3rd Qu.:0.026754  
+ Max.   :1.0000   Max.   :1.0000   Max.   :1.000000  
+
+> cor(isbsg400numno)
+     pryid      indsct      orgtyp       apptyp
+pryid      1.000000000  0.02869349  0.01255510  0.006799264
+indsct     0.028693492  1.00000000  0.79531883 -0.284873855
+orgtyp     0.012555103  0.79531883  1.00000000 -0.047392513
+apptyp     0.006799264 -0.28487386 -0.04739251  1.000000000
+dvltyp     0.021860882  0.19731256  0.16769402  0.042029285
+dvlplt     0.034863363  0.35139900  0.50435387  0.153189891
+lngtyp     0.144941481  0.04054140  0.06917770  0.067862741
+prglng1    0.110882073  0.14169717  0.19834465  0.137954329
+fncsze     0.052367657 -0.07225711 -0.08136567 -0.037701944
+nwell1     0.100839758 -0.11810945 -0.14616530  0.040626866
+smmwrkeff  0.084816853 -0.12350797 -0.15660055  0.028752529
+maxteasze  0.107798243 -0.20453539 -0.10998175  0.289771693
+dbms1      0.069787808  0.19892493  0.38332263  0.128313141
+dvlmtd    -0.023904934  0.12586377  0.19071398  0.193520065
+loc        0.046537221 -0.06825839 -0.07538729  0.011776021
+               dvltyp      dvlplt      lngtyp     prglng1
+pryid      0.02186088  0.03486336  0.14494148  0.11088207
+indsct     0.19731256  0.35139900  0.04054140  0.14169717
+orgtyp     0.16769402  0.50435387  0.06917770  0.19834465
+apptyp     0.04202929  0.15318989  0.06786274  0.13795433
+dvltyp     1.00000000  0.29280462  0.10300513  0.19785962
+dvlplt     0.29280462  1.00000000  0.14640830  0.35679244
+lngtyp     0.10300513  0.14640830  1.00000000  0.38339626
+prglng1    0.19785962  0.35679244  0.38339626  1.00000000
+fncsze    -0.35362066 -0.17932371 -0.02769293 -0.03108684
+nwell1    -0.23915198 -0.11845486  0.03487038 -0.01116219
+smmwrkeff -0.25450952 -0.10873342  0.03298457 -0.01921478
+maxteasze  0.13752989  0.18920723  0.14191068  0.32809333
+dbms1      0.25988132  0.53079196  0.09883902  0.19150648
+dvlmtd     0.18316283  0.27719229 -0.01756086  0.04278776
+loc       -0.26954917 -0.16894412  0.01185427 -0.05114228
+               fncsze      nwell1   smmwrkeff   maxteasze
+pryid      0.05236766  0.10083976  0.08481685  0.10779824
+indsct    -0.07225711 -0.11810945 -0.12350797 -0.20453539
+orgtyp    -0.08136567 -0.14616530 -0.15660055 -0.10998175
+apptyp    -0.03770194  0.04062687  0.02875253  0.28977169
+dvltyp    -0.35362066 -0.23915198 -0.25450952  0.13752989
+dvlplt    -0.17932371 -0.11845486 -0.10873342  0.18920723
+lngtyp    -0.02769293  0.03487038  0.03298457  0.14191068
+prglng1   -0.03108684 -0.01116219 -0.01921478  0.32809333
+fncsze     1.00000000  0.69380425  0.71416712 -0.02474795
+nwell1     0.69380425  1.00000000  0.96225901  0.28353535
+smmwrkeff  0.71416712  0.96225901  1.00000000  0.31746185
+maxteasze -0.02474795  0.28353535  0.31746185  1.00000000
+dbms1     -0.08429595 -0.05345735 -0.02643567  0.17892425
+dvlmtd    -0.12524976 -0.11232004 -0.11987741  0.07189234
+loc        0.83056951  0.61419618  0.63733463 -0.00192964
+                dbms1      dvlmtd         loc
+pryid      0.06978781 -0.02390493  0.04653722
+indsct     0.19892493  0.12586377 -0.06825839
+orgtyp     0.38332263  0.19071398 -0.07538729
+apptyp     0.12831314  0.19352007  0.01177602
+dvltyp     0.25988132  0.18316283 -0.26954917
+dvlplt     0.53079196  0.27719229 -0.16894412
+lngtyp     0.09883902 -0.01756086  0.01185427
+prglng1    0.19150648  0.04278776 -0.05114228
+fncsze    -0.08429595 -0.12524976  0.83056951
+nwell1    -0.05345735 -0.11232004  0.61419618
+smmwrkeff -0.02643567 -0.11987741  0.63733463
+maxteasze  0.17892425  0.07189234 -0.00192964
+dbms1      1.00000000  0.08569148 -0.09434964
+dvlmtd     0.08569148  1.00000000 -0.08922153
+loc       -0.09434964 -0.08922153  1.00000000
+
+Mtx2<-cor(isbsg400numno)   #permite ejecutar una matriz de correlación
+
+install.packages("corrplot")
+   library(corrplot)
+
+> corrplot(Mtx2, method = "ellipse") #permite obtener un gráfico con elipses
+corrplot(Mtx2, method = "number") #permite obtener un gráfico con números
+Modelo5 = lm(nwell1 ~ (indsct + orgtyp + apptyp + dvltyp + 
+           dvlplt + lngtyp + prglng1 + fncsze + smmwrkeff + 
+	   maxteasze + dbms1 + dvlmtd + loc), 
+     datos = isbsg400numno)
+
+summary(modelo5)
+Call:
+lm(formula = nwell1 ~ (indsct + orgtyp + apptyp + dvltyp + dvlplt + 
+    lngtyp + prglng1 + fncsze + smmwrkeff + maxteasze + dbms1 + 
+    dvlmtd + loc), datos = isbsg400numno)
+
+Residuals:
+     Min       1Q   Median       3Q      Max 
+-0.05254 -0.00490 -0.00133  0.00229  0.49952 
+
+Coefficients:
+              Estimate Std. Error t value Pr(>|t|)    
+(Intercept) -0.0003684  0.0083420  -0.044   0.9648    
+indsct      -0.0048523  0.0064246  -0.755   0.4505    
+orgtyp       0.0085581  0.0068820   1.244   0.2144    
+apptyp       0.0048879  0.0034662   1.410   0.1593    
+dvltyp       0.0071776  0.0052279   1.373   0.1706    
+dvlplt      -0.0037010  0.0050209  -0.737   0.4615    
+lngtyp       0.0004203  0.0046948   0.090   0.9287    
+prglng1      0.0042032  0.0037355   1.125   0.2612    
+fncsze       0.0219795  0.0440756   0.499   0.6183    
+smmwrkeff    1.0157302  0.0238449  42.597   <2e-16 ***
+maxteasze   -0.0297538  0.0150434  -1.978   0.0487 *  
+dbms1       -0.0085840  0.0040791  -2.104   0.0360 *  
+dvlmtd       0.0009538  0.0070206   0.136   0.8920    
+loc         -0.0279374  0.0310101  -0.901   0.3682    
+---
+Signif. codes:  0 ‘***’ 0.001 ‘**’ 0.01 ‘*’ 0.05 ‘.’ 0.1 ‘ ’ 1
+
+Residual standard error: 0.02813 on 386 degrees of freedom
+Multiple R-squared:  0.9287,	Adjusted R-squared:  0.9263 
+F-statistic: 386.6 on 13 and 386 DF,  p-value: < 2.2e-16
+
+solo la variable SmmWrkEff, es significativa por su p-value < 0.05 ***; MaxTeaSze  por su p-value * -0.0297538; 
+dbms1, por su p-value * -0.0085840
+ de forma que la predicción de esfuerzo NWELL1 puede representarse como
+
+NWELL1 = -0.0003684    + smmWrkeff * 1.0157302   +  maxteasze * (-0.0297538  )  + dbms1 * (-0.0085840)
+Con esta expressión se puede evaluar la precisión del estimado nwell1 mediante métricas mre, mmre, pred() 
+ver articulo WRD_Manuscript9434XXXX-
+
+
