@@ -1,1 +1,26 @@
 usando MySql, calcular el estimado de esfuerzo NWEL1 en la muestra M400
+
+# de la tabla C:\Users\Marco\OneDrive\Smstr15\S15ArtUno\S15A1IeeeLatin\Envio250411\MYSQL/ isb100
+# se aplica el modelo3 del lenguaje R,  junto con los VII.1coeficientes de interrelacionM400
+#  para calcular el estimado de esfuerzo NWELL1est
+# NWELL1 = 0.007018 + smmWrkeff * 1.010  +  orgtypcnt * (0.005803) +
+# dvltypcnt * (-0.006540) 
+# modelo3 = lm(nwell1 ~ (smmwrkeff + orgtypcnt + dvltypcnt), 
+# data=N100pruebapry)
+  
+# calcular nwell1est
+ update    isborg.isb100esfmod
+ set   nwell1est = intercepto + smmwrkeff * smmwrkeffcof   +  orgtypcnt * orgtypcntcof   + dvltypcnt * dvltypcntcof;
+# mostrar tabla isborg.isb100esfmod
+select * from isborg.isb100esfmod;
+# y se toma la tabla
+ # C:\Users\Marco\OneDrive\Smstr15\S15ArtUno\S15A1IeeeLatin\Envio250411\MYSQL/ 
+# isb100esfmodest
+# como base de referencia para calcular las métricas de precisión para el valor calculado de la 
+# predicción de esfuerzo nwell1est.
+
+
+
+
+
+
