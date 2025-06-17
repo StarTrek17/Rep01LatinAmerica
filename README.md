@@ -11,21 +11,25 @@ primer repositorio de IEEE LatinAmerica
 
 
 Resources and extra documentation for the manuscript "Replacing Missing Data" published in IEEE Latin America Transactions. The code is organized by the type of process:
-I.-    Repositorio de datos
+
+I.-    Repositorio de datos.
        Este proceso decide cual será el repositorio de donde se extraen los datos de experimentación.
        I.1.-   Repositorio ISBSG.
                El proceso selecciona al repositorio ISBSG como el repositorio de datos de investigación.
+               
 II.-   Calidad de datos.
        Durante este proceso se depuran los datos del repositorio de acuerdo a criterios de calidad ISBSG.
        II.1     MySql. Filtros de datos ISBSG.
                 Pone en ejecución los criterios de calidad sugeridos por ISBSG.
        II.2	    Datasets.
+       
 III.-  Muestra de datos de experimentación 
        Del conjunto general de datos ISBSG con calidad, se toma una muestra aleatoria de datos.
        III.1    Lenguaje R. Selección de muestra aleatoria de 400 proyectos M400.
                 Del dataset ISBSG depurado por calidad, se selecciona una muestra aleaoria
                 de 400 proyectos.
        III.2	    Datasets.
+       
 IV.-   Remplazar datos faltantes M400.
        Cubre los huecos de información producidos por la presencia de datos faltantes en la muestra aleatoria,
        tanto para variables categóricas como para variables numéricas.
@@ -36,6 +40,7 @@ IV.-   Remplazar datos faltantes M400.
        IV.3     MySql. Variable numérica tamaño máximo de equipo.
                 Rellena los datos faltantes presentes en la variable numérica MAXTEASZE.              
        IV.4	    Datasets.
+       
 V.-    Normalizar muestra M400 de datos completos.
        La muestra de datos completos, resultado del relleno de datos faltantes, requiere uniformizar
        sus valores mediante un proceso de normalización facilitado por el lenguaje R.
@@ -43,6 +48,7 @@ V.-    Normalizar muestra M400 de datos completos.
                 Se utiliza la función de valor minimo-máximo para normalizar cada variable
                 de la muestra M400.
        V.2	    Datasets.
+       
 VI.-   Modelo de predicción de esfuerzo.
        Se define un modelo de relación entre la variable independiente NWELL1 y las
        variables dependientes obteniendo además los coeficentes de interrelación
