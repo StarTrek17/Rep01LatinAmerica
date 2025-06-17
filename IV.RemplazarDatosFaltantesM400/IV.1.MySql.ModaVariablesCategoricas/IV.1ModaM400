@@ -5,16 +5,15 @@ es utilizada para extraer los datos categóricos y numéricos. Se seleccionan lo
 The code is organized by the type of process:
 # IV.-   Remplazar datos faltantes M400
 #      IV.1     MySql. La moda en variables categóricas
-#      IV.1.1     Selección 400 registros
-#      IV.1.2     Selección variables estudio
-#      IV.1.3     Asignar valor -1 a dato numérico faltante
-#      IV.1.4     Calcular moda en variable indsct
-#      IV.1.5     Calcular moda en variable orgtyp 
-#      IV.1.6     Calcular moda en variable apptyp 
-#      IV.1.7     Calcular moda en variable dvltyp 
-#      IV.1.8     Calcular moda en variable dvlplt 
-#      IV.1.9     Calcular moda en variable lngtyp 
-#      IV.1.10     Calcular moda en variable prglng1
-#      IV.1.11     Calcular moda en variable dbms1
-#      IV.1.12     Calcular moda en variable dvlmtd
+#              IV.1.1     Selección 400 registros
+#              IV.1.2     Selección variables estudio
+#              IV.1.3     Calcular moda en variable indsc6
+#              IV.1.4     Calcular moda en variable orgtyp 
+#              IV.1.5     Calcular moda en variable apptyp 
+#              IV.1.6     Calcular moda en variable dvltyp 
+#              IV.1.7     Calcular moda en variable dvlplt 
+#              IV.1.8     Calcular moda en variable lngtyp 
+#              IV.1.9     Calcular moda en variable prglng1
+#              IV.1.10     Calcular moda en variable dbms1
+#              IV.1.11     Calcular moda en variable dvlmtd
 
