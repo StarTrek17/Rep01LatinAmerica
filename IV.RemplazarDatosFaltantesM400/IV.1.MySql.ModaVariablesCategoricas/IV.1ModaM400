@@ -1,6 +1,8 @@
 En MYSql se calcula la moda de cada variable categorica
-#  La muestra_ordenada C:\Users\Marco\OneDrive\Smstr15\S15ArtUno\S15A1IeeeLatin\Envio250510\GitHubCode isbsgmo es utilizada para extraer los datos categóricos y numéricos. Se seleccionan los primeros 400 proyectos
-# Resources and extra documentation for the manuscript "Replacing Missing Data" published in # # IEEE Latin America Transactions. The code is organized by the type of process:
+#  La muestra_ordenada de 500 proyectos 
+C:\Users\Marco\OneDrive\Smstr15\S15ArtUno\S15A1IeeeLatin\Envio250510\GitHubCode isbsgmo 
+es utilizada para extraer los datos categóricos y numéricos. Se seleccionan los primeros 400 proyectos
+The code is organized by the type of process:
 # IV.-   Remplazar datos faltantes M400
 #      IV.1     MySql. La moda en variables categóricas
 #      IV.1.1     Selección 400 registros
