@@ -26,7 +26,7 @@ II.-   Calidad de datos.
 III.-  Muestra de datos de experimentación 
        Del conjunto general de datos ISBSG con calidad, se toma una muestra aleatoria de datos.
        III.1    Lenguaje R. Selección de muestra aleatoria de 400 proyectos M400.
-                Del dataset ISBSG depurado por calidad, se selecciona una muestra aleaoria
+                Del dataset ISBSG depurado por calidad, se selecciona una muestra aleatoria
                 de 400 proyectos.
        III.2	    Datasets.
        
@@ -45,13 +45,13 @@ V.-    Normalizar muestra M400 de datos completos.
        La muestra de datos completos, resultado del relleno de datos faltantes, requiere uniformizar
        sus valores mediante un proceso de normalización facilitado por el lenguaje R.
        V.1      Lenguaje R. Normalizar muestra M400.
-                Se utiliza la función de valor minimo-máximo para normalizar cada variable
+                Se utiliza la función de valor mínimo-máximo para normalizar cada variable
                 de la muestra M400.
        V.2	    Datasets.
        
 VI.-   Modelo de predicción de esfuerzo.
        Se define un modelo de relación entre la variable independiente NWELL1 y las
-       variables dependientes obteniendo además los coeficentes de interrelación
+       variables dependientes obteniendo además los coeficientes de interrelación
        entre ambas variables para significar las variables más significativas que
        sirven para ajustar el modelo.
        VI.1     Lenguaje R. Modelo de variable independiente de esfuerzo NWEL1.  
@@ -71,7 +71,7 @@ VII.-  Precisión del modelo de predicción de esfuerzo.
                 Utilizando funciones MySql se define un conjunto de datos que incluye las variables 
                 del modelo ajustado y sus coeficientes de interrelación respectivos.
        VII.2    MySql.-   Esfuerzo de trabajo estimado NWEL1est.
-                Aplicando el modelo ajsutado, se calcula el esfuerzo de trabajo estimado NWEL1est.
+                Aplicando el modelo ajustado, se calcula el esfuerzo de trabajo estimado NWEL1est.
        VII.3    MySql.-   Métricas de precisión de NWEL1est.
                 Aplicando métricas de precisión comunmente aceptadas, se obtiene la exactitud del modelo.
        VII.4    MySql.-   Precisión del estimado NWEL1est con la muestra M400.
