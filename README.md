@@ -66,13 +66,13 @@ VI.-   Modelo de predicción de esfuerzo.
 
 VII.-  Precisión del modelo de predicción de esfuerzo.
        Utilizando métricas de precisión se logra determinar la exactitud y validez 
-       del modelo prouesto de predicción de esfuerzo.
+       del modelo propuesto de predicción de esfuerzo.
        VII.1    MySql.-   Coeficientes de interrelación en M400.
                 Utilizando funciones MySql se define un conjunto de datos que incluye las variables 
                 del modelo ajustado y sus coeficientes de interrelación respectivos.
        VII.2    MySql.-   Esfuerzo de trabajo estimado NWEL1est.
                 Aplicando el modelo ajsutado, se calcula el esfuerzo de trabajo estimado NWEL1est.
-       VII.3    MySqñ.-   Métricas de precisión de NWEL1est.
+       VII.3    MySql.-   Métricas de precisión de NWEL1est.
                 Aplicando métricas de precisión comunmente aceptadas, se obtiene la exactitud del modelo.
        VII.4    MySql.-   Precisión del estimado NWEL1est con la muestra M400.
                 Verificando los valores obtenidos por las métricas, se concluye que nuestro
