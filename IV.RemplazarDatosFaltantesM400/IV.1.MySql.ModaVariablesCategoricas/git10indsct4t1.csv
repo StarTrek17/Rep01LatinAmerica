@@ -1,0 +1,401 @@
+pryidind,indsct,progra,conteo2ind
+10003,Communication,Communication,189
+10019,Communication,Communication,189
+10104,Communication,Communication,189
+10267,Communication,Communication,189
+10388,"Service Industry","Service Industry",9
+10496,"Medical & Health Care","Medical & Health Care",57
+10566,"Service Industry","Service Industry",9
+10621,Banking,Banking,19
+10632,Communication,Communication,189
+10649,Communication,Communication,189
+10667,Communication,Communication,189
+10750,"Medical & Health Care","Medical & Health Care",57
+10896,Insurance,Insurance,53
+10929,"Medical & Health Care","Medical & Health Care",57
+10960,Communication,Communication,189
+10997,Banking,Banking,19
+11044,Banking,Banking,19
+11055,"Service Industry","Service Industry",9
+11083,Government,Government,27
+11101,Communication,Communication,189
+11113,Communication,Communication,189
+11132,Communication,Communication,189
+11251,Government,Government,27
+11339,Communication,Communication,189
+11389,Communication,Communication,189
+11436,Banking,Banking,19
+11493,"Medical & Health Care","Medical & Health Care",57
+11527,Communication,Communication,189
+11569,Communication,Communication,189
+11714,Banking,Banking,19
+11755,"Electronics & Computers","Electronics & Computers",4
+11763,Communication,Communication,189
+11785,Communication,Communication,189
+11993,Communication,Communication,189
+12019,"Medical & Health Care","Medical & Health Care",57
+12038,Communication,Communication,189
+12060,"Wholesale & Retail","Wholesale & Retail",5
+12082,Manufacturing,Manufacturing,12
+12097,Communication,Communication,189
+12146,"Service Industry","Service Industry",9
+12152,"Medical & Health Care","Medical & Health Care",57
+12153,"Electronics & Computers","Electronics & Computers",4
+12174,Communication,Communication,189
+12175,Communication,Communication,189
+12181,"Medical & Health Care","Medical & Health Care",57
+12202,Manufacturing,Manufacturing,12
+12204,Construction,Construction,1
+12305,Communication,Communication,189
+12344,Communication,Communication,189
+12365,Communication,Communication,189
+12377,Financial,Financial,18
+12410,Communication,Communication,189
+12529,Financial,Financial,18
+12573,Manufacturing,Manufacturing,12
+12667,Banking,Banking,19
+12684,Communication,Communication,189
+12712,"Medical & Health Care","Medical & Health Care",57
+12728,Communication,Communication,189
+12888,Communication,Communication,189
+13137,Communication,Communication,189
+13169,Communication,Communication,189
+13217,Communication,Communication,189
+13246,Insurance,Insurance,53
+13273,"Medical & Health Care","Medical & Health Care",57
+13303,Insurance,Insurance,53
+13367,Communication,Communication,189
+13403,Communication,Communication,189
+13597,"Service Industry","Service Industry",9
+13652,Communication,Communication,189
+13680,Financial,Financial,18
+13712,Communication,Communication,189
+13795,Communication,Communication,189
+13884,Communication,Communication,189
+13896,"Service Industry","Service Industry",9
+13915,Communication,Communication,189
+13981,Insurance,Insurance,53
+14078,Communication,Communication,189
+14091,Communication,Communication,189
+14157,Insurance,Insurance,53
+14228,Communication,Communication,189
+14257,Utilities,Utilities,3
+14289,Government,Government,27
+14374,Banking,Banking,19
+14410,Government,Government,27
+14422,Communication,Communication,189
+14439,Government,Government,27
+14466,Insurance,Insurance,53
+14483,Communication,Communication,189
+14494,"Medical & Health Care","Medical & Health Care",57
+14544,"Medical & Health Care","Medical & Health Care",57
+14712,Insurance,Insurance,53
+14715,Communication,Communication,189
+14758,Insurance,Insurance,53
+14764,Banking,Banking,19
+14780,Communication,Communication,189
+14879,Communication,Communication,189
+14892,Communication,Communication,189
+14959,Communication,Communication,189
+14968,"Medical & Health Care","Medical & Health Care",57
+14972,Insurance,Insurance,53
+15008,Communication,Communication,189
+15009,Communication,Communication,189
+15047,Financial,Financial,18
+15123,Insurance,Insurance,53
+15149,Communication,Communication,189
+15197,Government,Government,27
+15211,Insurance,Insurance,53
+15240,Banking,Banking,19
+15351,Communication,Communication,189
+15371,Communication,Communication,189
+15402,Communication,Communication,189
+15409,Insurance,Insurance,53
+15436,Communication,Communication,189
+15489,Communication,Communication,189
+15561,Financial,Financial,18
+15593,Communication,Communication,189
+15622,"Medical & Health Care","Medical & Health Care",57
+15670,Insurance,Insurance,53
+15689,Communication,Communication,189
+15724,Communication,Communication,189
+15732,Communication,Communication,189
+15733,"Medical & Health Care","Medical & Health Care",57
+15745,Communication,Communication,189
+15823,Government,Government,27
+15850,"Medical & Health Care","Medical & Health Care",57
+15947,"Medical & Health Care","Medical & Health Care",57
+16165,Government,Government,27
+16185,Financial,Financial,18
+16190,Government,Government,27
+16191,Communication,Communication,189
+16196,Government,Government,27
+16232,Communication,Communication,189
+16330,Insurance,Insurance,53
+16431,"Medical & Health Care","Medical & Health Care",57
+16439,"Medical & Health Care","Medical & Health Care",57
+16466,"Service Industry","Service Industry",9
+16467,Communication,Communication,189
+16525,Communication,Communication,189
+16534,Communication,Communication,189
+16645,Communication,Communication,189
+16682,Financial,Financial,18
+16685,Financial,Financial,18
+16701,Banking,Banking,19
+16766,Communication,Communication,189
+16771,"Wholesale & Retail","Wholesale & Retail",5
+16819,Insurance,Insurance,53
+16843,Communication,Communication,189
+16875,Government,Government,27
+16886,Communication,Communication,189
+16889,Manufacturing,Manufacturing,12
+16932,Communication,Communication,189
+16963,Communication,Communication,189
+16997,Insurance,Insurance,53
+17078,Communication,Communication,189
+17117,Insurance,Insurance,53
+17172,Insurance,Insurance,53
+17184,Government,Government,27
+17222,Insurance,Insurance,53
+17246,Communication,Communication,189
+17279,Communication,Communication,189
+17287,Communication,Communication,189
+17308,"Medical & Health Care","Medical & Health Care",57
+17429,"Medical & Health Care","Medical & Health Care",57
+17455,Communication,Communication,189
+17498,Communication,Communication,189
+17584,"Medical & Health Care","Medical & Health Care",57
+17594,"Service Industry","Service Industry",9
+17603,"Medical & Health Care","Medical & Health Care",57
+17639,Communication,Communication,189
+17663,Communication,Communication,189
+17743,Banking,Banking,19
+17758,Communication,Communication,189
+17872,Mining,Mining,2
+17903,Manufacturing,Manufacturing,12
+17990,"Medical & Health Care","Medical & Health Care",57
+17995,Communication,Communication,189
+18012,Insurance,Insurance,53
+18015,Communication,Communication,189
+18044,Communication,Communication,189
+18088,Insurance,Insurance,53
+18119,Government,Government,27
+18310,Insurance,Insurance,53
+18346,"Medical & Health Care","Medical & Health Care",57
+18361,Government,Government,27
+18387,Financial,Financial,18
+18410,Communication,Communication,189
+18417,Communication,Communication,189
+18427,Financial,Financial,18
+18428,Communication,Communication,189
+18438,Banking,Banking,19
+18442,Financial,Financial,18
+18459,Financial,Financial,18
+18498,Communication,Communication,189
+18638,Communication,Communication,189
+18663,Communication,Communication,189
+18697,Communication,Communication,189
+18735,Communication,Communication,189
+18746,Government,Government,27
+18808,Communication,Communication,189
+18890,Insurance,Insurance,53
+18917,Insurance,Insurance,53
+18945,Financial,Financial,18
+18961,Communication,Communication,189
+19040,"Medical & Health Care","Medical & Health Care",57
+19079,"Medical & Health Care","Medical & Health Care",57
+19114,Government,Government,27
+19122,Communication,Communication,189
+19136,"Medical & Health Care","Medical & Health Care",57
+19148,Communication,Communication,189
+19154,Insurance,Insurance,53
+19189,Communication,Communication,189
+19297,Insurance,Insurance,53
+19303,"Wholesale & Retail","Wholesale & Retail",5
+19403,"Medical & Health Care","Medical & Health Care",57
+19410,Banking,Banking,19
+19456,Insurance,Insurance,53
+19461,"Medical & Health Care","Medical & Health Care",57
+19490,Communication,Communication,189
+19491,Communication,Communication,189
+19594,Insurance,Insurance,53
+19659,Communication,Communication,189
+19660,Financial,Financial,18
+19671,Communication,Communication,189
+19680,Communication,Communication,189
+19730,Government,Government,27
+19757,Government,Government,27
+19799,Communication,Communication,189
+19815,Utilities,Utilities,3
+19881,"Wholesale & Retail","Wholesale & Retail",5
+19885,"Medical & Health Care","Medical & Health Care",57
+19905,Banking,Banking,19
+20082,Communication,Communication,189
+20093,Manufacturing,Manufacturing,12
+20106,Government,Government,27
+20115,Communication,Communication,189
+20123,Insurance,Insurance,53
+20177,Communication,Communication,189
+20236,Insurance,Insurance,53
+20352,"Medical & Health Care","Medical & Health Care",57
+20398,Communication,Communication,189
+20419,Communication,Communication,189
+20477,Manufacturing,Manufacturing,12
+20538,"Medical & Health Care","Medical & Health Care",57
+20614,Communication,Communication,189
+20758,Communication,Communication,189
+20776,Communication,Communication,189
+20837,Communication,Communication,189
+20887,"Medical & Health Care","Medical & Health Care",57
+20892,Government,Government,27
+21078,Communication,Communication,189
+21107,Government,Government,27
+21114,Communication,Communication,189
+21151,Communication,Communication,189
+21180,"Electronics & Computers","Electronics & Computers",4
+21195,Communication,Communication,189
+21198,Communication,Communication,189
+21261,Insurance,Insurance,53
+21317,"Medical & Health Care","Medical & Health Care",57
+21370,Insurance,Insurance,53
+21394,Communication,Communication,189
+21399,Communication,Communication,189
+21420,Communication,Communication,189
+21429,Communication,Communication,189
+21433,Communication,Communication,189
+21467,Communication,Communication,189
+21496,Banking,Banking,19
+21522,Insurance,Insurance,53
+21552,Manufacturing,Manufacturing,12
+21609,Communication,Communication,189
+21623,Communication,Communication,189
+21668,Financial,Financial,18
+21775,Communication,Communication,189
+21824,Insurance,Insurance,53
+21859,Insurance,Insurance,53
+21915,"Electronics & Computers","Electronics & Computers",4
+22063,Insurance,Insurance,53
+22274,Government,Government,27
+22342,Communication,Communication,189
+22361,Communication,Communication,189
+22425,"Medical & Health Care","Medical & Health Care",57
+22465,Communication,Communication,189
+22471,Insurance,Insurance,53
+22495,Communication,Communication,189
+22507,Banking,Banking,19
+22638,Communication,Communication,189
+22727,Government,Government,27
+22776,Communication,Communication,189
+22886,Communication,Communication,189
+22893,Communication,Communication,189
+22922,"Medical & Health Care","Medical & Health Care",57
+22951,Communication,Communication,189
+22957,Communication,Communication,189
+23066,Banking,Banking,19
+23110,Communication,Communication,189
+23122,"Medical & Health Care","Medical & Health Care",57
+23182,Communication,Communication,189
+23317,Communication,Communication,189
+23467,"Medical & Health Care","Medical & Health Care",57
+23518,Communication,Communication,189
+23538,"Medical & Health Care","Medical & Health Care",57
+23559,"Professional Services","Professional Services",1
+23565,Financial,Financial,18
+23573,Communication,Communication,189
+23656,Communication,Communication,189
+23687,Manufacturing,Manufacturing,12
+23698,Communication,Communication,189
+23708,Communication,Communication,189
+23712,Communication,Communication,189
+23741,"Medical & Health Care","Medical & Health Care",57
+23766,Insurance,Insurance,53
+23777,Communication,Communication,189
+23784,"Medical & Health Care","Medical & Health Care",57
+23972,"Medical & Health Care","Medical & Health Care",57
+24009,Insurance,Insurance,53
+24042,Banking,Banking,19
+24043,Communication,Communication,189
+24125,Mining,Mining,2
+24135,Communication,Communication,189
+24141,Communication,Communication,189
+24151,Communication,Communication,189
+24210,Insurance,Insurance,53
+24366,Communication,Communication,189
+24407,Manufacturing,Manufacturing,12
+24457,Communication,Communication,189
+24505,Communication,Communication,189
+24543,"Medical & Health Care","Medical & Health Care",57
+24573,Communication,Communication,189
+24615,"Medical & Health Care","Medical & Health Care",57
+24629,Communication,Communication,189
+24633,Communication,Communication,189
+24661,Insurance,Insurance,53
+24851,Communication,Communication,189
+24866,Insurance,Insurance,53
+24889,"Medical & Health Care","Medical & Health Care",57
+24937,Insurance,Insurance,53
+25053,"Medical & Health Care","Medical & Health Care",57
+25120,"Service Industry","Service Industry",9
+25126,Communication,Communication,189
+25151,Communication,Communication,189
+25158,Communication,Communication,189
+25213,Insurance,Insurance,53
+25268,Communication,Communication,189
+25270,Communication,Communication,189
+25310,Communication,Communication,189
+25336,Financial,Financial,18
+25343,Communication,Communication,189
+25346,"Medical & Health Care","Medical & Health Care",57
+25438,Communication,Communication,189
+25461,"Medical & Health Care","Medical & Health Care",57
+25509,Communication,Communication,189
+25516,Communication,Communication,189
+25543,Communication,Communication,189
+25618,Government,Government,27
+25641,Manufacturing,Manufacturing,12
+25786,Communication,Communication,189
+25885,Banking,Banking,19
+25916,Communication,Communication,189
+25926,Government,Government,27
+25931,Insurance,Insurance,53
+25975,Utilities,Utilities,3
+25979,Insurance,Insurance,53
+26007,Communication,Communication,189
+26047,Communication,Communication,189
+26096,Communication,Communication,189
+26105,"Medical & Health Care","Medical & Health Care",57
+26137,"Medical & Health Care","Medical & Health Care",57
+26156,Government,Government,27
+26187,Communication,Communication,189
+26199,Communication,Communication,189
+26274,Communication,Communication,189
+26284,Communication,Communication,189
+26290,"Medical & Health Care","Medical & Health Care",57
+26315,Insurance,Insurance,53
+26339,"Wholesale & Retail","Wholesale & Retail",5
+26391,Communication,Communication,189
+26457,Insurance,Insurance,53
+26470,Manufacturing,Manufacturing,12
+26513,Communication,Communication,189
+26537,Insurance,Insurance,53
+26575,Insurance,Insurance,53
+26604,"Medical & Health Care","Medical & Health Care",57
+26738,"Medical & Health Care","Medical & Health Care",57
+26765,Communication,Communication,189
+26888,Insurance,Insurance,53
+26895,Communication,Communication,189
+26925,"Medical & Health Care","Medical & Health Care",57
+26994,Government,Government,27
+26997,Insurance,Insurance,53
+27060,Financial,Financial,18
+27151,Communication,Communication,189
+27171,Communication,Communication,189
+27245,"Medical & Health Care","Medical & Health Care",57
+27357,Communication,Communication,189
+27361,Communication,Communication,189
+27423,Insurance,Insurance,53
+27574,Communication,Communication,189
+27727,Communication,Communication,189
+27743,"Medical & Health Care","Medical & Health Care",57
+27745,"Medical & Health Care","Medical & Health Care",57
+27858,Communication,Communication,189
