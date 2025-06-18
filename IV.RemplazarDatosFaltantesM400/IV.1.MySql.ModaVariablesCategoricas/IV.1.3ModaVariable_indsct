@@ -58,24 +58,31 @@ select * from gitisb.git10indsct;
 	alter table gitisb.git10indsctt4t1
 	drop column progra;
 	select * from gitisb.git10indsctt4t1;
-#		alterar tabla gitisb.git10indsctt4t1 para cambiar el nombre de la columna indsct    #		por indsct2. Mostrar tabla.
+#		alterar tabla gitisb.git10indsctt4t1 para cambiar el nombre de la columna indsct 
+#		por indsct2. Mostrar tabla.
 	alter table gitisb.git10indsctt4t1
 	change column indsct indsct2 text;
 	select * from gitisb.git10indsctt4t1;
-#	8.	duplicar tabla gitisb.git10indsctt4t1 con 2 copias: gitisb.git101indsctcnt y                    #		gitisb.git102indsctconteo.
+#	8.	duplicar tabla gitisb.git10indsctt4t1 con 2 copias: gitisb.git101indsctcnt y   
+#		gitisb.git102indsctconteo.
 	create table gitisb.git101indsctcnt 
 	select * from gitisb.git10indsctt4t1;
 	create table gitisb.git102indsctconteo
 	select * from gitisb.git10indsctt4t1;
-#		se borra la columna indsct de la tabla gitisb.git102indsctconteo. Solo permanecen #		los valores de frecuencia correspondientes  a cada valor de indsct.
+#		se borra la columna indsct de la tabla gitisb.git102indsctconteo. Solo permanecen 
+#		los valores de frecuencia correspondientes  a cada valor de indsct.
 	alter table gitisb.git102indsctconteo 
 	drop column indsct;
 #
-#		la tabla gitisb.git101indsctcnt  contiene el conteo de frecuencias de cada valor  de     #		indsct. La tabla es base para armar la tabla de valores completos gitisb.gitisbmofil #		la cual sirve para extraer la muestra de entrenamiento de 400 proyectos
+#		la tabla gitisb.git101indsctcnt  contiene el conteo de frecuencias de cada valor  de  
+#		indsct. La tabla es base para armar la tabla de valores completos gitisb.gitisbmofil
+#		la cual sirve para extraer la muestra de entrenamiento de 400 proyectos
 	select * from gitisb.git101indsctcnt;
-#		la tabla gitisb.git102indsctconteo  solo contiene el conteo de frecuencias de cada #		valor indsct
+#		la tabla gitisb.git102indsctconteo  solo contiene el conteo de frecuencias de cada 
+#		valor indsct
 	select * from gitisb.git102indsctconteo;
-#			agregar columna indsct, conteo2ind de tabla gitisb.git101indsctcnt a la         #			tabla origen gitisb.gitisbmove mediante un join interno entre ambas tablas 
+#			agregar columna indsct, conteo2ind de tabla gitisb.git101indsctcnt a la     
+#			tabla origen gitisb.gitisbmove mediante un join interno entre ambas tablas 
 #			por el numero de pryid y pryidind
 	create table  gitisb.git101indsct
  	select *  from gitisb.gitisbmove 
