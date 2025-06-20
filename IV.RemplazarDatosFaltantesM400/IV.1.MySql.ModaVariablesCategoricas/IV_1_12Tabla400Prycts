@@ -1,0 +1,143 @@
+#
+#	1.	crear tabla  duplicado de gitisb.git801dvlmtd como la tabla gitisb.git900pryisb	create table gitisb.git900pryisb
+	select *  from gitisb.git801dvlmtd;
+#
+# 		vista de la nueva tabla git900pryisb 
+	select * from gitisb.git900pryisb;
+#		exporto tabla gitisb.git900pryisb a excell en 
+#	C:\Users\Marco\OneDrive\Smstr15\S15ArtUno\S15A1IeeeLatin\Envio250510\MySql/
+#	2.1	En la tabla gitisb.git900pryisb, se iguala la columna original indsct a la columna           #		calculada por moda indsct2. La idea es crear la tabla original de valores y rellenarla #		con los valores calculados por moda para las variables categóricas.
+	update gitisb.git900pryisb
+	set indsct = indsct2;
+#		vista de la tabla gitisb.git900pryisb
+	select * from gitisb.git900pryisb;
+#	verificar existencia de valores faltantes en indsct
+	select * from gitisb.git900pryisb
+	where indsct ="";
+#	cero filas
+#	verificar existencia de  indsct diferente de indsct2
+	select * from gitisb.git900pryisb
+	where indsct != indsct2;
+#	cero filas
+
+#	2.2	En la tabla gitisb.git900pryisb, se iguala la columna original orgtyp a la columna           #		calculada por moda orgtyp2. La idea es crear la tabla original de valores y                #		rellenarla con los valores calculados por moda para las variables categóricas.
+	update gitisb.git900pryisb
+	set orgtyp = orgtyp2;
+#		vista de la tabla gitisb.git900pryisb
+	select * from gitisb.git900pryisb;
+#	verificar existencia de valores faltantes en orgtyp
+	select * from gitisb.git900pryisb
+	where orgtyp ="";
+#	cero filas
+#	verificar existencia de  orgtyp diferente de orgtyp2
+	select * from gitisb.git900pryisb
+	where orgtyp != orgtyp2;
+#	cero filas
+#	suspendo aquí 17.22; continuo 17.54
+#	2.3	En la tabla gitisb.git900pryisb, se iguala la columna original apptyp a la columna           #		calculada por moda apptyp2. La idea es crear la tabla original de valores y                #		rellenarla con los valores calculados por moda para las variables categóricas.
+	update gitisb.git900pryisb
+	set apptyp = apptyp2;
+#		vista de la tabla gitisb.git900pryisb
+	select * from gitisb.git900pryisb;
+#	verificar existencia de valores faltantes en apptyp
+	select * from gitisb.git900pryisb
+	where apptyp ="";
+#	cero filas
+#	verificar existencia de  apptyp diferente de apptyp2
+	select * from gitisb.git900pryisb
+	where apptyp != apptyp2;
+#	cero filas
+#	2.4	En la tabla gitisb.git900pryisb, se iguala la columna original dvlplt 
+#		a la columna  calculada por moda dvlplt2. La idea es crear 
+#		la tabla original de valores y  rellenarla con los valores 
+#		calculados por moda para las variables categóricas.
+	update gitisb.git900pryisb
+	set dvlplt = dvlplt2;
+#		vista de la tabla gitisb.git900pryisb
+	select * from gitisb.git900pryisb;
+#	verificar existencia de valores faltantes en dvlplt
+	select * from gitisb.git900pryisb
+	where dvlplt ="";
+#	cero filas
+#	verificar existencia de  dvlplt diferente de dvlplt2
+	select * from gitisb.git900pryisb
+	where dvlplt != dvlplt2;
+#	cero filas
+#	2.5	En la tabla gitisb.git900pryisb, se iguala la columna original lngtyp 
+#		a la columna  calculada por moda lngtyp2. La idea es crear 
+#		la tabla original de valores y  rellenarla con los valores 
+#		calculados por moda para las variables categóricas.
+	update gitisb.git900pryisb
+	set lngtyp = lngtyp2;
+#		vista de la tabla gitisb.git900pryisb
+	select * from gitisb.git900pryisb;
+#	verificar existencia de valores faltantes en lngtyp
+	select * from gitisb.git900pryisb
+	where lngtyp ="";
+#	cero filas
+#	verificar existencia de  lngtyp diferente de lngtyp2
+	select * from gitisb.git900pryisb
+	where lngtyp != lngtyp2;
+#	cero filas
+
+
+#	2.6	En la tabla gitisb.git900pryisb, se iguala la columna original prglng1 
+#		a la columna  calculada por moda prglng12. La idea es crear 
+#		la tabla original de valores y  rellenarla con los valores 
+#		calculados por moda para las variables categóricas.
+	update gitisb.git900pryisb
+	set prglng1 = prglng2;
+#		vista de la tabla gitisb.git900pryisb
+	select * from gitisb.git900pryisb;
+#	verificar existencia de valores faltantes en prglng1
+	select * from gitisb.git900pryisb
+	where prglng1 ="";
+#	cero filas
+#	verificar existencia de  prglng1 diferente de prglng12
+	select * from gitisb.git900pryisb
+	where prglng1 != prglng2;
+#	cero filas
+#	2.7	En la tabla gitisb.git900pryisb, se iguala la columna original dbms1 
+#		a la columna  calculada por moda dbms12. La idea es crear 
+#		la tabla original de valores y  rellenarla con los valores 
+#		calculados por moda para las variables categóricas.
+	update gitisb.git900pryisb
+	set dbms1 = dbms12;
+#		vista de la tabla gitisb.git900pryisb
+	select * from gitisb.git900pryisb;
+#	verificar existencia de valores faltantes en dbms1
+	select * from gitisb.git900pryisb
+	where dbms1 ="";
+#	cero filas
+#	verificar existencia de dbms1 diferente de dbms12
+	select * from gitisb.git900pryisb
+	where dbms1 != dbms12;
+#	cero filas
+#	2.8	En la tabla gitisb.git900pryisb, se iguala la columna original dvlmtd 
+#		a la columna  calculada por moda dvlmtd2. La idea es crear 
+#		la tabla original de valores y  rellenarla con los valores 
+#		calculados por moda para las variables categóricas.
+	update gitisb.git900pryisb
+	set dvlmtd = dvlmtd2;
+#		vista de la tabla gitisb.git900pryisb
+	select * from gitisb.git900pryisb;
+#	verificar existencia de valores faltantes en dvlmtd
+	select * from gitisb.git900pryisb
+	where dvlmtd ="";
+#	cero filas
+#	verificar existencia de dvlmtd diferente de dvlmtd2
+	select * from gitisb.git900pryisb
+	where dvlmtd != sdvlmtd2;
+#	cero filas
+#	2.9	Crear duplicado de la tabla gitisb.git900pryisb, como gitisb.git901pryisb 
+	create table gitisb.git901pryisb
+	select *  from gitisb. git900pryisb;
+#
+# 		vista de la nueva tabla git901pryisb 
+	select * from gitisb.git901pryisb;
+#		exporto tabla gitisb.git901pryisb a excell en 
+#	C:\Users\Marco\OneDrive\Smstr15\S15ArtUno\S15A1IeeeLatin\Envio250510\MySql/
+
+
+
+
