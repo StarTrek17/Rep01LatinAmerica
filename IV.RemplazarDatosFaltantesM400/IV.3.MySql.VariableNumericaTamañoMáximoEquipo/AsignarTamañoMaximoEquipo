@@ -1,5 +1,5 @@
-# Por medio del método ISPI, aplicar las estadisticas de proyectos terminados para asignar el valor faltante en la variable
-# tamaño maximo de equipo
+# Por medio del método ISPI, aplicar las estadisticas de proyectos terminados para asignar el valor faltante  
+# en la variable tamaño maximo de equipo
 #
 #	1.	crear tabla  duplicado de gitisb.git940pryisb  como la 
 #		tabla gitisb.git950pryisb
@@ -7,7 +7,11 @@
 	select *  from gitisb.git940pryisb;
 # 		vista de la nueva tabla git950pryisb  
 	select * from gitisb.git950pryisb;
-#	2.	Por su parte, la información estadística recopilada por [13] S. McConell, Software  # 	Estimation. Demystifying the Black Art. 2006, sobre 500 proyectos de                       #	software terminados permite imputar valores faltantes del tamaño máximo del          #	equipo maxteasze. Según McConell, comúnmente se acepta que el tamaño             #	máximo del equipo de trabajo debe ser de 9 elementos.
+#	2.	Por su parte, la información estadística recopilada por [13] S. McConell, Software
+# 	Estimation. Demystifying the Black Art. 2006, sobre 500 proyectos de 
+#	software terminados permite imputar valores faltantes del tamaño máximo del
+#	equipo maxteasze. Según McConell, comúnmente se acepta que el tamaño
+#	máximo del equipo de trabajo debe ser de 9 elementos.
 #	se asigna el valor 9 a la columna maxteasze donde tenga el valor -1.
 	update gitisb.git950pryisb
 	set maxteasze  = 9
