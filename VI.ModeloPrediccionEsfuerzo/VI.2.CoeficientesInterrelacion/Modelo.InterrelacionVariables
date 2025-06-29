@@ -1,6 +1,18 @@
-usando el lenguaje R, se determinan los coeficientes de interrelación entre variables inpdendiente-dependientes.
-# del script VI.I.1ModeloVariableIndependiente se determinan los coeficentes de interrelación entre las 
-# variables del modelo
+
+# se importa archivo de excell isbsg400num el cual contiene todos
+# los valores completos de la muestra de 400 proyectos. 
+# Son valores numéricos.
+
+> library(readxl)
+Warning message:
+In fun(libname, pkgname) :
+  Java home setting is INVALID, it will be ignored.
+Please do NOT set it unless you want to override system settings.
+> isbsg400num <- read_excel("C:/Users/Marco/OneDrive/Smstr15/S15ArtUno/S15A1IeeeLatin/Envio250510/LenguajeR/isbsg400num.xlsx")
+# vista del archivo importado isbsg400num
+> View(isbsg400num)
+
+
 # mostrar la estructura de isbsg400num
 > str(isbsg400num)
 tibble [400 × 15] (S3: tbl_df/tbl/data.frame)
@@ -20,6 +32,9 @@ tibble [400 × 15] (S3: tbl_df/tbl/data.frame)
  $ dbms1    : num [1:400] 287 287 287 287 287 287 21 1 287 287 ...
  $ dvlmtd   : num [1:400] 380 380 380 380 380 380 380 380 380 380 ...
  $ loc      : num [1:400] 3551 9506 259 2247 6533 ...
+
+
+
 # mostrar nombres de columnas
 > colnames(isbsg400num)
 
@@ -27,13 +42,68 @@ tibble [400 × 15] (S3: tbl_df/tbl/data.frame)
  [6] "dvlplt"    "lngtyp"    "prglng1"   "fncsze"    "nwell1"   
 [11] "smmwrkeff" "maxteasze" "dbms1"     "dvlmtd"    "loc"  
 
+
+# se puede definir un modelo entre la variable independiente “resumen de # esfuerzo de trabajo, nivel1, NWELL1” y el resto de variables            # dependientes
+> modelo = lm(nwell1 ~ (indsct + orgtyp + apptyp + dvltyp + 
+           dvlplt + lngtyp + prglng1 + fncsze + smmwrkeff + 
+	   maxteasze + dbms1 + dvlmtd + loc), 
+     datos = isbsg400num)						(1)
+Warning message:
+In lm.fit(x, y, offset = offset, singular.ok = singular.ok, ...) :
+ extra argument ‘datos’ will be disregarded 
+> 
+# Se definen las variables significativas
+> summary(modelo)
+
+Call:
+lm(formula = nwell1 ~ (indsct + orgtyp + apptyp + dvltyp + dvlplt + 
+    lngtyp + prglng1 + fncsze + smmwrkeff + maxteasze + dbms1 + 
+    dvlmtd + loc), datos = isbsg400num)
+
+Residuals:
+   Min     1Q Median     3Q    Max 
+ -3377   -315    -86    147  32109 
+
+Coefficients:
+              Estimate Std. Error t value Pr(>|t|)    
+(Intercept)  -4.578297 541.439461  -0.008   0.9933    
+indsct       -1.659074   2.196661  -0.755   0.4505    
+orgtyp        3.692037   2.968975   1.244   0.2144    
+apptyp        1.689208   1.197903   1.410   0.1593    
+dvltyp        1.441805   1.050150   1.373   0.1706    
+dvlplt       -0.904560   1.227157  -0.737   0.4615    
+lngtyp        0.084156   0.940120   0.090   0.9287    
+prglng1       1.535126   1.364302   1.125   0.2612    
+fncsze        0.191028   0.383069   0.499   0.6183    
+smmwrkeff     1.073744   0.025207  42.597   <2e-16 ***
+maxteasze   -13.960386   7.058320  -1.978   0.0487 *  
+dbms1        -1.929308   0.916809  -2.104   0.0360 *  
+dvlmtd        0.161765   1.190717   0.136   0.8920    
+loc          -0.004357   0.004836  -0.901   0.3682    
+---
+Signif. codes:  0 ‘***’ 0.001 ‘**’ 0.01 ‘*’ 0.05 ‘.’ 0.1 ‘ ’ 1
+
+Residual standard error: 1808 on 386 degrees of freedom
+Multiple R-squared:  0.9287,	Adjusted R-squared:  0.9263 
+F-statistic: 386.6 on 13 and 386 DF,  p-value: < 2.2e-16
+
+
+
+
+
+
+solo la variable SmmWrkEff, es significativa por su p-value < 0.05 ***; MaxTeaSze  por su p-value ** 0.0487; dbms1, por su p-value * 0.0360
+ de forma que la predicción de esfuerzo NWELL1 puede representarse como
+
+NWELL1 = -4.578297  + smmWrkeff * 1.073744 +  maxteasze * (-13.960386)  + dbms1 * (-1.929308)					(2)
+modelo3 = lm(nwell1 ~ (smmwrkeff + maxteasze + dbms1), data=isbsg400num)
+
 ## normalizar isbsg400num con function minmax
 > norm_minmax <- function (x) {(x - min(x))/(max(x) - min(x))}
 > norm_isbsg400num <- as.data.frame (lapply(isbsg400num,norm_minmax))
 > View(norm_isbsg400num) 
 ## Exportar norm_isbsg400num
-write.csv(norm_isbsg400num,
-file = "C:/Users/Marco/OneDrive/Smstr15/S15ArtUno/S15A1IeeeLatin/Envio250510/LenguajeR/norm_isbsg400num")
+write.csv(norm_isbsg400num, file = "C:/Users/Marco/OneDrive/Smstr15/S15ArtUno/S15A1IeeeLatin/Envio250510/LenguajeR/norm_isbsg400num")
 #
 > head(norm_isbsg400num) 
           pryid     indsct    orgtyp     apptyp dvltyp dvlplt
@@ -60,7 +130,7 @@ file = "C:/Users/Marco/OneDrive/Smstr15/S15ArtUno/S15A1IeeeLatin/Envio250510/Len
 
 > install.packages("rio")
 WARNING: Rtools is required to build R packages but is not currently installed. Please download and install the appropriate version of Rtools before proceeding:
-+
+
 https://cran.rstudio.com/bin/windows/Rtools/
 Installing package into ‘C:/Users/Marco/AppData/Local/R/win-library/4.2’
 (as ‘lib’ is unspecified)
@@ -94,6 +164,8 @@ downloaded 519 KB
 The downloaded source packages are in
 	‘C:\Users\Marco\AppData\Local\Temp\RtmpgFZnX7\downloaded_packages’
 > 
+
+
 > library(rio)
 The following rio suggested packages are not installed: ‘arrow’, ‘hexView’, ‘fst’, ‘pzfx’, ‘rmatio’, ‘readODS’, ‘qs’
 Use 'install_formats()' to install them
@@ -139,7 +211,12 @@ pryid            indsct           orgtyp
  3rd Qu.:1.0000   3rd Qu.:1.0000   3rd Qu.:0.026754  
  Max.   :1.0000   Max.   :1.0000   Max.   :1.000000  
 
+
 > cor(isbsg400numno)
+
+
+
+
      pryid      indsct      orgtyp       apptyp
 pryid      1.000000000  0.02869349  0.01255510  0.006799264
 indsct     0.028693492  1.00000000  0.79531883 -0.284873855
@@ -205,19 +282,17 @@ dbms1      1.00000000  0.08569148 -0.09434964
 dvlmtd     0.08569148  1.00000000 -0.08922153
 loc       -0.09434964 -0.08922153  1.00000000
 
-Mtx2<-cor(isbsg400numno)   #permite ejecutar una matriz de correlación
 
-install.packages("corrplot")
-   library(corrplot)
 
-> corrplot(Mtx2, method = "ellipse") #permite obtener un gráfico con elipses
-corrplot(Mtx2, method = "number") #permite obtener un gráfico con números
 Modelo5 = lm(nwell1 ~ (indsct + orgtyp + apptyp + dvltyp + 
            dvlplt + lngtyp + prglng1 + fncsze + smmwrkeff + 
 	   maxteasze + dbms1 + dvlmtd + loc), 
      datos = isbsg400numno)
 
 summary(modelo5)
+
+
+
 Call:
 lm(formula = nwell1 ~ (indsct + orgtyp + apptyp + dvltyp + dvlplt + 
     lngtyp + prglng1 + fncsze + smmwrkeff + maxteasze + dbms1 + 
@@ -250,12 +325,10 @@ Residual standard error: 0.02813 on 386 degrees of freedom
 Multiple R-squared:  0.9287,	Adjusted R-squared:  0.9263 
 F-statistic: 386.6 on 13 and 386 DF,  p-value: < 2.2e-16
 
-solo la variable SmmWrkEff, es significativa por su p-value < 0.05 ***; MaxTeaSze  por su p-value * -0.0297538; 
-dbms1, por su p-value * -0.0085840
+solo la variable SmmWrkEff, es significativa por su p-value < 0.05 ***; MaxTeaSze  por su p-value * -0.0297538; dbms1, por su p-value * -0.0085840
  de forma que la predicción de esfuerzo NWELL1 puede representarse como
 
 NWELL1 = -0.0003684    + smmWrkeff * 1.0157302   +  maxteasze * (-0.0297538  )  + dbms1 * (-0.0085840)
-Con esta expressión se puede evaluar la precisión del estimado nwell1 mediante métricas mre, mmre, pred() 
-ver articulo WRD_Manuscript9434XXXX-
+Con esta expression se puede evaluar la precisión del estimado nwell1 mediante métricas mre, mmre, pred() ver articulo WRD_Manuscript9434XXXX-
 
 
