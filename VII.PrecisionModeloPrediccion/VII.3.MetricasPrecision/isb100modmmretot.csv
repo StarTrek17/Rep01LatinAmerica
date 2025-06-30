@@ -1,0 +1,2 @@
+count(*),sum(errorabsol),sum(errorrelatmre),sum(pred25)
+100,21982.0000,10.5570,99
